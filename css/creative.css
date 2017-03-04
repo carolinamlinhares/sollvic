@@ -392,7 +392,7 @@ fieldset[disabled] .btn-primary.active {
   padding: 15px 30px;
 }
 ::-moz-selection {
-  color: white;
+  color: #f2f2f2;
   text-shadow: none;
   background: #222222;
 }
