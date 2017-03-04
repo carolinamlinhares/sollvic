@@ -256,10 +256,10 @@ header .header-content .header-content-inner p {
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
 }
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-  font-size: 18px;
+  font-size: 14px;
 }
 .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
