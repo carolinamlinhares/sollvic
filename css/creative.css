@@ -437,6 +437,6 @@ footer{
     border-radius: 50%;
     height: auto; 
     width: auto; 
-    max-width: 150px; 
-    max-height: 150px;
+    max-width: 100px; 
+    max-height: 100px;
 }
