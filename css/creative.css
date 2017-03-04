@@ -431,6 +431,7 @@ footer{
     width: auto;
     height: auto;
     margin: auto;
+    padding-left: 20px;
 }
 
 .img-circle {
@@ -439,7 +440,6 @@ footer{
     width: auto; 
     max-width: 120px; 
     max-height: 120px;
-    padding-left: 20px;
 }
 
 #identification {
