@@ -132,7 +132,7 @@ aside {
   }
   .navbar-default.affix .navbar-header .navbar-brand:hover,
   .navbar-default.affix .navbar-header .navbar-brand:focus {
-    color: #eb3812;
+    color: #2095f2;
   }
   .navbar-default.affix .nav > li > a,
   .navbar-default.affix .nav > li > a:focus {
@@ -207,6 +207,7 @@ header .header-content .header-content-inner p {
 }
 .section-heading {
   margin-top: 0;
+  color: black;
 }
 .service-box {
   max-width: 400px;
