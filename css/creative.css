@@ -423,3 +423,10 @@ footer{
   color: white;
   background-color: #333333;
 }
+
+.imgsize {
+    max-width: 440px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+}
