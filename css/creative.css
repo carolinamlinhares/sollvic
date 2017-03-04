@@ -417,5 +417,8 @@ footer{
   position:left; 
   bottom:0; 
   width:100%; 
-  height:100px; 
+  height:50px;
+  padding-top: 25px;
+  color: white;
+  background-color: black;
 }
