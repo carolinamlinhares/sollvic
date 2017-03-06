@@ -439,6 +439,7 @@ footer{
     width: auto; 
     max-width: 140px; 
     max-height: 140px;
+    margin: auto;
 }
 
 .identification {
