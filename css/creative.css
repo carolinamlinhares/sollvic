@@ -437,10 +437,10 @@ footer{
     border-radius: 50%;
     height: auto; 
     width: auto; 
-    max-width: 120px; 
-    max-height: 120px;
+    max-width: 140px; 
+    max-height: 140px;
 }
 
-#identification {
+.identification {
     font-size: 10px;
 }
