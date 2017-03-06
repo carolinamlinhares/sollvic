@@ -450,4 +450,8 @@ footer{
   .bigtitle { 
       text-align: center;
     }
+    .img-responsive{
+        display:block;
+        margin:auto;
+    }
 }
