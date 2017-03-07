@@ -7,7 +7,7 @@ $(document).ready(function(){
         }                   
     });
     
-    $('.switch').change(function(){
+    $('.switch-input').change(function(){
         if (this.checked) {
             $("#coef").show(500);
         } else {
