@@ -458,6 +458,8 @@ footer{
 
 .generalNav {
     background-color: #41bef6;
+    border-color: #2095f2;
+    margin-bottom: 50px !important;
 }
 
 .apptitle {
@@ -467,6 +469,6 @@ footer{
 }
 
 .description {
-    font-size: 7px;
+    font-size: 13px;
 }
 
