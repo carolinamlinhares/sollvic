@@ -67,3 +67,67 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
+    <body>
+		<div class="header">
+			<h1> Verificação de Vigas Metálicas </h1>
+		</div>
+		<div class="form">
+		<form name="formCS">
+			<label>Projeto:</label>
+			<input type="text" name="projectCS" placeholder="Ex.: Edifício Califórnia"/> <br>
+
+			<label>Viga:</label>
+			<input type="text" name="beamCS" placeholder="Identifique a viga. Ex.: V1" /> <br>
+
+			<label>Norma:</label>
+			<select name="standard">
+				<option value="NBR 8800:2008"> NBR 8800:2008 </option> 
+			</select> <br> 
+
+			<h2> Esforços </h2>
+			<label>Esforço Cortante Vk (kN):</label>
+			<input type="text" name="vCS" /> <br>
+
+			<label>Momento Fletor Mk (kN.m):</label>
+			<input type="text" name="mCS" /> <br>
+
+			<label> Distância entre travamentos laterais (m):</label>
+			<input type="text" name="lbCS" /> <br>
+
+			<h2> Perfil </h2>
+
+			<label>Bitola:</label>
+			<select id="bitola" name="sectionS">
+			</select> <br>
+
+			<label>Aço:</label>
+			<select id="acos" name="typeS">
+			</select> <br> <br>
+
+			<input type="checkbox" id="stiffeningCS" name="stiffeningCS" value="getK" checked=""> Perfil sem enrijecedor <br>
+			<label> Espaço entre Enrijecedores (m):</label>
+			<input type="text" name="aCS" /> <br>
+
+			<br>
+
+			<h4> Coeficientes </h4>
+			
+			<label>Gama</label>
+			<input type="text" name="gama" value=1.4 /> <br>
+			<label>Gama A1</label>
+			<input type="text" name="gama1" value=1.1 /> <br>
+			<label>Cb</label>
+			<input type="text" name="cb" value=1 /> <br>
+
+			<br>
+
+			<input type="button" value="Verificar" onClick="processFormCS()" /> <br>
+			<input type="reset" value="Limpar" /> <br>
+
+			<br>
+			<br>
+			<br>
+
+		</form>
+		</div>
