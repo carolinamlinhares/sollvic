@@ -598,3 +598,7 @@ footer{
 .inline{
     display: inline-block;
 }
+
+input[type='checkbox'] {
+   vertical-align:middle;
+}
