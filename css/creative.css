@@ -605,5 +605,5 @@ input[type="checkbox"] {
 }
 
 #aCS {
-    display: none;
+    visibility: hidden;
 }

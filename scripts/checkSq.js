@@ -1,9 +1,9 @@
 $(document).ready(function(){
     $('#stiffeningCS').change(function(){
         if (this.checked) {
-            $('#aCS').hide(500);
+            $("#aCS").css("visibility", "hidden");
         } else {
-            $('#aCS').show(500);
+            $("#aCS").css("visibility", "visible");
         }                   
     });
     
