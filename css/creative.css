@@ -472,6 +472,10 @@ footer{
     font-size: 13px;
 }
 
+.author {
+    font-size: 7px;
+}
+
 .projectid input[type="text"]{
     width: 500px;
 }

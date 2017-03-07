@@ -73,7 +73,8 @@
         <div class="row">
             <div class="apptitle">
                 <h1 class="title1">Verificação de Vigas Metálicas</h1>
-                <p class="description"> Verificação para vigas metálicas submetidas à Flexão Simples de acordo com a norma NBR 8800:2008. </p>
+                <p class="description"> Verificação para vigas metálicas submetidas à Flexão Simples de acordo com a norma NBR 8800:2008. </p> 
+                <p class="author"> Autora: Carolina Linhares </p> <br>
             </div>
         </div>
     </div> 
@@ -84,15 +85,15 @@
                 <div class="col-lg-12">
                     <div class="projectid">
                         <label>Projeto:</label>
-                        <input class="form-control" type="text" name="projectCS" placeholder="Ex.: Edifício Califórnia"/> <br><br>
+                        <input class="form-control" type="text" name="projectCS" placeholder="Ex.: Edifício Califórnia"/> <br><br><br>
                 
                         <label>Viga:</label>
-                        <input class="form-control" type="text" name="beamCS" placeholder="Identifique a viga. Ex.: V1" /> <br><br>
+                        <input class="form-control" type="text" name="beamCS" placeholder="Identifique a viga. Ex.: V1" /> <br><br><br>
                         
                         <label>Norma:</label>
                         <select class="form-control" name="standard">
                             <option value="NBR 8800:2008"> NBR 8800:2008 </option> 
-                        </select> <br>
+                        </select> <br><br>
                     </div>
                 </div>
                 
@@ -101,13 +102,13 @@
                     <p class="title2"> Esforços </p>
                     
                     <label>Esforço Cortante Vk (kN):</label>
-                    <input class="form-control" type="text" name="vCS" /> <br>
+                    <input class="form-control" type="text" name="vCS" /> <br><br><br>
                     
                     <label>Momento Fletor Mk (kN.m):</label>
-                    <input class="form-control" type="text" name="mCS" /> <br>
+                    <input class="form-control" type="text" name="mCS" /> <br><br><br>
                     
                     <label> Distância entre travamentos laterais (m):</label>
-                    <input class="form-control" type="text" name="lbCS" /> <br>
+                    <input class="form-control" type="text" name="lbCS" /> <br><br><br>
                     
                 </div>
                 <div class="col-lg-6">
@@ -122,27 +123,27 @@
                     <select class="form-control" id="acos" name="typeS">
                     </select> <br> <br>
                     
-                    <input type="checkbox" id="stiffeningCS" name="stiffeningCS" value="getK" checked=""> Perfil sem enrijecedor <br>
+                    <input class="form-control" type="checkbox" id="stiffeningCS" name="stiffeningCS" value="getK" checked=""> Perfil sem enrijecedor <br>
                     <label> Espaço entre Enrijecedores (m):</label>
-                    <input type="text" name="aCS" /> <br>
+                    <input class="form-control" type="text" name="aCS" /> <br>
                     
                     <br>
                     
                     <h4> Coeficientes </h4>
                     
                     <label>Gama</label>
-                    <input type="text" name="gama" value=1.4 /> <br>
+                    <input class="form-control" type="text" name="gama" value=1.4 /> <br>
                     <label>Gama A1</label>
-                    <input type="text" name="gama1" value=1.1 /> <br>
+                    <input class="form-control" type="text" name="gama1" value=1.1 /> <br>
                     <label>Cb</label>
-                    <input type="text" name="cb" value=1 /> <br>
+                    <input class="form-control" type="text" name="cb" value=1 /> <br>
                     
                     <br>
                     
                 </div>
                     
-                    <input type="button" value="Verificar" onClick="processFormCS()" /> <br>
-                    <input type="reset" value="Limpar" /> <br>
+                    <input class="btn btn-primary btn-xl" type="button" value="Verificar" onClick="processFormCS()" /> <br>
+                    <input class="btn btn-primary btn-xl" type="reset" value="Limpar" /> <br>
                     
                     <br>
                     <br>
