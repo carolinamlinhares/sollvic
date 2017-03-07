@@ -459,3 +459,9 @@ footer{
 .generalNav {
     background-color: #41bef6;
 }
+
+.apptitle {
+    color: black;
+    text-align: left;
+    font-size: 25px;
+}
