@@ -602,4 +602,8 @@ footer{
 input[type="checkbox"] { 
     height: auto;
     width: auto;
-} 
+}
+
+#aCS {
+    display: none;
+}

@@ -270,10 +270,10 @@ function processFormCS() {
     
     if (vsd <= vrd && msd <= mrdOut) {
         result = "OK";
-        alert("OK");
+        alert("A viga foi aprovada.");
     } else {
         result = "Não OK";
-        alert("Não OK");
+        alert("A viga foi reprovada.");
     }
     
     // Fixing decimals 
