@@ -607,3 +607,7 @@ input[type="checkbox"] {
 #aCS {
     visibility: hidden;
 }
+
+#coef {
+    display: none;
+}
