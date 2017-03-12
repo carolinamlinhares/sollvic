@@ -624,4 +624,5 @@ table, th, td, tr {
 
 .imgtable{
     background-image: url("../images/Perfil.png");
+    object-fit: cover;
 }
