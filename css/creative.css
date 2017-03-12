@@ -697,7 +697,6 @@ table, th, td, tr {
 }
 
 #sidebar-wrapper.active {
-    right: 250px;
     width: 250px;
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
