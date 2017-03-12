@@ -621,3 +621,7 @@ table, th, td, tr {
     margin: 0 auto;
     float: none;
 }
+
+.imgtable{
+    background-image: url("images/Perfil.png");
+}
