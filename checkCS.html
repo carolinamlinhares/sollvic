@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sollvic">
+    <meta name="author" content="Juliana Libório">
+
+    <title>Verificação de Vigas em Concreto - Simplesmente Armadas</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/creative.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body id="page-top">
+
+    <nav id="genNav" class="navbar navbar-default navbar-fixed-top generalNav">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Sollvic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <!-- RETIRAR PAGE SCROLL E MUDAR HREF -->
+                        <a class="page-scroll" href="#about">Quem Somos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#support">Apoio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#joinus">Participe</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="apptitle">
+                <h1 class="title1">Verificação de Vigas em Concreto - Simplesmente Armadas</h1>
+                <p class="description"> Verificação para vigas em concreto armado submetidas à Flexão Simples de acordo com a norma NBR 6118:2014. <br> <span class="author"> Autora: Juliana Libório </span> <br><br> </p> 
+            </div>
+        </div>
+    </div> 
+
+    <div class="container">
+        <div class="row">
+            <form name="formCS" class="form-inline">
+                <div class="col-lg-12">
+                    <div class="projectid">
+                        <label>Projeto:</label>
+                        <input class="form-control" type="text" name="projectCC" placeholder="Ex.: Edifício Canadá"/> <br><br>
+                
+                        <label>Viga:</label>
+                        <input class="form-control" type="text" name="beamCC" placeholder="Identifique a viga. Ex.: V1" /> <br><br>
+                        
+                        <label>Norma:</label>
+                        <select class="form-control" name="standard">
+                            <option value="NBR 6118:2014"> NBR 6118:2014 </option> 
+                        </select> <br><br>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    
+                    <p class="title2"> Dados </p>
+                    
+                    <label>Altura da viga (cm):</label>
+			        <input type="text" name="hCC" /><br>
+            
+                    <label>Largura da viga (cm):</label>
+			        <input type="text" name="bwCC" /> <br>
+            
+                    <label>Concreto (Fck):</label>
+			        <select id="concrete" name="concreteCC">
+			        </select> <br>
+   
+                    <label>Aço:</label>
+			        <select id="steel" name="steelCC">
+			        </select> <br>
+                    
+                    <label>Área de Aço (cm²):</label>
+			        <input id="asSteel" name="asCC"/> <br>
+			                     
+                    <label>Altura Útil (cm):</label>
+			        <input id="alturautil" name="dCC"/> <br>
+                    
+                    <label>Cobrimento (cm)</label>
+			        <input type="text" name="cobCC" value=3.0 /> <br>
+                                                            
+                </div>
+                
+                <div class="col-lg-6">
+                    
+                    <p class="title2"> Bitolas </p>
+                    
+                    <label>Bitola longitudinal (mm):</label>
+			        <select id="bitolaLong" name="longCC">
+			        </select> <br>
+            
+			        <label>Bitola transversal (mm):</label>
+			        <select id="bitolaEst" name="estCC">
+			        </select> <br>    
+                                                    
+                </div>
+                    
+                <div class="col-lg-6">
+                    <p class="title2 inline"> Coeficientes e Parâmetros </p>
+                    
+                    <label class="switch">
+                      <input type="checkbox" class="switch-input">
+                      <span class="switch-label" data-on="On" data-off="Off"></span>
+                      <span class="switch-handle"></span>
+                    </label> <br>
+                    
+                    <div id="coef">
+                        <label>\({\gamma}_{c}\)</label>
+                        <input class="form-control" type="text" name="gamac" value=1.4 /> <br><br>
+                        <label>\({\gamma}_{f}\)</label>
+                        <input class="form-control" type="text" name="gamaf" value=1.4 /> <br><br>
+                        <label>\({\gamma}_{s}\)</label>
+                        <input class="form-control" type="text" name="gamas" value=1.15 /> <br><br>
+                    </div>
+                </div>
+                
+                <div class="col-lg-12 text-center">
+                    <a href="#" class="btn btn-primary btn-xl" id="reportCheckCS" onClick="processFormCC()">Verificar</a>
+                    <input class="btn btn-primary btn-xl" type="reset" value="Limpar" /> <br>
+                    
+                    <br>
+                    <br>
+                
+                </div>
+                
+    
+            </form>
+        </div>
+    </div>
+    
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="scripts/checkCS.js"></script>
+    <script type="text/javascript" src="scripts/checkCSq.js"></script>
+    
+</body>
