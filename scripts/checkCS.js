@@ -303,16 +303,19 @@ function processFormCC() {
             result = "A viga não resiste ao momento fletor solicitado. Sugere-se aumentar a seção transversal ou a resistência do concreto. Verifique o relatório para mais opções.";
         }
         alert(result);
-    
-        if (h > 60) {
-            armPele = 0.001 * bw * h;
-            resultArmPele = "É necessário utilizar armadura de pele com " + armPele + "cm² por face";
-        } else {
-            resultArmPele = "Não é necessário utilizar armadura de pele";
-        }
-        alert(resultArmPele);
-        
     }
+    
+    if (h > 60) {
+        armPele = 0.001 * bw * h;
+        resultArmPele = "É necessário utilizar armadura de pele com " + armPele + "cm² por face";
+    } else {
+        resultArmPele = "Não é necessário utilizar armadura de pele";
+    }
+    if (resultArmPele === "É necessário utilizar armadura de pele com " + armPele + "cm² por face") {
+        alert(resultArmPele);
+    }
+        
+    
 }
 
     
