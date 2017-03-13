@@ -414,7 +414,7 @@ function processFormCS() {
             "ratiopCSM": ratiopCSM
         };
     
-    document.getElementById("botaoRelatorio").href = "reportCS.html?test=" + JSON.stringify(resultado);
+    document.getElementById("reportCheckS").href = "reportCheckS.html?test=" + JSON.stringify(resultado);
 }
 
 /*

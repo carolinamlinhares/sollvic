@@ -714,3 +714,7 @@ table, th, td, tr {
 .logo {
     margin-left: 15px;
 }
+
+.eqcenter {
+    text-align: center;
+}
