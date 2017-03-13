@@ -1,3 +1,4 @@
+
 // Start of parsing results
 function getJsonFromUrl(hashBased) {
     'use strict'
