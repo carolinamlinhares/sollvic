@@ -41,7 +41,7 @@ function processFormCS() {
     if (project === "") {
         project = "Exemplo 1";
     }
-       
+
     beam = document.formCS.beamCS.value;
     /* if (beam === "") {
         bootbox.alert("Por favor preencha o campo Viga.");
@@ -51,7 +51,7 @@ function processFormCS() {
     if (beam === "") {
         beam = "V1";
     }
-    
+
     vk = Number(document.formCS.vCS.value);
     if (document.formCS.vCS.value === "" || isNaN(vk)) {
         bootbox.alert("Por favor preencha o campo Cortante com números.");
@@ -70,7 +70,7 @@ function processFormCS() {
         console.log("Por favor preencha o campo Distância entre travamentos laterais com números.");
         return false;
     }
-    
+
     if (document.getElementById("stiffeningCS").checked === false) {
         enrij = "Sim";
         a = Number(document.formCS.aCS.value);
@@ -83,14 +83,14 @@ function processFormCS() {
         enrij = "Não";
         a = "N/A";
     }
-    
-   
+
+
     section = perfis[Number(document.formCS.sectionS.value)].bitola;
     steel = steelProp[Number(document.formCS.typeS.value)].steelType;
     gama = Number(document.formCS.gama.value);
     gama1 = Number(document.formCS.gama1.value);
     cb = Number(document.formCS.cb.value);
-    
+
     // Getting section properties
     i = Number(document.getElementById("bitola").value);
 
@@ -119,18 +119,18 @@ function processFormCS() {
 
     // Getting values from steel properties array
     j = Number(document.getElementById("acos").value);
-    
+
     fyForm = steelProp[j].fy;
     fuForm = steelProp[j].fu;
     EForm = steelProp[j].E;
-    
+
     // Calculating kv
     if (((a / h) > 3) || ((a / h) > Math.pow(260 / (h / tw), 2)) || (document.getElementById("stiffeningCS").checked === true)) {
         kv = 5;
     } else {
         kv = 5 + 5 / (Math.pow(a / h, 2));
     }
-    
+
     // Calculating parameters 
     aw = (d * tw) / 100;
     lb = lbForm * 100;
@@ -140,13 +140,13 @@ function processFormCS() {
     beta1 = (0.7 * fy * wx) / (E * it);
     kc = 4 / Math.sqrt(h / tw);
     tr = 0.3 * fy;
-    
+
     // Shear Vrd
     lambV = h / tw;
     lambpV = (1.1 * Math.sqrt(kv * E / fy));
     lambrV = (1.37 * Math.sqrt(kv * E / fy));
     vpl = 0.6 * fy * aw;
-    
+
     if (lambV <= lambpV) {
         situationV = "Caso 1";
     } else if (lambpV < lambV && lambV <= lambrV) {
@@ -156,26 +156,26 @@ function processFormCS() {
     } else {
         situationV = "Error";
     }
-    
+
     switch (situationV) {
-    case "Caso 1":
-        vrd = vpl / gama1;
-        break;
-    case "Caso 2":
-        vrd = (lambpV / lambV) * (vpl / gama1);
-        break;
-    case "Caso 3":
-        vrd = 1.24 * Math.pow(lambpV / lambV, 2) * (vpl / gama1);
-        break;
+        case "Caso 1":
+            vrd = vpl / gama1;
+            break;
+        case "Caso 2":
+            vrd = (lambpV / lambV) * (vpl / gama1);
+            break;
+        case "Caso 3":
+            vrd = 1.24 * Math.pow(lambpV / lambV, 2) * (vpl / gama1);
+            break;
     }
-    
+
     // Bending
     //FLA
     mpl = zx * fy;
     lambA = dl / tw; // lambA = h / tw;
     lambpA = 3.76 * Math.sqrt(E / fy);
     lambrA = 5.7 * Math.sqrt(E / fy);
-    
+
     if (lambA <= lambpA) {
         situationA = "Caso 1";
     } else if (lambpA < lambA && lambA <= lambrA) {
@@ -185,26 +185,26 @@ function processFormCS() {
     } else {
         situationA = "Error";
     }
-    
+
     switch (situationA) {
-    case "Caso 1":
-        mrdA = mpl / gama1;
-        break;
-    case "Caso 2":
-        mrA = 0.7 * fy * wx;
-        mrdA = (cb / gama1) * (mpl - ((mpl - mrA) * ((lambA - lambpA) / (lambrA - lambpA))));
-        break;
-    case "Caso 3":
-        // mcrA = Anexo H
-        bootbox.alert("Cálculo indisponível. Viga com perfil de alma esbelta, consulte o anexo H da Norma 8800:2008.");
-        break;
+        case "Caso 1":
+            mrdA = mpl / gama1;
+            break;
+        case "Caso 2":
+            mrA = 0.7 * fy * wx;
+            mrdA = (cb / gama1) * (mpl - ((mpl - mrA) * ((lambA - lambpA) / (lambrA - lambpA))));
+            break;
+        case "Caso 3":
+            // mcrA = Anexo H
+            bootbox.alert("Cálculo indisponível. Viga com perfil de alma esbelta, consulte o anexo H da Norma 8800:2008.");
+            break;
     }
-    
+
     //FLM
     lambM = mesa;
     lambpM = 0.38 * Math.sqrt(E / fy);
     lambrM = 0.83 * Math.sqrt(E / (fy - tr));
-    
+
     if (lambM <= lambpM) {
         situationM = "Caso 1";
     } else if (lambpM < lambM && lambM <= lambrM) {
@@ -214,26 +214,26 @@ function processFormCS() {
     } else {
         situationM = "Error";
     }
-    
+
     switch (situationM) {
-    case "Caso 1":
-        mrdM = mpl / gama1;
-        break;
-    case "Caso 2":
-        mrM = 0.7 * fy * wx;
-        mrdM = (cb / gama1) * (mpl - ((mpl - mrM) * ((lambM - lambpM) / (lambrM - lambpM))));
-        break;
-    case "Caso 3":
-        mcrM = ((0.69 * E) / (lambM * lambM)) * wx;
-        mrdM = mcrM / gama1;
-        break;
+        case "Caso 1":
+            mrdM = mpl / gama1;
+            break;
+        case "Caso 2":
+            mrM = 0.7 * fy * wx;
+            mrdM = (cb / gama1) * (mpl - ((mpl - mrM) * ((lambM - lambpM) / (lambrM - lambpM))));
+            break;
+        case "Caso 3":
+            mcrM = ((0.69 * E) / (lambM * lambM)) * wx;
+            mrdM = mcrM / gama1;
+            break;
     }
-    
+
     // FLT
     lambT = lb / ry;
     lambpT = 1.76 * Math.sqrt(E / fy);
     lambrT = ((1.38 * Math.sqrt(iy * it)) / (ry * it * beta1)) * Math.sqrt(1 + Math.sqrt(1 + (27 * cw * beta1 * beta1) / iy));
-    
+
     if (lambT <= lambpT) {
         situationT = "Caso 1";
     } else if (lambpT < lambT && lambT <= lambrT) {
@@ -243,21 +243,21 @@ function processFormCS() {
     } else {
         situationT = "Error";
     }
-    
+
     switch (situationT) {
-    case "Caso 1":
-        mrdT = mpl / gama1;
-        break;
-    case "Caso 2":
-        mrT = 0.7 * fy * wx;
-        mrdT = (cb / gama1) * (mpl - ((mpl - mrT) * ((lambT - lambpT) / (lambrT - lambpT))));
-        break;
-    case "Caso 3":
-        mcrT = ((cb * Math.PI * Math.PI * E * iy) / Math.pow(lb, 2)) * Math.sqrt((cw / iy) * (1 + 0.039 * (it * lb * lb) / cw));
-        mrdT = mcrT / gama1;
-        break;
+        case "Caso 1":
+            mrdT = mpl / gama1;
+            break;
+        case "Caso 2":
+            mrT = 0.7 * fy * wx;
+            mrdT = (cb / gama1) * (mpl - ((mpl - mrT) * ((lambT - lambpT) / (lambrT - lambpT))));
+            break;
+        case "Caso 3":
+            mcrT = ((cb * Math.PI * Math.PI * E * iy) / Math.pow(lb, 2)) * Math.sqrt((cw / iy) * (1 + 0.039 * (it * lb * lb) / cw));
+            mrdT = mcrT / gama1;
+            break;
     }
-    
+
     //Compare & Results
     vsd = vk * gama;
     msd = mk * gama;
@@ -267,17 +267,9 @@ function processFormCS() {
     ratioCSM = msd / mrdOut;
     ratiopCSV = ratioCSV * 100;
     ratiopCSM = ratioCSM * 100;
-    
-    if (vsd <= vrd && msd <= mrdOut) {
-        result = "OK";
-        bootbox.alert("A viga foi aprovada.");
-    } else {
-        result = "Não OK";
-        bootbox.alert("A viga foi reprovada.");
-    }
-    
+
     // Fixing decimals 
-    
+
     aw = aw.toFixed(2);
     kv = kv.toFixed(2);
     lambV = lambV.toFixed(2);
@@ -327,94 +319,119 @@ function processFormCS() {
     ratiopCSV = ratiopCSV.toFixed(2);
     ratiopCSM = ratiopCSM.toFixed(2);
 
-    var resultado = 
-        {
-            "project": project,
-            "beam": beam,
-            "vk": vk,
-            "mk": mk,
-            "lbForm": lbForm,
-            "section": section,
-            "steel": steel,
-            "fyForm": fyForm,
-            "fuForm": fuForm,
-            "EForm": EForm,
-            "ml": ml,
-            "d": d,
-            "bf": bf,
-            "tw": tw,
-            "tf": tf,
-            "h": h,
-            "dl": dl,
-            "area": area,
-            "ix": ix,
-            "wx": wx,
-            "rx": rx,
-            "zx": zx,
-            "iy": iy,
-            "wy": wy,
-            "ry": ry,
-            "zy": zy,
-            "rt": rt,
-            "it": it,
-            "mesa": mesa,
-            "alma": alma,
-            "cw": cw,
-            "u": u,
-            "fy": fy,
-            "fu": fu,
-            "E": E,
-            "aw": aw,
-            "gama": gama,
-            "gama1": gama1,
-            "cb": cb,
-            "kv": kv,
-            "lb": lb,
-            "kc": kc,
-            "tr": tr,
-            "beta1": beta1,
-            "a": a,
-            "enrij": enrij,
-            "lambV": lambV,
-            "lambpV": lambpV,
-            "lambrV": lambrV,
-            "vpl": vpl,
-            "vrd": vrd,
-            "mpl": mpl,
-            "lambA": lambA,
-            "lambpA": lambpA,
-            "lambrA": lambrA,
-            "mrA": mrA,
-            "mcrA": mcrA,
-            "mrdA": mrdA,
-            "lambM": lambM,
-            "lambpM": lambpM,
-            "lambrM": lambrM,
-            "mrM": mrM,
-            "mcrM": mcrM,
-            "mrdM": mrdM,
-            "lambT": lambT,
-            "lambpT": lambpT,
-            "lambrT": lambrT,
-            "mrT": mrT,
-            "mcrT": mcrT,
-            "mrdT": mrdT,
-            "vsd": vsd,
-            "msd": msd,
-            "mrd": mrd,
-            "mrdOut": mrdOut,
-            "situationV": situationV,
-            "situationA": situationA,
-            "situationM": situationM,
-            "situationT": situationT,
-            "result": result,
-            "ratioCSV": ratioCSV,
-            "ratioCSM": ratioCSM,
-            "ratiopCSV": ratiopCSV,
-            "ratiopCSM": ratiopCSM
-        };
-    
-    document.getElementById("reportCheckS").href = "reportCheckS.html?test=" + JSON.stringify(resultado);
+    var resultado = {
+        "project": project,
+        "beam": beam,
+        "vk": vk,
+        "mk": mk,
+        "lbForm": lbForm,
+        "section": section,
+        "steel": steel,
+        "fyForm": fyForm,
+        "fuForm": fuForm,
+        "EForm": EForm,
+        "ml": ml,
+        "d": d,
+        "bf": bf,
+        "tw": tw,
+        "tf": tf,
+        "h": h,
+        "dl": dl,
+        "area": area,
+        "ix": ix,
+        "wx": wx,
+        "rx": rx,
+        "zx": zx,
+        "iy": iy,
+        "wy": wy,
+        "ry": ry,
+        "zy": zy,
+        "rt": rt,
+        "it": it,
+        "mesa": mesa,
+        "alma": alma,
+        "cw": cw,
+        "u": u,
+        "fy": fy,
+        "fu": fu,
+        "E": E,
+        "aw": aw,
+        "gama": gama,
+        "gama1": gama1,
+        "cb": cb,
+        "kv": kv,
+        "lb": lb,
+        "kc": kc,
+        "tr": tr,
+        "beta1": beta1,
+        "a": a,
+        "enrij": enrij,
+        "lambV": lambV,
+        "lambpV": lambpV,
+        "lambrV": lambrV,
+        "vpl": vpl,
+        "vrd": vrd,
+        "mpl": mpl,
+        "lambA": lambA,
+        "lambpA": lambpA,
+        "lambrA": lambrA,
+        "mrA": mrA,
+        "mcrA": mcrA,
+        "mrdA": mrdA,
+        "lambM": lambM,
+        "lambpM": lambpM,
+        "lambrM": lambrM,
+        "mrM": mrM,
+        "mcrM": mcrM,
+        "mrdM": mrdM,
+        "lambT": lambT,
+        "lambpT": lambpT,
+        "lambrT": lambrT,
+        "mrT": mrT,
+        "mcrT": mcrT,
+        "mrdT": mrdT,
+        "vsd": vsd,
+        "msd": msd,
+        "mrd": mrd,
+        "mrdOut": mrdOut,
+        "situationV": situationV,
+        "situationA": situationA,
+        "situationM": situationM,
+        "situationT": situationT,
+        "result": result,
+        "ratioCSV": ratioCSV,
+        "ratioCSM": ratioCSM,
+        "ratiopCSV": ratiopCSV,
+        "ratiopCSM": ratiopCSM
+    };
+
+    var menu_prompt = {
+        title: "Resultado da verificação",
+        message: "A viga foi aprovada.",
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> Voltar'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Mostrar relatorio'
+            }
+        },
+        callback: function (result) {
+            console.log('Viga reprovada resultado: ' + result);
+            if (result) {
+                location.href = "reportCheckS.html?test=" + JSON.stringify(resultado);
+            }
+        }
+    };
+
+    if (vsd <= vrd && msd <= mrdOut) {
+        result = "OK";
+        bootbox.confirm(menu_prompt);
+    } else {
+        result = "Não OK";
+        menu_prompt.message = "A viga foi reprovada!";
+        bootbox.confirm(menu_prompt);
+    }
 }
 
 /*
@@ -432,7 +449,7 @@ function criarBitola(nomeBitola, linhaBitola) {
 var bitolaLista = document.getElementById("bitola"),
     acoLista = document.getElementById("acos"),
     i;
-    
+
 for (i = 0; i < perfis.length; i += 1) {
     bitolaLista.appendChild(criarBitola(perfis[i].bitola, i));
 }
@@ -445,7 +462,7 @@ function criarAco(nomeAco, linhaAco) {
     opcao.appendChild(texto);
     return opcao;
 }
-    
+
 for (i = 0; i < steelProp.length; i += 1) {
     acoLista.appendChild(criarAco(steelProp[i].steelType, i));
 }
