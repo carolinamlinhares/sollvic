@@ -48,60 +48,56 @@ resultado.vrd = Number (resultado.vrd);
 resultado.mrd = Number (resultado.mrd);
 resultado.mrdOut = Number (resultado.mrdOut);
 
-// Building variable texts
-textV1 = "<p> Como " + resultado.lambV + " ≤ " + resultado.lambpV + ", " + "\\(λ\\) ≤ \\(λ_p\\)" + ", o esforço cortante resistente é dado por: <br>" + "<span class='eqcenter'> \\(V_{Rd}=\\frac{V_{pl}}{{\\gamma }_{a1}}\\) = " + resultado.vrd + " KN </span> </p>" + "<p> Sendo: <br> \\(V_{pl}=0,5\\times A_w\\times f_y\\) = " + resultado.vpl + "KN <br> \\(A_w\\) = área da alma = \\(d\\times t_w\\) = " + resultado.aw + "\\({cm}^2\\) </p>";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textV1]);
-
-textV2 = "<p> Como " + resultado.lambpV + " < " + resultado.lambV + " ≤ " + resultado.lambrV + ",  \\(λ_p\\) < \\(λ\\) ≤ \\(λ_r\\), o esforço cortante resistente é dado por: <br>" + "<span class='eqcenter'> \\[V_{Rd}=\\frac{{\\lambda }_p}{\\lambda }\\times \\frac{V_{pl}}{{\\gamma }_{a1}}\\]  = " + resultado.vrd + " KN </span> </p>" + "<p> Sendo: <br> \\(V_{pl}=0,5\\times A_w\\times f_y\\) = " + resultado.vpl + "KN <br> \\(A_w\\) = área da alma = \\(d\\times t_w\\) = " + resultado.aw + "\\({cm}^2\\) </p>";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textV2]);
-
-textV3 = "<p> Como " + resultado.lambV + " > " + resultado.lambrV + ", " + "\\(λ\\) > \\(λ_r\\)" + ", o esforço cortante resistente é dado por: <br>" + "<span class='eqcenter'> \\(V_{Rd}=1,24\\ \\times \\ ({\\frac{{\\lambda }_p}{\\lambda })}^2\\times \\frac{V_{pl}}{{\\gamma }_{a1}}\\)  = " + resultado.vrd + " KN </span> </p>" + "<p> Sendo: <br> \\(V_{pl}=0,5\\times A_w\\times f_y\\) = " + resultado.vpl + "KN <br> \\(A_w\\) = área da alma = \\(d\\times t_w\\) = " + resultado.aw + "\\({cm}^2\\) </p>";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textV3]);
-
-textA1 = "<p> Como " + resultado.lambA + " ≤ " + resultado.lambpA + ", " + "\\(λ\\) ≤ \\(λ_p\\)" + ", o momento fletor resistente é dado por: <br>" + "<span class='eqcenter'> \\(M_{Rd}=\\frac{M_{pl}}{{\\gamma }_{a1}}\\) = " + resultado.mrdA + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)); <br> <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> </p>";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textA1]);
-
-textA2 = "<p> Como " + resultado.lambpA + " < " + resultado.lambA + " ≤ " + resultado.lambrA + ", \\(λ_p\\) < \\(λ\\) ≤ \\(λ_r\\), o momento fletor resistente é dado por: <br> <span class='eqcenter'> \\(M_{Rd}=\\frac{Cb}{{\\gamma }_{a1}}\\times (M_{pl}-(M_{pl}-\\ M_r)(\\frac{\\lambda -{\\lambda }_p}{{\\lambda }_r-{\\lambda }_p})\\)  = " + resultado.mrdA + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(C_b\\) = coeficiente para majorar momento DESCREVER = " + resultado.cb + "; <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)) <br>; <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> <br> \\(M_r\\) = momento fletor correspondente ao início do escoamento, incluindo a influência das tensões residuais em alguns casos; <br> <span class='eqcenter'> \\(M_r=0,7f_yW_x\\)   = " + resultado.mrA + " KN.cm </span> </p>";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textA2]);
-
-textA3 = "<p> Como " + resultado.lambA + " > " + resultado.lambrA + ", " + "\\(λ\\) > \\(λ_r\\), tem-se uma viga de alma esbelta conforme Anexo H da NBR 8800:2008. Não é indicado o uso, sugere-se a escolha de outro perfil ao projeto." 
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textA3]);
-
-textM1 = "<p> Como " + resultado.lambM + " ≤ " + resultado.lambpM + ", \\(λ\\) ≤ \\(λ_p\\) , o momento fletor resistente é dado por: <br>" + "<span class='eqcenter'> \\(M_{Rd}=\\frac{M_{pl}}{{\\gamma }_{a1}}\\) = " + resultado.mrdM + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)); <br> <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> </p>";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textM1]);
-
-textM2 = "<p> Como " + resultado.lambpM + " < " + resultado.lambM + " ≤ " + resultado.lambrM + ", \\(λ_p\\) < \\(λ\\) ≤ \\(λ_r\\), o momento fletor resistente é dado por: <br> <span class='eqcenter'> \\(M_{Rd}=\\frac{Cb}{{\\gamma }_{a1}}\\times (M_{pl}-(M_{pl}-\\ M_r)(\\frac{\\lambda -{\\lambda }_p}{{\\lambda }_r-{\\lambda }_p})\\)  = " + resultado.mrdM + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(C_b\\) = coeficiente para majorar momento DESCREVER = " + resultado.cb + " ; <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)) <br>; <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> <br> \\(M_r\\) = momento fletor correspondente ao início do escoamento, incluindo a influência das tensões residuais em alguns casos; <br> <span class='eqcenter'> \\(M_r=0,7f_yW_x\\)   = " + resultado.mrM + " KN.cm </span> </p>";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textM2]);
-
-textM3 = "<p> Como " + resultado.lambM + " > " + resultado.lambrM + ", \\(λ\\) > \\(λ_r\\), o momento fletor resistente é dado por: <br>" + "<span class='eqcenter'> \\(M_{Rd}=\\frac{M_{cr}}{{\\gamma }_{a1}}\\)  = " + resultado.mrdM + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(M_{cr}\\) = momento fletor de flambagem elástica. Para perfis laminados: <br>; <span class='eqcenter'> \\(M_{cr}=\\frac{0,69\\times E}{{\\lambda }^2}W_c\\)  = " + resultado.mcrM + " KN.cm </span> </p>" + "<p> Onde: <br> \\(W_c\\) = módulo de resistência elástico do lado comprimido da seção, relativo ao eixo de flexão, neste caso, o eixo x; valor retirado das especificações do perfil = " + resultado.wx + "\\({cm}^3\\).</p>";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textM3]);
-
-textT1 = "<p> Como " + resultado.lambT + " ≤ " + resultado.lambpT + ", \\(λ\\) ≤ \\(λ_p\\) , o momento fletor resistente é dado por: <br>" + "<span class='eqcenter'> \\(M_{Rd}=\\frac{M_{pl}}{{\\gamma }_{a1}}\\) = " + resultado.mrdT + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)); <br> <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> </p>";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textT1]);
-
-textT2 = "<p> Como " + resultado.lambpT + " < " + resultado.lambT + " ≤ " + resultado.lambrT + ", \\(λ_p\\) < \\(λ\\) ≤ \\(λ_r\\), o momento fletor resistente é dado por: <br> <span class='eqcenter'> \\(M_{Rd}=\\frac{Cb}{{\\gamma }_{a1}}\\times (M_{pl}-(M_{pl}-\\ M_r)(\\frac{\\lambda -{\\lambda }_p}{{\\lambda }_r-{\\lambda }_p})\\)  = " + resultado.mrdT + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(C_b\\) = coeficiente para majorar momento DESCREVER = " + resultado.cb + " ; <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)); <br> <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> <br> \\(M_r\\) = momento fletor correspondente ao início do escoamento, incluindo a influência das tensões residuais em alguns casos; <br> <span class='eqcenter'> \\(M_r=0,7f_yW_x\\)   = " + resultado.mrT + " KN.cm </span> </p>";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textT2]);
-
-textT3 = "<p> Como " + resultado.lambT + " > " + resultado.lambrT + ", \\(λ\\) > \\(λ_r\\), o momento fletor resistente é dado por: <br>" + "<span class='eqcenter'> \\(M_{Rd}=\\frac{M_{cr}}{{\\gamma }_{a1}}\\)  = " + resultado.mrdT + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(M_{cr}\\) = momento fletor de flambagem elástica. Para perfis laminados: <br> <span class='eqcenter'> \\(M_{cr}=\\ \\frac{C_b\\times \\ {\\pi }^2}{L_b}\\ \\times E\\ \\times \\ I_y\\ \\ \\times \\ \\sqrt{\\frac{C_w}{I_y}\\ \\times \\ \\left(1+0,039\\ \\times \\ \\frac{J\\times {L_b}^2}{C_w}\\right)}\\)  = " + resultado.mcrT + " KN.cm </span> </p>" + "<p> Onde: <br> \\(C_b\\) = coeficiente para majorar momento DESCREVER = " + resultado.cb + "; <br> </p>";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textT3]);
-
-textApp = "\\(V_{sd}\\) ≤ \\(V_{rd}\\) = " + resultado.vsd + " ≤ " +  resultado.vrd + " KN = APROVADO, Ratio " + resultado.ratioCSV + "<br> \\(M_{sd}\\) ≤ \\(M_{rd}\\) = " + resultado.msd + " ≤ " +  resultado.mrdOut + " KN.m = APROVADO, Ratio " + resultado.ratioCSM + "<br><br> Como o esforço solicitante é menor do que o resistente, a viga está aprovada na verificação quanto à flexão simples de acordo com os critérios da NBR 8800:2008.";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textApp]);
-
-textNAppV = "\\(V_{sd}\\) > \\(V_{rd}\\) = " + resultado.vsd + " > " +  resultado.vrd + " KN = REPROVADO, Ratio Cortante " + resultado.ratioCSV + "<br> \\(M_{sd}\\) ≤ \\(M_{rd}\\) = " + resultado.msd + " ≤ " +  resultado.mrdOut + " KN.m = APROVADO, Ratio Momento Fletor " + resultado.ratioCSM + "<br><br> Como o esforço solicitante de cortante é maior do que o resistente, a viga não está aprovada na verificação quanto à flexão simples de acordo com os critérios da NBR 8800:2008.";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textNAppV]);
-
-textNAppM = "\\(V_{sd}\\) ≤ \\(V_{rd}\\) = " + resultado.vsd + " ≤ " +  resultado.vrd + " KN = APROVADO, Ratio Cortante " + resultado.ratioCSV + "<br> \\(M_{sd}\\) > \\(M_{rd}\\) = " + resultado.msd + " > " +  resultado.mrdOut + " KN.m = REPROVADO, Ratio Momento Fletor " + resultado.ratioCSM + "<br><br> Como o esforço solicitante de momento fletor é maior do que o resistente, a viga não está aprovada na verificação quanto à flexão simples de acordo com os critérios da NBR 8800:2008.";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textNAppM]);
-
-textNAppVM = "\\(V_{sd}\\) > \\(V_{rd}\\) = " + resultado.vsd + " > " +  resultado.vrd + " KN = REPROVADO, Ratio Cortante " + resultado.ratioCSV + "<br> \\(M_{sd}\\) > \\(M_{rd}\\) = " + resultado.msd + " > " +  resultado.mrdOut + " KN.m = REPROVADO, Ratio Momento Fletor " + resultado.ratioCSM + "<br><br> Como os esforços solicitantes são maiores do que os resistentes, a viga não está aprovada na verificação quanto à flexão simples de acordo com os critérios da NBR 8800:2008.";
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, textNAppVM]);
-
-// Teste
-var text1 = "Como " + resultado.lambA + " = " + '\\(c=\\frac{2}{3x}\\) ' + " = " + resultado.lambpA
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, text1]);
-
 $(document).ready(function() {
+    // Building variable texts
+    textV1 = "<p> Como " + resultado.lambV + " ≤ " + resultado.lambpV + ", " + "\\(λ\\) ≤ \\(λ_p\\)" + ", o esforço cortante resistente é dado por: <br>" + "<span class='eqcenter'> \\(V_{Rd}=\\frac{V_{pl}}{{\\gamma }_{a1}}\\) = " + resultado.vrd + " KN </span> </p>" + "<p> Sendo: <br> \\(V_{pl}=0,5\\times A_w\\times f_y\\) = " + resultado.vpl + "KN <br> \\(A_w\\) = área da alma = \\(d\\times t_w\\) = " + resultado.aw + "\\({cm}^2\\) </p>";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textV1]);
+
+    textV2 = "<p> Como " + resultado.lambpV + " < " + resultado.lambV + " ≤ " + resultado.lambrV + ",  \\(λ_p\\) < \\(λ\\) ≤ \\(λ_r\\), o esforço cortante resistente é dado por: <br>" + "<span class='eqcenter'> \\[V_{Rd}=\\frac{{\\lambda }_p}{\\lambda }\\times \\frac{V_{pl}}{{\\gamma }_{a1}}\\]  = " + resultado.vrd + " KN </span> </p>" + "<p> Sendo: <br> \\(V_{pl}=0,5\\times A_w\\times f_y\\) = " + resultado.vpl + "KN <br> \\(A_w\\) = área da alma = \\(d\\times t_w\\) = " + resultado.aw + "\\({cm}^2\\) </p>";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textV2]);
+
+    textV3 = "<p> Como " + resultado.lambV + " > " + resultado.lambrV + ", " + "\\(λ\\) > \\(λ_r\\)" + ", o esforço cortante resistente é dado por: <br>" + "<span class='eqcenter'> \\(V_{Rd}=1,24\\ \\times \\ ({\\frac{{\\lambda }_p}{\\lambda })}^2\\times \\frac{V_{pl}}{{\\gamma }_{a1}}\\)  = " + resultado.vrd + " KN </span> </p>" + "<p> Sendo: <br> \\(V_{pl}=0,5\\times A_w\\times f_y\\) = " + resultado.vpl + "KN <br> \\(A_w\\) = área da alma = \\(d\\times t_w\\) = " + resultado.aw + "\\({cm}^2\\) </p>";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textV3]);
+
+    textA1 = "<p> Como " + resultado.lambA + " ≤ " + resultado.lambpA + ", " + "\\(λ\\) ≤ \\(λ_p\\)" + ", o momento fletor resistente é dado por: <br>" + "<span class='eqcenter'> \\(M_{Rd}=\\frac{M_{pl}}{{\\gamma }_{a1}}\\) = " + resultado.mrdA + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)); <br> <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> </p>";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textA1]);
+
+    textA2 = "<p> Como " + resultado.lambpA + " < " + resultado.lambA + " ≤ " + resultado.lambrA + ", \\(λ_p\\) < \\(λ\\) ≤ \\(λ_r\\), o momento fletor resistente é dado por: <br> <span class='eqcenter'> \\(M_{Rd}=\\frac{Cb}{{\\gamma }_{a1}}\\times (M_{pl}-(M_{pl}-\\ M_r)(\\frac{\\lambda -{\\lambda }_p}{{\\lambda }_r-{\\lambda }_p})\\)  = " + resultado.mrdA + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(C_b\\) = coeficiente para majorar momento DESCREVER = " + resultado.cb + "; <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)) <br>; <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> <br> \\(M_r\\) = momento fletor correspondente ao início do escoamento, incluindo a influência das tensões residuais em alguns casos; <br> <span class='eqcenter'> \\(M_r=0,7f_yW_x\\)   = " + resultado.mrA + " KN.cm </span> </p>";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textA2]);
+
+    textA3 = "<p> Como " + resultado.lambA + " > " + resultado.lambrA + ", " + "\\(λ\\) > \\(λ_r\\), tem-se uma viga de alma esbelta conforme Anexo H da NBR 8800:2008. Não é indicado o uso, sugere-se a escolha de outro perfil ao projeto." 
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textA3]);
+
+    textM1 = "<p> Como " + resultado.lambM + " ≤ " + resultado.lambpM + ", \\(λ\\) ≤ \\(λ_p\\) , o momento fletor resistente é dado por: <br>" + "<span class='eqcenter'> \\(M_{Rd}=\\frac{M_{pl}}{{\\gamma }_{a1}}\\) = " + resultado.mrdM + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)); <br> <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> </p>";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textM1]);
+
+    textM2 = "<p> Como " + resultado.lambpM + " < " + resultado.lambM + " ≤ " + resultado.lambrM + ", \\(λ_p\\) < \\(λ\\) ≤ \\(λ_r\\), o momento fletor resistente é dado por: <br> <span class='eqcenter'> \\(M_{Rd}=\\frac{Cb}{{\\gamma }_{a1}}\\times (M_{pl}-(M_{pl}-\\ M_r)(\\frac{\\lambda -{\\lambda }_p}{{\\lambda }_r-{\\lambda }_p})\\)  = " + resultado.mrdM + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(C_b\\) = coeficiente para majorar momento DESCREVER = " + resultado.cb + " ; <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)) <br>; <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> <br> \\(M_r\\) = momento fletor correspondente ao início do escoamento, incluindo a influência das tensões residuais em alguns casos; <br> <span class='eqcenter'> \\(M_r=0,7f_yW_x\\)   = " + resultado.mrM + " KN.cm </span> </p>";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textM2]);
+
+    textM3 = "<p> Como " + resultado.lambM + " > " + resultado.lambrM + ", \\(λ\\) > \\(λ_r\\), o momento fletor resistente é dado por: <br>" + "<span class='eqcenter'> \\(M_{Rd}=\\frac{M_{cr}}{{\\gamma }_{a1}}\\)  = " + resultado.mrdM + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(M_{cr}\\) = momento fletor de flambagem elástica. Para perfis laminados: <br>; <span class='eqcenter'> \\(M_{cr}=\\frac{0,69\\times E}{{\\lambda }^2}W_c\\)  = " + resultado.mcrM + " KN.cm </span> </p>" + "<p> Onde: <br> \\(W_c\\) = módulo de resistência elástico do lado comprimido da seção, relativo ao eixo de flexão, neste caso, o eixo x; valor retirado das especificações do perfil = " + resultado.wx + "\\({cm}^3\\).</p>";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textM3]);
+
+    textT1 = "<p> Como " + resultado.lambT + " ≤ " + resultado.lambpT + ", \\(λ\\) ≤ \\(λ_p\\) , o momento fletor resistente é dado por: <br>" + "<span class='eqcenter'> \\(M_{Rd}=\\frac{M_{pl}}{{\\gamma }_{a1}}\\) = " + resultado.mrdT + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)); <br> <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> </p>";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textT1]);
+
+    textT2 = "<p> Como " + resultado.lambpT + " < " + resultado.lambT + " ≤ " + resultado.lambrT + ", \\(λ_p\\) < \\(λ\\) ≤ \\(λ_r\\), o momento fletor resistente é dado por: <br> <span class='eqcenter'> \\(M_{Rd}=\\frac{Cb}{{\\gamma }_{a1}}\\times (M_{pl}-(M_{pl}-\\ M_r)(\\frac{\\lambda -{\\lambda }_p}{{\\lambda }_r-{\\lambda }_p})\\)  = " + resultado.mrdT + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(C_b\\) = coeficiente para majorar momento DESCREVER = " + resultado.cb + " ; <br> \\(M_{pl}\\) = momento fletor de plastificação da seção transversal, igual ao produto do módulo de resistência plástico (z) pela resistência ao escoamento do aço (\\(fy\\)); <br> <span class='eqcenter'> \\(M_{pl}=z_x\\ \\times f_y\\)  = " + resultado.mpl + " KN.cm </span> <br> \\(M_r\\) = momento fletor correspondente ao início do escoamento, incluindo a influência das tensões residuais em alguns casos; <br> <span class='eqcenter'> \\(M_r=0,7f_yW_x\\)   = " + resultado.mrT + " KN.cm </span> </p>";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textT2]);
+
+    textT3 = "<p> Como " + resultado.lambT + " > " + resultado.lambrT + ", \\(λ\\) > \\(λ_r\\), o momento fletor resistente é dado por: <br>" + "<span class='eqcenter'> \\(M_{Rd}=\\frac{M_{cr}}{{\\gamma }_{a1}}\\)  = " + resultado.mrdT + " KN.cm </span> </p>" + "<p> Sendo: <br> \\(M_{cr}\\) = momento fletor de flambagem elástica. Para perfis laminados: <br> <span class='eqcenter'> \\(M_{cr}=\\ \\frac{C_b\\times \\ {\\pi }^2}{L_b}\\ \\times E\\ \\times \\ I_y\\ \\ \\times \\ \\sqrt{\\frac{C_w}{I_y}\\ \\times \\ \\left(1+0,039\\ \\times \\ \\frac{J\\times {L_b}^2}{C_w}\\right)}\\)  = " + resultado.mcrT + " KN.cm </span> </p>" + "<p> Onde: <br> \\(C_b\\) = coeficiente para majorar momento DESCREVER = " + resultado.cb + "; <br> </p>";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textT3]);
+
+    textApp = "\\(V_{sd}\\) ≤ \\(V_{rd}\\) = " + resultado.vsd + " ≤ " +  resultado.vrd + " KN = APROVADO, Ratio " + resultado.ratioCSV + "<br> \\(M_{sd}\\) ≤ \\(M_{rd}\\) = " + resultado.msd + " ≤ " +  resultado.mrdOut + " KN.m = APROVADO, Ratio " + resultado.ratioCSM + "<br><br> Como o esforço solicitante é menor do que o resistente, a viga está aprovada na verificação quanto à flexão simples de acordo com os critérios da NBR 8800:2008.";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textApp]);
+
+    textNAppV = "\\(V_{sd}\\) > \\(V_{rd}\\) = " + resultado.vsd + " > " +  resultado.vrd + " KN = REPROVADO, Ratio Cortante " + resultado.ratioCSV + "<br> \\(M_{sd}\\) ≤ \\(M_{rd}\\) = " + resultado.msd + " ≤ " +  resultado.mrdOut + " KN.m = APROVADO, Ratio Momento Fletor " + resultado.ratioCSM + "<br><br> Como o esforço solicitante de cortante é maior do que o resistente, a viga não está aprovada na verificação quanto à flexão simples de acordo com os critérios da NBR 8800:2008.";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textNAppV]);
+
+    textNAppM = "\\(V_{sd}\\) ≤ \\(V_{rd}\\) = " + resultado.vsd + " ≤ " +  resultado.vrd + " KN = APROVADO, Ratio Cortante " + resultado.ratioCSV + "<br> \\(M_{sd}\\) > \\(M_{rd}\\) = " + resultado.msd + " > " +  resultado.mrdOut + " KN.m = REPROVADO, Ratio Momento Fletor " + resultado.ratioCSM + "<br><br> Como o esforço solicitante de momento fletor é maior do que o resistente, a viga não está aprovada na verificação quanto à flexão simples de acordo com os critérios da NBR 8800:2008.";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textNAppM]);
+
+    textNAppVM = "\\(V_{sd}\\) > \\(V_{rd}\\) = " + resultado.vsd + " > " +  resultado.vrd + " KN = REPROVADO, Ratio Cortante " + resultado.ratioCSV + "<br> \\(M_{sd}\\) > \\(M_{rd}\\) = " + resultado.msd + " > " +  resultado.mrdOut + " KN.m = REPROVADO, Ratio Momento Fletor " + resultado.ratioCSM + "<br><br> Como os esforços solicitantes são maiores do que os resistentes, a viga não está aprovada na verificação quanto à flexão simples de acordo com os critérios da NBR 8800:2008.";
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, textNAppVM]);    
+    
     // Header
     $(".project").html(resultado.project);
     $(".beam").html(resultado.beam);
@@ -238,8 +234,5 @@ $(document).ready(function() {
     } else if (resultado.vsd > resultado.vrd && resultado.msd > resultado.mrdOut) {
         $("#textR").html(textNAppVM);
     }
-
-
-    $("#text1").html(text1);
 
 });

@@ -31,10 +31,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </head>
 
@@ -53,7 +52,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li> <!-- RETIRAR PAGE SCROLL E MUDAR HREF -->
+                    <li>
+                        <!-- RETIRAR PAGE SCROLL E MUDAR HREF -->
                         <a class="page-scroll" href="#about">Quem Somos</a>
                     </li>
                     <li>
@@ -78,201 +78,177 @@
                 <h1 class="title1"></h1>
             </div>
         </div>
-    </div> 
-    
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <table class="col-lg-10 centertable">
                     <caption> Relatório de Verificação </caption>
                     <tr>
-                        <td class="col-lg-8" > Projeto </td>
+                        <td class="col-lg-8"> Projeto </td>
                         <div class="imgtable">
                             <td class="col-lg-4" rowspan="6"> Image</td>
                         </div>
                     </tr>
                     <tr>
-                        <td class="col-lg-8" > Projeto </td>
+                        <td class="col-lg-8"> Projeto </td>
                     </tr>
                     <tr>
-                        <td class="col-lg-8" > Projeto </td>    
+                        <td class="col-lg-8"> Projeto </td>
                     </tr>
                     <tr>
-                        <td class="col-lg-8" > Projeto </td>
+                        <td class="col-lg-8"> Projeto </td>
                     </tr>
                     <tr>
-                        <td class="col-lg-8" > Projeto </td>
+                        <td class="col-lg-8"> Projeto </td>
                     </tr>
                     <tr>
-                        <td class="col-lg-8" > Projeto </td>
+                        <td class="col-lg-8"> Projeto </td>
                     </tr>
-                </table>     
+                </table>
             </div>
-        </div>    
+        </div>
     </div>
-    
+
     <div class="container">
         <div class="row col-lg-10 text-justify centertable">
             <br> <br> <br>
             <p> Para a verificação de uma viga metálica deve-se analisar a mesma pelo Estado Limite Último (ELU) e o Estado Limite de Serviço (ELS). O ELU avalia a viga pelos esforço cortante e o momento fletor máximo, enquanto o ELS analisa o deslocamento e a vibração da viga. Este relatório avalia a viga quanto ao Estado Limite Último (ELU) de acordo com a norma brasileira NBR 8800:2008. </p>
-        
+
             <h2> Estado de Limite Último (ELU) </h2>
-            
+
             <p> O cálculo do esforço cortante e o momento fletor resistente da viga são dependentes do parâmetro de esbeltez, dividida em categorias:</p>
-            
-            <p> \(λ\) - parâmetro de esbeltez característico; <br>
-                \(λ_p\) - parâmetro de esbeltez correspondente à plastificação; <br>
-                \(λ_r\) - parâmetro de esbeltez correspondente ao início do escoamento. </p>
-    
+
+            <p> \(λ\) - parâmetro de esbeltez característico; <br> \(λ_p\) - parâmetro de esbeltez correspondente à plastificação; <br> \(λ_r\) - parâmetro de esbeltez correspondente ao início do escoamento. </p>
+
             <p>Os limites de plastificação e escoamento ditam a situação do perfil perante aos esforços aplicados. Logo, as equações para cálculo do momento resistente são específicas para cada situação. Teremos:</p>
-            
-            <p>   \(λ\) ≤ \(λ_p\) = Caso 1 <br>
-                  \(λ_p\) < \(λ\) ≤ \(λ_r\) = Caso 2 <br>
-                  \(λ\) > \(λ_r\) = Caso 3 <br> 
+
+            <p> \(λ\) ≤ \(λ_p\) = Caso 1 <br> \(λ_p\)
+                < \(λ\) ≤ \(λ_r\)=C aso 2 <br>
+                    \(λ\) > \(λ_r\) = Caso 3 <br>
             </p>
-            
+
             <h3> I. Esforço Cortante </h3>
-            
+
             <h5> Parâmetro de esbeltez característico (\(λ\)) </h5>
-            
+
             <p class="eqcenter"> \(\lambda =\frac{h}{t_w}\) = <span id="lambV"></span> </p>
-            
-            <p> Onde: <br><br>
-            h = altura da alma, tomada igual à distância entre faces internas das mesas nos perfis soldados e igual a esse valor menos os dois raios de concordância entre mesa e alma nos perfis laminados e igual ao comprimento da parte plana nas seções tubulares retangulares; valor retirado da especificação do perfil = <span class="h"> </span> mm; <br>
-            \(t_w\)= espessura da alma; valor retirado da especificação do perfil = <span class="tw"> </span> mm.
+
+            <p> Onde: <br><br> h = altura da alma, tomada igual à distância entre faces internas das mesas nos perfis soldados e igual a esse valor menos os dois raios de concordância entre mesa e alma nos perfis laminados e igual ao comprimento da parte plana nas seções tubulares retangulares; valor retirado da especificação do perfil = <span class="h"> </span> mm; <br> \(t_w\)= espessura da alma; valor retirado da especificação do perfil = <span class="tw"> </span> mm.
             </p>
-            
+
             <h5> Parâmetro de esbeltez correspondente à plastificação (\(λ_p\)) </h5>
-            
+
             <p class="eqcenter"> \({\lambda }_p=1,10\sqrt{\frac{k_v\times E}{f_y}}\) = <span id="lambpV"></span> </p>
-            
-            <p> Onde: <br><br>
-            \(f_y\) = resistência ao escoamento do aço = <span class="fyForm"> </span> MPa <br>
-            E = módulo de elasticidade do aço = <span class="E"> </span> MPa <br>
-            \(k_v\) = DESCREVER <br>
-                
-            \(k_v\) = 5, para perfis sem enrijecedores ou \(\frac{a}{h}>3\) ou \(\frac{a}{h}>({\frac{260}{{h}/{tw}})}^2\) <br>
-            \(k_v=5+\frac{5}{{({a}/{h})}^2}\), para os demais casos, sendo a distância entre enrijecedores. <br>
-                
-            Neste caso temos, \(k_v\) = <span id="kv"> </span> . 
+
+            <p> Onde: <br><br> \(f_y\) = resistência ao escoamento do aço = <span class="fyForm"> </span> MPa <br> E = módulo de elasticidade do aço = <span class="E"> </span> MPa <br> \(k_v\) = DESCREVER <br> \(k_v\) = 5, para perfis sem enrijecedores ou \(\frac{a}{h}>3\) ou \(\frac{a}{h}>({\frac{260}{{h}/{tw}})}^2\) <br> \(k_v=5+\frac{5}{{({a}/{h})}^2}\), para os demais casos, sendo a distância entre enrijecedores. <br> Neste caso temos, \(k_v\) = <span id="kv"> </span> .
             </p>
-        
+
             <h5> Parâmetro de esbeltez correspondente ao início do escoamento (\(λ_r\)) </h5>
-            
-            <p class="eqcenter"> \({\lambda }_r=1,37\sqrt{\frac{k_v\times E}{f_y}}\)  = <span id="lambrV"></span> </p>
-            
+
+            <p class="eqcenter"> \({\lambda }_r=1,37\sqrt{\frac{k_v\times E}{f_y}}\) = <span id="lambrV"></span> </p>
+
             <h5> Cálculo do Esforço Cortante Resistente (\(V_{rd}\)) </h5>
-            
+
             <span id="textV"></span>
-            
+
             <h3> II. Momento Fletor </h3>
-            
+
             <p> São considerados os casos de Flambagem Local da Alma (FLA), Flambagem Local da Mesa Comprimida (FLM) e Flambagem Lateral com Torção (FLT). O momento fletor resitente é adotado como a resistência mínima entre os três casos.</p>
-            
+
             <h4> a) Flambagem Local da Alma (FLA) </h4>
-            
+
             <h5> Parâmetro de esbeltez característico (\(λ\)) </h5>
-            
+
             <p class="eqcenter"> \(\lambda =\frac{d'}{t_w}\) = <span id="lambA"></span> </p>
-            
-            <p> Onde: <br><br>
-            d' = altura livre da alma; valor retirado da especificação do perfil = <span class="dl"> </span> mm; 
+
+            <p> Onde: <br><br> d' = altura livre da alma; valor retirado da especificação do perfil = <span class="dl"> </span> mm;
             </p>
-            
+
             <h5> Parâmetro de esbeltez correspondente à plastificação (\(λ_p\)) </h5>
-            
+
             <p class="eqcenter"> \({\lambda }_p=3,76\sqrt{\frac{E}{f_y}}\) = <span id="lambpA"></span> </p>
-            
+
             <h5> Parâmetro de esbeltez correspondente ao início do escoamento (\(λ_r\)) </h5>
-            
+
             <p class="eqcenter"> \({\lambda }_r=5,70\sqrt{\frac{E}{f_y}}\) = <span id="lambrA"></span> </p>
-            
+
             <h5> Cálculo do Momento Fletor Resistente FLA (\(M_{rd}\)) </h5>
-            
+
             <span id="textA"></span>
-            
+
             <h4> b) Flambagem Local da Mesa Comprimida (FLM) </h4>
-            
+
             <h5> Parâmetro de esbeltez característico (\(λ\)) </h5>
-            
+
             <p class="eqcenter"> \(\lambda =\frac{b_f}{2t_f}\) = <span id="lambM"></span> </p>
-            
-            <p> Onde: <br><br>
-            \(b_f\) = largura da mesa do perfil; valor retirado da especificação do perfil = <span class="bf"> </span> mm; <br>
-            \(t_f\) = largura da mesa do perfil; valor retirado da especificação do perfil = <span class="tf"> </span> mm; <br>
+
+            <p> Onde: <br><br> \(b_f\) = largura da mesa do perfil; valor retirado da especificação do perfil = <span class="bf"> </span> mm; <br> \(t_f\) = largura da mesa do perfil; valor retirado da especificação do perfil = <span class="tf"> </span> mm; <br>
             </p>
-            
+
             <h5> Parâmetro de esbeltez correspondente à plastificação (\(λ_p\)) </h5>
-            
+
             <p class="eqcenter"> \({\lambda }_p=3,76\sqrt{\frac{E}{f_y}}\) = <span id="lambpM"></span> </p>
-            
+
             <h5> Parâmetro de esbeltez correspondente ao início do escoamento (\(λ_r\)) </h5>
-            
+
             <p class="eqcenter"> \({\lambda }_r=0,83\sqrt{\frac{E}{\left(f_y-{\sigma }_r\right)}}\) = <span id="lambrM"></span> </p>
-        
-            <p> Onde: <br><br>
-            \({\sigma }_r=0,3\ \times \ f_y\) = <span id="tr"> </span> \(KN.{cm}^2\) <br>
+
+            <p> Onde: <br><br> \({\sigma }_r=0,3\ \times \ f_y\) = <span id="tr"> </span> \(KN.{cm}^2\) <br>
             </p>
-            
+
             <h5> Cálculo do Momento Fletor Resistente FLM (\(M_{rd}\)) </h5>
-            
+
             <span id="textM"></span>
-            
+
             <h4> c) Flambagem Lateral com Torção (FLT) </h4>
-            
+
             <h5> Parâmetro de esbeltez característico (\(λ\)) </h5>
-            
+
             <p class="eqcenter"> \(\lambda =\frac{L_b}{r_y}\) = <span id="lambT"></span> </p>
-            
-            <p> Onde: <br><br>
-            \(L_b\) = distância entre duas seções contidas à flambagem lateral com torção (comprimento destravado) = <span class="lbForm"> </span> m; <br>
-            \(r_y\) = raio de giração da seção em relação ao eixo principal de inércia perpendicular ao eixo de flexão = <span class="ry"> </span> cm. <br>
+
+            <p> Onde: <br><br> \(L_b\) = distância entre duas seções contidas à flambagem lateral com torção (comprimento destravado) = <span class="lbForm"> </span> m; <br> \(r_y\) = raio de giração da seção em relação ao eixo principal de inércia perpendicular ao eixo de flexão = <span class="ry"> </span> cm. <br>
             </p>
-            
+
             <h5> Parâmetro de esbeltez correspondente à plastificação (\(λ_p\)) </h5>
-            
+
             <p class="eqcenter"> \({\lambda }_p=1,76\sqrt{\frac{E}{f_y}}\) = <span id="lambpT"></span> </p>
-            
+
             <h5> Parâmetro de esbeltez correspondente ao início do escoamento (\(λ_r\)) </h5>
-            
-            <p class="eqcenter"> \({\lambda }_r=\frac{1,38\sqrt{I_YJ}}{r_yJ{\beta }_1}\times \sqrt{1+\sqrt{1+\frac{27C_w{{\beta }_1}^2}{I_y}}}\)  = <span id="lambrT"></span> </p>
-        
-            <p> Onde: <br><br>
-            \({\beta }_1=\ \frac{\left(f_y-\ {\sigma }_r\right)\ \times \ W_x\ }{E\ \times \ J}\) = <span id="beta1"> </span> <br>
-            Sendo: <br>
-            \(C_w\) = constante do empenamento da seção transversal; valor retirado das especificações do perfil = <span class="cw"></span> ;<br>
-            \(I_y\) = momento de inércia da seção em relação ao eixo que passa pelo plano médio da alma; valor retirado das especificações do perfil = <span class="iy"></span> \({cm}^4\);<br>
-            \(J\) = constante de torção da seção transversal; valor retirado das especificações do perfil = <span class="it"></span> \({cm}^4\);<br>
-            \(W_x\) = módulo de resistência (mínimo) elástico da seção, relativo ao eixo de flexão, no caso o eixo x; valor retirado das especificações do perfil = <span class="wx"></span> \({cm}^3\).<br> 
-                
+
+            <p class="eqcenter"> \({\lambda }_r=\frac{1,38\sqrt{I_YJ}}{r_yJ{\beta }_1}\times \sqrt{1+\sqrt{1+\frac{27C_w{{\beta }_1}^2}{I_y}}}\) = <span id="lambrT"></span> </p>
+
+            <p> Onde: <br><br> \({\beta }_1=\ \frac{\left(f_y-\ {\sigma }_r\right)\ \times \ W_x\ }{E\ \times \ J}\) = <span id="beta1"> </span> <br> Sendo: <br> \(C_w\) = constante do empenamento da seção transversal; valor retirado das especificações do perfil = <span class="cw"></span> ;<br> \(I_y\) = momento de inércia da seção em relação ao eixo que passa pelo plano médio da alma; valor retirado das especificações do perfil = <span class="iy"></span> \({cm}^4\);<br> \(J\) = constante de torção da seção transversal; valor retirado das especificações do perfil = <span class="it"></span> \({cm}^4\);<br> \(W_x\) = módulo de resistência (mínimo) elástico da seção, relativo ao eixo de flexão, no caso o eixo x; valor retirado das especificações do perfil = <span class="wx"></span> \({cm}^3\).<br>
+
             </p>
-            
+
             <h5> Cálculo do Momento Fletor Resistente FLT (\(M_{rd}\)) </h5>
-            
+
             <span id="textT"></span>
-            
+
             <h3> III. Análise dos resultados </h3>
-            
-            <h4> a)	Esforços solicitantes</h4>
-            
+
+            <h4> a) Esforços solicitantes</h4>
+
             <p> Os esforços solicitantes inseridos pelo usuário \(V_k\) e \(M_k\) são majorados pelo fator γ, normalmente acrescendo 40% do valor existente. O programa permite alternar o coeficiente padrão, para esta verificação foi adotado γ = <span class="gama"></span>.</p>
-            
-            <p class="eqcenter"> \(V_{sd}=\ \gamma \ \times \ V_k\)  = <span class="vsd"></span> KN </p>
-            <p class="eqcenter"> \(M_{sd}=\ \gamma \ \times \ M_k\)  = <span class="msd"></span> KN.m </p>
-        
-            <h4> b)	Esforços resistentes </h4>
-            
+
+            <p class="eqcenter"> \(V_{sd}=\ \gamma \ \times \ V_k\) = <span class="vsd"></span> KN </p>
+            <p class="eqcenter"> \(M_{sd}=\ \gamma \ \times \ M_k\) = <span class="msd"></span> KN.m </p>
+
+            <h4> b) Esforços resistentes </h4>
+
             <p> Com base nos cálculos apresentados nos itens acima, temos: </p>
-            
+
             <p> Esforço cortante resistente: \(V_{rd}\) = <span class="vrd"></span> KN</p>
             <p> Momento fletor resistente: \(M_{rd}\) = <span class="mrdOut"></span> KN.m</p>
-            
+
             <h4> Resultado </h4>
-            
+
             <p> Se o esforço solicitante for menor ou igual esforço resistente, a viga poderá ser submetida aos esforços apresentados. Para a viga <span class="beam"> </span>, temos: </p>
-            
+
             <span id="textR"></span>
-            
+
             <br>
             <br>
             <br>
@@ -280,11 +256,18 @@
             <br>
         </div>
     </div>
-    
-</body>
 
-        <script type="text/javascript" src="scripts/reportCheckS.js"></script>
-        <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    menuSettings:{
+    inTabOrder:false
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+    <script type="text/javascript" src="scripts/reportCheckS.js"></script>
+
 </html>
-		

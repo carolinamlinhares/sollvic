@@ -25,6 +25,9 @@
     <!-- Theme CSS -->
     <link href="css/creative.css" rel="stylesheet">
 
+    <!-- Simple Sidebar -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,32 +37,71 @@
 
 </head>
 
-<body id="page-top">
+<body id="wrapper">
+    <div id="top-page"></div>
+    <div id="sidebar-wrapper" class="sidebar-menu">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#page-top" style="padding-left:15px">
+                    Nossas Ferramentas
+                </a>
+            </li>
+            <li>
+                <span class="submenu-title"> Estruturas Metálicas </span>
+                <ul>
+                    <li>
+                        <a href="checkS.html"> Verificação de Vigas </a>
+                    </li>
+                    <li>
+                        <a href="designS.html"> Dimensionamento de Vigas </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="submenu-title"> Estruturas em Concreto Armado </span>
+                <ul>
+                    <li>
+                        <a href="checkCS.html"> Verificação de Vigas Simplesmente Armadas </a>
+                    </li>
+                    <li>
+                        <a href="#EBOMMUDAR"> Verificação de Vigas Duplamente Armadas </a>
+                    </li>
+                    <li>
+                        <a href="#EBOMMUDAR"> Dimensionamento de Vigas </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top top-menu">
+        <div class="sidebar-logo container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-            <a class="navbar-brand page-scroll logo" href="#page-top">Sollvic</a>
+
+                <a href="#menu-toggle" class="navbar-brand page-scroll menu-sidebar-open" id="menu-toggle"><i class="fa fa-bars" style="padding: 0 3px 0 2px"></i></a>
+
+                <a class="navbar-brand page-scroll sollvic-home" href="#top-page">Sollvic</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li> <!-- RETIRAR PAGE SCROLL E MUDAR HREF -->
-                        <a class="page-scroll" href="#about">Quem Somos</a>
+                    <li>
+                        <!-- RETIRAR PAGE SCROLL E MUDAR HREF -->
+                        <a class="page-scroll" href="aboutUs.html">Quem Somos</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#support">Apoio</a>
+                        <a class="page-scroll" href="support.html">Apoio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#joinus">Participe</a>
+                        <a class="page-scroll" href="joinUs.html">Participe</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contato</a>
+                        <a class="page-scroll" href="contact.html">Contato</a>
                     </li>
                 </ul>
             </div>
@@ -67,13 +109,15 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    
+
     <header>
         <div class="header-content">
             <div class="header-content-inner">
+                <h1 class="big-logo" id="homeHeading">Sollvic</h1>
                 <h1 id="homeHeading">Mais que uma solução</h1>
                 <br><br><br>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Descubra</a>  <!-- Mudar HREF -->
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Descubra</a>
+                <!-- Mudar HREF -->
             </div>
         </div>
     </header>
@@ -85,13 +129,14 @@
                     <h2 class="section-heading">Resolva, agora!</h2>
                     <hr class="light">
                     <p>Sollvic é uma plataforma educacional de conteúdo de nível superior aplicado para tornar mais eficiente o aprendizado dos universitários e serve de apoio para profissionais. Não somos um curso online, somos a oportunidade que você está precisando para testar seus conhecimentos, obter a resolução rápida para situações diárias e exercícios através de um relatório completo. <br><br> Online. Grátis. Auto-didático.</p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Comece já!</a> <!-- Mudar HREF -->
+                    <a href="" class="page-scroll btn btn-default btn-xl sr-button">Comece já!</a>
+                    <!-- Mudar HREF -->
                 </div>
             </div>
         </div>
     </section>
-    
-     <section class="bg-primary" id="report">
+
+    <section class="bg-primary" id="report">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-1">
@@ -101,7 +146,7 @@
                     <h2 class="section-heading bigtitle">Saiba o que está fazendo</h2> <br> <br> <br>
                     <p>Cansado de programas que te entregam somente respostas soltas? Aqui não te entregamos apenas o resultado. Te damos o passo a passo de como chegar lá!</p> <br> <br>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -161,7 +206,7 @@
                                     ESTRUTURAS METÁLICAS <br><br>
                                 </div>
                                 <div class="project-name">
-                                   Atenção Engenheiros à bordo! Que tal dimensionar seu próximo projeto utilizando as vantagens das estruturas metálicas? Comece agora mesmo utilizando nosso dimensionador de Vigas Metálicas.
+                                    Atenção Engenheiros à bordo! Que tal dimensionar seu próximo projeto utilizando as vantagens das estruturas metálicas? Comece agora mesmo utilizando nosso dimensionador de Vigas Metálicas.
                                 </div>
                             </div>
                         </div>
@@ -200,8 +245,8 @@
             </div>
         </div>
     </section>
-    
-     <section>
+
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-1 text-justify">
@@ -215,7 +260,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="bg-primary" id="testimonials">
         <div class="container">
             <div class="row">
@@ -223,7 +268,7 @@
                     <h2 class="section-heading">Aprovado por quem você confia</h2> <br> <br> <br>
                 </div>
                 <div class="col-lg-6">
-                    <div class="col-lg-4"> 
+                    <div class="col-lg-4">
                         <img class="img-circle img-responsive sm-center" src="images/man.png" alt="testimonial1">
                     </div>
                     <div class="text-justify clearfix">
@@ -231,11 +276,11 @@
                         <p class="text-right identification"> — Eduardo Lemos, Engenheiro Estrutural Sênior </p>
                     </div>
                 </div>
-                    <!-- <div class="text-justify">“Uma ferramenta simples e funcional para quem precisa. Hoje, uso para rápidas verificações, ansioso por novas aplicações!”</div><br>
+                <!-- <div class="text-justify">“Uma ferramenta simples e funcional para quem precisa. Hoje, uso para rápidas verificações, ansioso por novas aplicações!”</div><br>
                     <div class="text-right" id="identification">— Eduardo Lemos, Engenheiro Estrutural Sênior</div>
                 </div> -->
                 <div class="col-lg-6">
-                    <div class="col-lg-4"> 
+                    <div class="col-lg-4">
                         <img class="img-circle img-responsive sm-center" src="images/girl.png" alt="testimonial2">
                     </div>
                     <div class="text-justify clearfix">
@@ -252,7 +297,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Parceiros</h2>
-                </div> 
+                </div>
                 <div class="col-lg-3"> </div>
                 <div class="col-lg-3">
                     <img src="images/ufba.png" alt="ufba" class="img-responsive imgsize">
@@ -265,6 +310,7 @@
         </div>
     </section>
 
+    <!--
     <section class="bg-primary" id="joinus">
         <div class="container text-center">
             <div class="call-to-action">
@@ -273,8 +319,7 @@
             </div>
         </div>
     </section>
-
-     <!--<section id="contact">
+    <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -294,7 +339,6 @@
         </div>
     </section> -->
 
-
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -308,6 +352,15 @@
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#menu-toggle").toggleClass("toggled");
+            $("#wrapper").toggleClass("toggled");
+        });
+
+    </script>
 
     <footer>Todos os direitos reservados.</footer>
 </body>

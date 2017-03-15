@@ -34,7 +34,7 @@ function processFormCS() {
     // Getting values from HTML form inputs
     project = document.formCS.projectCS.value;
     /* if (project === "") {
-        alert("Por favor preencha o campo Projeto.");
+        bootbox.bootbox.alert("Por favor preencha o campo Projeto.");
         console.log("Por favor preencha o campo Projeto.");
         return false;
     } */
@@ -44,7 +44,7 @@ function processFormCS() {
        
     beam = document.formCS.beamCS.value;
     /* if (beam === "") {
-        alert("Por favor preencha o campo Viga.");
+        bootbox.alert("Por favor preencha o campo Viga.");
         console.log("Por favor preencha o campo Viga.");
         return false;
     } */
@@ -54,19 +54,19 @@ function processFormCS() {
     
     vk = Number(document.formCS.vCS.value);
     if (document.formCS.vCS.value === "" || isNaN(vk)) {
-        alert("Por favor preencha o campo Cortante com números.");
+        bootbox.alert("Por favor preencha o campo Cortante com números.");
         console.log("Por favor preencha o campo Cortante.");
         return false;
     }
     mk = Number(document.formCS.mCS.value);
     if (document.formCS.mCS.value === "" || isNaN(mk)) {
-        alert("Por favor preencha o campo Momento com números.");
+        bootbox.alert("Por favor preencha o campo Momento com números.");
         console.log("Por favor preencha o campo Momento.");
         return false;
     }
     lbForm = Number(document.formCS.lbCS.value);
     if (document.formCS.lbCS.value === "" || isNaN(lbForm)) {
-        alert("Por favor preencha o campo Distância entre travamentos laterais com números.");
+        bootbox.alert("Por favor preencha o campo Distância entre travamentos laterais com números.");
         console.log("Por favor preencha o campo Distância entre travamentos laterais com números.");
         return false;
     }
@@ -75,7 +75,7 @@ function processFormCS() {
         enrij = "Sim";
         a = Number(document.formCS.aCS.value);
         if (document.formCS.aCS.value === "" || isNaN(a)) {
-            alert("Por favor preencha o campo Distância entre enrijecedores com números.");
+            bootbox.alert("Por favor preencha o campo Distância entre enrijecedores com números.");
             console.log("Por favor preencha o campo Distância entre enrijecedores com números.");
             return false;
         }
@@ -196,7 +196,7 @@ function processFormCS() {
         break;
     case "Caso 3":
         // mcrA = Anexo H
-        alert("Cálculo indisponível. Viga com perfil de alma esbelta, consulte o anexo H da Norma 8800:2008.");
+        bootbox.alert("Cálculo indisponível. Viga com perfil de alma esbelta, consulte o anexo H da Norma 8800:2008.");
         break;
     }
     
@@ -270,10 +270,10 @@ function processFormCS() {
     
     if (vsd <= vrd && msd <= mrdOut) {
         result = "OK";
-        alert("A viga foi aprovada.");
+        bootbox.alert("A viga foi aprovada.");
     } else {
         result = "Não OK";
-        alert("A viga foi reprovada.");
+        bootbox.alert("A viga foi reprovada.");
     }
     
     // Fixing decimals 
