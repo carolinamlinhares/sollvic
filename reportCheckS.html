@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Sollvic">
-    <meta name="author" content="Carolina Linhares">
+    <meta name="author" content="Carolina Linhares & Juliana Lima">
 
-    <title>Relatório de Verificação</title>
+    <title>Verificação de Vigas Metálicas</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,6 +25,9 @@
     <!-- Theme CSS -->
     <link href="css/creative.css" rel="stylesheet">
 
+    <!-- Simple Sidebar -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,21 +35,56 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
 </head>
 
-<body id="page-top">
+<body id="wrapper">
+    <div id="top-page"></div>
+    <div id="sidebar-wrapper" class="sidebar-menu">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#page-top" style="padding-left:15px">
+                    Nossas Ferramentas
+                </a>
+            </li>
+            <li>
+                <span class="submenu-title"> Estruturas Metálicas </span>
+                <ul>
+                    <li>
+                        <a href="checkS.html"> Verificação de Vigas </a>
+                    </li>
+                    <li>
+                        <a href="designS.html"> Dimensionamento de Vigas </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="submenu-title"> Estruturas em Concreto Armado </span>
+                <ul>
+                    <li>
+                        <a href="checkCS.html"> Verificação de Vigas Simplesmente Armadas </a>
+                    </li>
+                    <li>
+                        <a href="#EBOMMUDAR"> Verificação de Vigas Duplamente Armadas </a>
+                    </li>
+                    <li>
+                        <a href="#EBOMMUDAR"> Dimensionamento de Vigas </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
-    <nav id="genNav" class="navbar navbar-default navbar-fixed-top generalNav">
-        <div class="container-fluid">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top top-menu generalNav">
+        <div class="sidebar-logo container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Sollvic</a>
+
+                <a href="#menu-toggle" class="navbar-brand page-scroll menu-sidebar-open" id="menu-toggle"><i class="fa fa-bars" style="padding: 0 3px 0 2px"></i></a>
+
+                <a class="navbar-brand page-scroll sollvic-home" href="#top-page">Sollvic</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,16 +92,16 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <!-- RETIRAR PAGE SCROLL E MUDAR HREF -->
-                        <a class="page-scroll" href="#about">Quem Somos</a>
+                        <a class="page-scroll" href="aboutUs.html">Quem Somos</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#support">Apoio</a>
+                        <a class="page-scroll" href="support.html">Apoio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#joinus">Participe</a>
+                        <a class="page-scroll" href="joinUs.html">Participe</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contato</a>
+                        <a class="page-scroll" href="contact.html">Contato</a>
                     </li>
                 </ul>
             </div>
@@ -72,39 +110,19 @@
         <!-- /.container-fluid -->
     </nav>
 
+    <div class="clear-nav"></div>
+    
     <div class="container">
         <div class="row">
-            <div class="apptitle">
-                <h1 class="title1"></h1>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <table class="col-lg-10 centertable">
-                    <caption> Relatório de Verificação </caption>
+            <div class="table-responsive">
+                <table class="table my-table">
                     <tr>
-                        <td class="col-lg-8"> Projeto </td>
-                        <div class="imgtable">
-                            <td class="col-lg-4" rowspan="6"> Image</td>
-                        </div>
+                        <td>aaa</td>
+                        <td>aaa</td>
                     </tr>
                     <tr>
-                        <td class="col-lg-8"> Projeto </td>
-                    </tr>
-                    <tr>
-                        <td class="col-lg-8"> Projeto </td>
-                    </tr>
-                    <tr>
-                        <td class="col-lg-8"> Projeto </td>
-                    </tr>
-                    <tr>
-                        <td class="col-lg-8"> Projeto </td>
-                    </tr>
-                    <tr>
-                        <td class="col-lg-8"> Projeto </td>
+                        <td>aaa</td>
+                        <td>aaa</td>
                     </tr>
                 </table>
             </div>
@@ -124,9 +142,7 @@
 
             <p>Os limites de plastificação e escoamento ditam a situação do perfil perante aos esforços aplicados. Logo, as equações para cálculo do momento resistente são específicas para cada situação. Teremos:</p>
 
-            <p> \(λ\) ≤ \(λ_p\) = Caso 1 <br> \(λ_p\)
-                < \(λ\) ≤ \(λ_r\)=C aso 2 <br>
-                    \(λ\) > \(λ_r\) = Caso 3 <br>
+            <p> \(λ\) ≤ \(λ_p\) = Caso 1 <br> \(λ_p\) \(λ\) ≤ \(λ_r\) = Caso 2 <br> \(λ\) > \(λ_r\) = Caso 3 <br>
             </p>
 
             <h3> I. Esforço Cortante </h3>
@@ -258,16 +274,42 @@
     </div>
 
 </body>
-    
+
+<!-- jQuery -->
+<script src="vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="js/creative.min.js"></script>
+
+<!-- Enable Sidebar Menu -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#menu-toggle").toggleClass("toggled");
+        $("#wrapper").toggleClass("toggled");
+    });
+
+</script>
+
+<!-- BootBox Modal Library -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    menuSettings:{
-    inTabOrder:false
-    }
-  });
+    MathJax.Hub.Config({ menuSettings:{ inTabOrder:false } });
 </script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    
-    <script type="text/javascript" src="scripts/reportCheckS.js"></script>
+
+<!-- Page Code -->
+<!-- ==================================================================================================================== -->
+<script type="text/javascript" src="scripts/reportCheckS.js"></script>
+<!-- ==================================================================================================================== -->
 
 </html>

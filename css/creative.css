@@ -697,7 +697,7 @@ tr {
 }
 
 .imgtable {
-    background-image: url("../images/Perfil.png");
+    background-image: url("../images/Section.png");
     object-fit: cover;
 }
 
@@ -762,3 +762,12 @@ tr {
     margin-top: 20px;
     width: 250px;
 }
+
+.clear-nav { 
+    padding-top: 65px; 
+}
+
+.my-table, .my-table tr, .my-table td, .my-table tr td {
+    /*border: none !important;*/
+}
+
