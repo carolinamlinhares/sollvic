@@ -779,3 +779,19 @@ tr {
     /*border: none !important;*/
 }
 
+.side-title{
+    padding-left:5px;
+    font-family: 'Nunito' !important;
+}
+
+#slogan{
+    margin-top: 30px;
+}
+
+.logoHeading{
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 80px;
+    margin:auto;
+}
