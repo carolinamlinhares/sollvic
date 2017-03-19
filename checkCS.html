@@ -9,15 +9,15 @@
     <meta name="description" content="Sollvic">
     <meta name="author" content="Juliana Libório">
 
-    <title>Verificação de Vigas em Concreto - Simplesmente Armadas</title>
+    <title>Verificação de Vigas em Concreto: Simplesmente Armadas</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -25,44 +25,84 @@
     <!-- Theme CSS -->
     <link href="css/creative.css" rel="stylesheet">
 
+    <!-- Simple Sidebar -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 </head>
 
-<body id="page-top">
+<body id="wrapper">
+    <div id="top-page"></div>
+    <div id="sidebar-wrapper" class="sidebar-menu">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand side-title">
+                <a href="#page-top">
+                    Nossas Ferramentas
+                </a>
+            </li>
+            <li>
+                <span class="submenu-title"> Estruturas Metálicas </span>
+                <ul>
+                    <li>
+                        <a href="checkS.html"> Verificação de Vigas </a>
+                    </li>
+                    <li>
+                        <a href="designS.html"> Dimensionamento de Vigas </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="submenu-title"> Estruturas em Concreto Armado </span>
+                <ul>
+                    <li>
+                        <a href="checkCS.html"> Verificação de Vigas Simplesmente Armadas </a>
+                    </li>
+                    <li>
+                        <a href="checkCD.html"> Verificação de Vigas Duplamente Armadas </a>
+                    </li>
+                    <li>
+                        <a href="support.html"> Dimensionamento de Vigas </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
-    <nav id="genNav" class="navbar navbar-default navbar-fixed-top generalNav">
-        <div class="container-fluid">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top top-menu generalNav">
+        <div class="sidebar-logo container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Sollvic</a>
+
+                <a href="#menu-toggle" class="navbar-brand page-scroll menu-sidebar-open" id="menu-toggle"><i class="fa fa-bars" style="padding: 0 3px 0 2px"></i></a>
+
+                <a class="navbar-brand page-scroll sollvic-home" href="index.html">
+                    <img class="nav-logo img-responsive" src=images/Nav-Logo.png alt="Sollvic Logo">
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li> <!-- RETIRAR PAGE SCROLL E MUDAR HREF -->
-                        <a class="page-scroll" href="#about">Quem Somos</a>
+                    <li>
+                        <a class="page-scroll" href="aboutUs.html">Quem Somos</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#support">Apoio</a>
+                        <a class="page-scroll" href="support.html">Apoio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#joinus">Participe</a>
+                        <a class="page-scroll" href="joinUs.html">Participe</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contato</a>
+                        <a class="page-scroll" href="contact.html">Contato</a>
                     </li>
                 </ul>
             </div>
@@ -71,15 +111,14 @@
         <!-- /.container-fluid -->
     </nav>
 
-
     <div class="container">
         <div class="row">
             <div class="apptitle">
                 <h1 class="title1">Verificação de Vigas em Concreto - Simplesmente Armadas</h1>
-                <p class="description"> Verificação de vigas em concreto armado submetidas à Flexão Simples de acordo com a norma NBR 6118:2014. <br> <span class="author"> Autora: Juliana Libório </span> <br><br> </p> 
+                <p class="description"> Verificação de vigas em concreto armado submetidas à Flexão Simples de acordo com a norma NBR 6118:2014. <br> <span class="author"> Autora: Juliana Libório </span> <br><br> </p>
             </div>
         </div>
-    </div> 
+    </div>
 
     <div class="container">
         <div class="row">
@@ -87,82 +126,82 @@
                 <div class="col-lg-12">
                     <div class="projectid">
                         <label>Projeto:</label>
-                        <input class="form-control" type="text" name="projectCC" placeholder="Ex.: Edifício Canadá"/> <br><br>
-                
+                        <input class="form-control" type="text" name="projectCC" placeholder="Ex.: Edifício Canadá" /> <br><br>
+
                         <label>Viga:</label>
                         <input class="form-control" type="text" name="beamCC" placeholder="Identifique a viga. Ex.: V1" /> <br><br>
-                        
+
                         <label>Norma:</label>
                         <select class="form-control" name="standard">
                             <option value="NBR 6118:2014"> NBR 6118:2014 </option> 
                         </select> <br><br>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6">
-                    
+
                     <p class="title2"> Dados </p>
-                    
+
                     <label>Altura da viga (cm):</label>
-			        <input type="text" name="hCC" /><br>
-            
+                    <input type="text" name="hCC" /><br>
+
                     <label>Largura da viga (cm):</label>
-			        <input type="text" name="bwCC" /> <br>
-            
+                    <input type="text" name="bwCC" /> <br>
+
                     <label>Concreto (Fck):</label>
-			        <select id="concrete" name="concreteCC">
+                    <select id="concrete" name="concreteCC">
 			        </select> <br>
-   
+
                     <label>Aço:</label>
-			        <select id="steel" name="steelCC">
+                    <select id="steel" name="steelCC">
 			        </select> <br>
-                    
+
                     <label>Área de Aço (cm²):</label>
-			        <input id="asSteel" name="asCC"/> <br>
-			                     
+                    <input id="asSteel" name="asCC" /> <br>
+
                     <label>Altura Útil (cm):</label>
-			        <input id="alturautil" name="dCC"/> <br>
-                    
+                    <input id="alturautil" name="dCC" /> <br>
+
                     <label>Cobrimento (cm)</label>
-			        <input type="text" name="cobCC" value=3.0 /> <br><br>
-                                                            
+                    <input type="text" name="cobCC" value=3.0 /> <br><br>
+
                 </div>
-                
+
                 <div class="col-lg-6">
-                    
+
                     <p class="title2"> Esforços </p>
-                    
+
                     <!--<label>Esforço Cortante \(V_k\) (kN):</label>
                     <input class="form-control" type="text" name="vCS" /> <br><br> !-->
-                    
+
                     <label>Momento Fletor \(M_k\) (kN.cm):</label>
                     <input class="form-control" type="text" name="mCC" /> <br><br>
-                    
+
                 </div>
-                
+
                 <div class="col-lg-6">
-                    
+
                     <p class="title2"> Bitolas </p>
-                    
+
                     <label>Bitola longitudinal (mm):</label>
-			        <select id="bitolaLong" name="longCC">
+                    <select id="bitolaLong" name="longCC">
 			        </select> <br>
-            
-			        <label>Bitola transversal (mm):</label>
-			        <select id="bitolaEst" name="estCC">
-			        </select> <br><br>    
-                                                    
+
+                    <label>Bitola transversal (mm):</label>
+                    <select id="bitolaEst" name="estCC">
+			        </select> <br><br>
+
                 </div>
-                    
+
                 <div class="col-lg-6">
                     <p class="title2 inline"> Coeficientes e Parâmetros </p>
-                    
+
                     <label class="switch">
                       <input type="checkbox" class="switch-input">
                       <span class="switch-label" data-on="On" data-off="Off"></span>
                       <span class="switch-handle"></span>
                     </label> <br>
-                    
+
                     <div id="coef">
                         <label>\({\gamma}_{c}\)</label>
                         <input class="form-control" type="text" name="gamacCC" value=1.4 /> <br><br>
@@ -172,23 +211,50 @@
                         <input class="form-control" type="text" name="gamasCC" value=1.15 /> <br><br>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-12 text-center">
                     <a href="#" class="btn btn-primary btn-xl" onClick="processFormCC()">Verificar</a>
                     <input class="btn btn-primary btn-xl" type="reset" value="Limpar" /> <br>
-                    
+
                     <br>
                     <br>
-                
+
                 </div>
-                
-    
+
+
             </form>
         </div>
     </div>
     
-    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/creative.min.js"></script>
+
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#menu-toggle").toggleClass("toggled");
+            $("#wrapper").toggleClass("toggled");
+        });
+
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ menuSettings:{ inTabOrder:false } });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script type="text/javascript" src="scripts/checkCS.js"></script>
     <script type="text/javascript" src="scripts/checkSq.js"></script>
     
+    <footer>® Sollvic 2017</footer>
 </body>
