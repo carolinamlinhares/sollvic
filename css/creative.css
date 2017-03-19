@@ -794,8 +794,9 @@ tr {
     max-width: 300px;
     max-height: 80px;
     margin:auto;
+    margin-top: 30px;
 }
 
-.header-content{
-    padding-bottom: 10px !important;
+header .header-content{
+    top: 40% !important;
 }
