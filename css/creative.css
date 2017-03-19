@@ -795,3 +795,7 @@ tr {
     max-height: 80px;
     margin:auto;
 }
+
+.header-content{
+    padding-bottom: 10px !important;
+}
