@@ -115,7 +115,7 @@
         <div class="row">
             <div class="apptitle">
                 <h1 class="title1">Dimensionamento de Vigas Metálicas</h1>
-                <p class="description"> Dimensionamento de vigas metálicas submetidas à Flexão Simples de acordo com a norma NBR 8800:2008. <br> <span class="author"> Autora: Carolina Linhares </span> <br><br> </p> 
+                <p class="description"> Dimensionamento de vigas metálicas submetidas à Flexão Simples de acordo com a norma NBR 8800:2008. <br> <span class="author"> Autora: Carolina Linhares </span> <br> </p> 
             </div>
         </div>
     </div> 
@@ -209,6 +209,17 @@
             </form>
         </div>
     </div>
+    
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#menu-toggle").toggleClass("toggled");
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     <script type="text/x-mathjax-config">
