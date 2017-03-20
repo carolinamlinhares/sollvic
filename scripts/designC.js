@@ -262,11 +262,11 @@ function processFormD() {
     
     // Verificação
     
-    if (dl >= cob + diamEst + 0.5 * diamLongT && dlc >= cob + diamEst + 0.5 * diamLongC) {
+    /*if (dl >= cob + diamEst + 0.5 * diamLongT && dlc >= cob + diamEst + 0.5 * diamLongC) {
         situationCG = "Coerente";
     } else {
         situationCG = "Incoerente";
-    }
+    }*/
     
     console.log("situationCG = " + situationCG);
     
@@ -334,72 +334,72 @@ function processFormD() {
     
     //CÁLCULO DA ÁREA DE AÇO
     
-    if (situationCG === "Incoerente") {
+    /*if (situationCG === "Incoerente") {
         alert("A altura da viga não está coerente com as distâncias ao centro das armaduras, cobrimento e bitolas utilizadas. Por favor, verifique os dados de entrada.");
-    } else {
+    } else {*/
 
-        if (situationD === "Aprovado" && situationLN === "Aprovada") {
-            situationS = "Simples";
-	        as = md / (tsd * (d - 0.4 * x));
+    if (situationD === "Aprovado" && situationLN === "Aprovada") {
+        situationS = "Simples";
+	    as = md / (tsd * (d - 0.4 * x));
+        
+        //CÁLCULO DA ARMADURA MÍNIMA DE TRAÇÃO
+        inercia = (bw * Math.pow(h, 3)) / 12;
+        wo = inercia / (h - x);
+        fctm = 0.3 * Math.pow(fck, (2 / 3));
+        fctkSup = 1.3 * fctm;
+        mdMin = 0.8 * wo * fctkSup;
+        astMin = mdMin / (tsd * (d - 0.4 * x));
+        if (as < astMin) {
+            as = astMin;
+        }
+        resultP = "PARCIAL: Área de aço = " + as + "cm²";
+        alert(resultP);
+     
+    } else {
+        situationS = "Dupla";
+        
+        //Cálculo da nova posição da LN
+        xd = 0.45 * d;
+        
+        //Cálculo de M1d
+        m1d = 0.68 * bw * xd * fcd * (d - 0.4 * xd);
+        
+        //Cálculo de M2d
+        m2d = md - m1d;
+        
+        //Encontrar valor de tlsd na tabela (!!!!)
+        rtab = dlc / d;
+        elsd = 3.5 * (1 - (1 / 0.45) * rtab);
+        tlsd = (elsd / 10) * (Es / 100);
+        
+        if ((rtab) < 0.1838571429) {
+            (rtab) = 0.1838571429;
+        }
             
-            //CÁLCULO DA ARMADURA MÍNIMA DE TRAÇÃO
-            inercia = (bw * Math.pow(h, 3)) / 12;
-            wo = inercia / (h - x);
-            fctm = 0.3 * Math.pow(fck, (2 / 3));
-            fctkSup = 1.3 * fctm;
-            mdMin = 0.8 * wo * fctkSup;
-            astMin = mdMin / (tsd * (d - 0.4 * x));
-            if (as < astMin) {
-                as = astMin;
-            }
-            resultP = "PARCIAL: Área de aço = " + as + "cm²";
-            alert(resultP);
-         
-        } else {
-            situationS = "Dupla";
-            
-            //Cálculo da nova posição da LN
-            xd = 0.45 * d;
-            
-            //Cálculo de M1d
-            m1d = 0.68 * bw * xd * fcd * (d - 0.4 * xd);
-            
-            //Cálculo de M2d
-            m2d = md - m1d;
-            
-            //Encontrar valor de tlsd na tabela (!!!!)
-            rtab = dlc / d;
-            elsd = 3.5 * (1 - (1 / 0.45) * rtab);
-            tlsd = (elsd / 10) * (Es / 100);
-            
-            if ((rtab) < 0.1838571429) {
-                (rtab) = 0.1838571429;
-            }
-                
-            //Encontrar área de aço comprimida A's
-            asl = m2d / (tlsd * (d - dlc));
-            
-            //Encontrar área de aço tracionada As
-            as1 = m1d / (tsd * (d - 0.4 * xd));
-            as2 = m2d / (tsd * (d - dlc));
-            ast = as1 + as2;
-            
-            //CÁLCULO DA ARMADURA MÍNIMA DE TRAÇÃO
-            inercia = (bw * Math.pow(h, 3)) / 12;
-            wo = inercia / (h - xd);
-            fctm = 0.3 * Math.pow(fck, (2 / 3));
-            fctkSup = 1.3 * fctm;
-            mdMin = 0.8 * wo * fctkSup;
-            astMin = mdMin / (tsd * (d - 0.4 * xd));
-            if (ast < astMin) {
-                ast = astMin;
-            }
-            
-            //Resultados
-            resultP = "PARCIAL: Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
-            alert(resultP);
-            
-        } //NOVO
+        //Encontrar área de aço comprimida A's
+        asl = m2d / (tlsd * (d - dlc));
+        
+        //Encontrar área de aço tracionada As
+        as1 = m1d / (tsd * (d - 0.4 * xd));
+        as2 = m2d / (tsd * (d - dlc));
+        ast = as1 + as2;
+        
+        //CÁLCULO DA ARMADURA MÍNIMA DE TRAÇÃO
+        inercia = (bw * Math.pow(h, 3)) / 12;
+        wo = inercia / (h - xd);
+        fctm = 0.3 * Math.pow(fck, (2 / 3));
+        fctkSup = 1.3 * fctm;
+        mdMin = 0.8 * wo * fctkSup;
+        astMin = mdMin / (tsd * (d - 0.4 * xd));
+        if (ast < astMin) {
+            ast = astMin;
+        }
+        
+        //Resultados
+        resultP = "PARCIAL: Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
+        alert(resultP);
+        
+        //} //NOVO
              
         //CÁLCULO DA TAXA DE ARMADURA
         ac = bw * h;
