@@ -819,3 +819,8 @@ header .header-content{
 .no-padding-bottom{
     padding-bottom: 0;
 }
+
+#retirar{
+    width: 80%;
+    height: 80%;
+}
