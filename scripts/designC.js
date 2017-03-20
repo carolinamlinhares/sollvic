@@ -200,14 +200,14 @@ function processFormD() {
     }
     
     bw = Number(document.formD.bwD.value);
-    if (document.formDC.bwDC.value === "" || isNaN(bw)) {
+    if (document.formD.bwD.value === "" || isNaN(bw)) {
         alert("Por favor preencha o campo Largura da Viga com números.");
         console.log("Por favor preencha o campo Largura da Viga.");
         return false;
     }
     
     mk = Number(document.formD.mD.value);
-    if (document.formDC.mDC.value === "" || isNaN(mk)) {
+    if (document.formD.mD.value === "" || isNaN(mk)) {
         alert("Por favor preencha o campo Momento com números.");
         console.log("Por favor preencha o campo Momento.");
         return false;
