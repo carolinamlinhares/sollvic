@@ -111,122 +111,134 @@
         <!-- /.container-fluid -->
     </nav>
     
-    <!DOCTYPE html>
+    <div class="container">
+        <div class="row">
+            <div class="apptitle">
+                <h1 class="title1">Verificação de Vigas em Concreto - Duplamente Armadas</h1>
+                <p class="description"> Verificação de vigas em concreto armado submetidas à Flexão Simples de acordo com a norma NBR 6118:2014. <br> <span class="author"> Autora: Juliana Libório </span> <br><br> </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <form name="formCD" class="form-inline">
+                <div class="col-lg-12">
+                    <div class="projectid">
+                        <label>Projeto:</label>
+                        <input class="form-control" type="text" name="projectCD" placeholder="Ex.: Edifício Canadá" /> <br><br>
 
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="description" content="Plataforma educacional para dimensionamento de vigas em concreto armado.">
-		<meta name="author" content="Juliana Libório">
+                        <label>Viga:</label>
+                        <input class="form-control" type="text" name="beamCD" placeholder="Identifique a viga. Ex.: V1" /> <br><br>
 
-		<title>Verificação de Vigas em Concreto Armado</title>
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto" rel="stylesheet">
-	</head>
+                        <label>Norma:</label>
+                        <select class="form-control" name="standard">
+                            <option value="NBR 6118:2014"> NBR 6118:2014 </option> 
+                        </select> <br><br>
+                    </div>
+                </div>
 
-	<body>
-		<div class="header">
-			<h1> Verificação de Vigas em Concreto Duplamente Armado </h1>
-		</div>
-		<div class="form">
-		<form name="formCD">
-			<label>Projeto:</label>
-			<input type="text" name="projectCD" placeholder="Ex.: Edifício Canadá"/> <br>
+                <div class="col-lg-7">
 
-			<label>Viga:</label>
-			<input type="text" name="beamCD" placeholder="Identifique a viga. Ex.: V1" /> <br>
+                    <p class="title2"> Dados </p>
 
-			<label>Norma:</label>
-			<select name="standard">
-				<option value="NBR 6118:2014"> NBR 6118:2014 </option> 
-			</select> <br> 
+                    <label>Altura da viga (cm):</label>
+                    <input type="text" name="hCD" /><br>
 
-			<h2> DADOS </h2>
+                    <label>Largura da viga (cm):</label>
+                    <input type="text" name="bwCD" /> <br>
 
-			<label>Altura da viga (cm):</label>
-			<input type="text" name="hCD" /><br>
-            
-            <label>Largura da viga (cm):</label>
-			<input type="text" name="bwCD" /> <br>
-            
-            <label>Concreto (Fck):</label>
-			<select id="concrete" name="concreteCD">
-			</select> <br>
-   
-            <label>Aço:</label>
-			<select id="steel" name="steelCD">
-			</select> <br>
-            
-            <label>Área de Aço Tracionada (cm²)</label>
-			<input type="text" name="astCD" /><br>
-            <br>
-            
-            <label>Área de Aço Comprimida (cm²)</label>
-			<input type="text" name="ascCD" /><br>
-            <br>
-            
-            <label>Distância da borda tracionada ao centro de gravidade da armadura tracionada (cm)</label>
-			<input type="text" name="dlCD" value=3.0 /><br>
-            <br>
-            
-            <label>Distância da borda comprimida ao centro de gravidade da armadura comprimida (cm)</label>
-			<input type="text" name="dlcCD" value=3.0 /> <br>
-            <br>
-            
-			<h3> BITOLAS </h3>
-   
-            <label>Bitola longitudinal tracionada (mm):</label>
-			<select id="bitolaLongT" name="longTCD">
-			</select> <br>
+                    <label>Concreto (Fck):</label>
+                    <select id="concrete" name="concreteCD">
+			        </select> <br>
 
-			<label>Bitola longitudinal comprimida (mm):</label>
-			<select id="bitolaLongC" name="longCCD">
-			</select> <br>
+                    <label>Aço:</label>
+                    <select id="steel" name="steelCD">
+			        </select> <br>
 
-            <label>Bitola transversal (mm):</label>
-			<select id="bitolaEst" name="estCD">
-			</select> <br>
-            
-            <br>
-            
-            <h2> ESFORÇOS </h2>
-			
-			<label>Momento Fletor Mk (kN.cm):</label>
-			<input type="text" name="mCD" /> <br>
+                    <label>Área de Aço Tracionada (cm²):</label>
+                    <input name="astCD" /> <br>
+                    
+                    <label>Área de Aço Comprimida (cm²):</label>
+                    <input name="ascCD" /> <br>
+                    
+                    <label>Distância da borda tracionada ao centro de gravidade da armadura tracionada (cm):</label>
+                    <input type="text" name="dlCD" value=4.0 /> <br>
+                    
+                    <label>Distância da borda comprimida ao centro de gravidade da armadura comprimida (cm):</label>
+                    <input type="text" name="dlcCD" value=4.0 /> <br>
 
-			<h4> COEFICIENTES </h4>
-			
-			<label>Gama c</label>
-			<input type="text" name="gamacCD" value=1.4 /> <br>
-			<label>Gama f</label>
-			<input type="text" name="gamafCD" value=1.4 /> <br>
-			<label>Gama s</label>
-			<input type="text" name="gamasCD" value=1.15 /> <br>
-            <label>Espaçamento entre camadas (cm)</label>
-			<input type="text" name="sCD" value=2.5 /> <br>
-			<label>Cobrimento (cm)</label>
-			<input type="text" name="cobCD" value=3.0 /> <br>
-                        
-            <br>
+                    <label>Cobrimento (cm)</label>
+                    <input type="text" name="cobCC" value=3.0 /> <br><br>
 
-			<input type="button" value="Verificar" onClick="processFormCD()" /> <br>
-			<input type="button" value="Gerar Relatório" onClick="reportCD()" /> <br>
-			<input type="reset" value="Limpar" /> <br>
+                </div>
 
-			<br>
-			<br>
-			<br>
+                <div class="col-lg-5">
 
-		</form>
-		</div>
-		
-		<!-- Only to access pages while testing -->
-		<input type="button" value="Início" onclick="window.location.href='index.html'">
-		
-		<script type="text/javascript" src="scripts/scriptCD.js"></script>
+                    <p class="title2"> Esforços </p>
+
+                    <!--<label>Esforço Cortante \(V_k\) (kN):</label>
+                    <input class="form-control" type="text" name="vCS" /> <br><br> !-->
+
+                    <label>Momento Fletor \(M_k\) (kN.cm):</label>
+                    <input class="form-control" type="text" name="mCD" /> <br><br>
+
+                </div>
+
+                <div class="col-lg-5">
+
+                    <p class="title2"> Bitolas </p>
+                    
+                    <label>Bitola longitudinal tracionada (mm):</label>
+			        <select id="bitolaLongT" name="longTCD">
+                    </select> <br>
+    
+			        <label>Bitola longitudinal comprimida (mm):</label>
+			        <select id="bitolaLongC" name="longCCD">
+			        </select> <br>
+    
+                    <label>Bitola transversal (mm):</label>
+			        <select id="bitolaEst" name="estCD">
+			        </select> <br>
+                    
+                </div>
+
+                <div class="col-lg-6">
+                    <p class="title2 inline"> Coeficientes e Parâmetros </p>
+
+                    <label class="switch">
+                      <input type="checkbox" class="switch-input">
+                      <span class="switch-label" data-on="On" data-off="Off"></span>
+                      <span class="switch-handle"></span>
+                    </label> <br>
+
+                    <div id="coef">
+                        <label>\({\gamma}_{c}\)</label>
+                        <input class="form-control" type="text" name="gamacCC" value=1.4 /> <br><br>
+                        <label>\({\gamma}_{f}\)</label>
+                        <input class="form-control" type="text" name="gamafCC" value=1.4 /> <br><br>
+                        <label>\({\gamma}_{s}\)</label>
+                        <input class="form-control" type="text" name="gamasCC" value=1.15 /> <br><br>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 text-center">
+                    <a href="#" class="btn btn-primary btn-xl" onClick="processFormCC()">Verificar</a>
+                    <input class="btn btn-primary btn-xl" type="reset" value="Limpar" /> <br>
+
+                    <br>
+                    <br>
+
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+    
+    	
+    <script type="text/javascript" src="scripts/scriptCD.js"></script>
         
-	</body>
-
-</html>
     
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
