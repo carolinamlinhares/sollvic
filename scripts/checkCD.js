@@ -356,9 +356,9 @@ function processFormCD() {
             ast = as1 + as2;
          
             if ((astForm + (0.05 * astForm)) >= ast && (ascForm + (0.05 * ascForm)) >= asl) {
-                result = "A viga resiste ao momento fletor solicitado com a armadura dupla utilizada";
+                result = "A viga resiste ao momento fletor solicitado com a armadura dupla utilizada.";
             } else {
-                result = "A viga NÃO resiste ao momento fletor solicitado com a armadura dupla utilizada";
+                result = "A viga não resiste ao momento fletor solicitado.";
             }
         }
         alert(result);
