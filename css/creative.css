@@ -505,6 +505,11 @@ footer {
     margin: auto;
 }
 
+.imgAbout {
+    margin: auto;
+    padding: 60px;
+}
+
 .identification {
     font-size: 10px;
 }
@@ -820,6 +825,10 @@ header .header-content{
     color: #999999;
 }
 
+.title1 {
+    padding-left: 28px;
+}
+
 #contato {
     padding-top:25px;
 }
@@ -842,3 +851,7 @@ header .header-content{
     width: 80%;
     height: 80%;
 }
+
+#about {
+    padding-top: auto;
+    }
