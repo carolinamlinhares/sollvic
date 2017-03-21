@@ -820,6 +820,10 @@ header .header-content{
     color: #999999;
 }
 
+#contato {
+    padding-top:25px;
+}
+
 #logo-hover:hover {
     content: url("../images/LogoBlue2.png");
     width: auto;
