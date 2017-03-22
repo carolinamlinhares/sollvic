@@ -890,15 +890,21 @@ header .header-content{
     filter: grayscale(100%);
 }
 
-.title2{
+.join{
     color: white;
     font-weight: bolder;
     font-size: 40px;
     letter-spacing: 2px;
 }
 
-.apptitle2 {
+.title3 {
     color: black;
     text-align: left;
     font-size: 15px;
+}
+
+.title2{
+    font-weight: bold;
+    font-family: 'Nunito';
+    font-size: 24px;
 }
