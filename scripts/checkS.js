@@ -413,7 +413,7 @@ function processFormCS() {
                 label: '<i class="fa fa-times"></i> Voltar'
             },
             confirm: {
-                label: '<i class="fa fa-check"></i> Mostrar relatorio'
+                label: '<i class="fa fa-check"></i> Mostrar relatório'
             }
         },
         callback: function (result) {

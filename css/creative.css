@@ -508,6 +508,7 @@ footer {
 .imgAbout {
     margin: auto;
     padding: 60px;
+    al
 }
 
 .identification {
@@ -533,7 +534,7 @@ footer {
     color: black;
     text-align: left;
     font-size: 15px;
-    padding-top: 60px;
+    padding-top: 90px;
 }
 
 .description {
@@ -821,7 +822,7 @@ header .header-content{
     background-size: cover;
     -o-background-size: cover;
     background-position: center;
-    background-image: url('../images/mockup1.jpg');
+    background-image: url('../images/Participe.png');
     text-align: center;
     color: #999999;
 }
@@ -855,4 +856,49 @@ header .header-content{
 
 #about {
     padding-top: auto;
-    }
+}
+
+.minor-padding-top{
+    padding-top: 20px;
+}
+
+#stairs{
+    margin-left: 40px;
+}
+
+.line-height{
+    line-height: 2;
+    
+}
+
+#welcome{
+    font-weight: bold;
+    text-align: center !important; 
+    font-size: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.founderpic{
+    max-width: 170px;
+    max-height: 170px;
+    vertical-align: top !important;
+}
+
+.founderpic:hover{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.title2{
+    color: white;
+    font-weight: bolder;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.apptitle2 {
+    color: black;
+    text-align: left;
+    font-size: 15px;
+}
