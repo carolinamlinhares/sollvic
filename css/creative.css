@@ -149,6 +149,11 @@ aside {
         color: #41bef6;
         font-size: 14px;
     }
+    .navbar-default.affix .navbar-header .navbar-brand img {
+        /*filter:invert() hue-rotate(90deg);*/
+        background-image: url(../images/Nav-Logo-Blue.png);
+        background-size: cover;
+    }
     .navbar-default.affix .navbar-header .navbar-brand:hover,
     .navbar-default.affix .navbar-header .navbar-brand:focus {
         color: #2095f2;
@@ -776,7 +781,7 @@ tr {
 }
 
 .my-table, .my-table tr, .my-table td, .my-table tr td {
-    /*border: none !important;*/
+    border: none !important;
 }
 
 .side-title{
@@ -907,4 +912,9 @@ header .header-content{
     font-weight: bold;
     font-family: 'Nunito';
     font-size: 24px;
+}
+
+.navbar-brand img {
+    background-image: url(/images/Nav-Logo.png);
+    background-size: cover;
 }
