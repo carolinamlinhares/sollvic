@@ -273,9 +273,10 @@ function processFormD() {
         situationCG = "Coerente";
     } else {
         situationCG = "Incoerente";
+        
+    console.log("situationCG = " + situationCG);
     }*/
 
-    console.log("situationCG = " + situationCG);
 
     //CÁLCULO DOS LIMITES DOS DOMÍNIOS 2 E 3
     //DOMÍNIO 2
@@ -491,22 +492,22 @@ function processFormD() {
                     situationCam = "aprovado";
                 }
                 console.log("Essa bitola cabe em " + nCamadas + " camadas")
-            }
 
             //Verificação do espaçamento vertical mínimo
 
             av = h - x - cob - diamEst;
-
-            if ((nCamadas > 1) && (avMin <= ((av - (nCamadas * bitola[i].diametroCM)) / (nCamadas - 1)))) {
-                conditionAv = "av OK";
-            } else {
-                conditionAv = "av insuficiente";
-            }
-            console.log(conditionAv);
-
-            if (conditionAv === "av OK") {
-                ahSugg = ahMin;
-                avSugg = avMin;
+            
+            if (nCamadas > 1){
+                if ((avMin <= ((av - (nCamadas * bitola[i].diametroCM)) / (nCamadas - 1)))) {
+                    conditionAv = "av OK";
+                } else {
+                    conditionAv = "av insuficiente";
+                }
+                console.log(conditionAv);
+    
+                if (conditionAv === "av OK") {
+                    ahSugg = ahMin;
+                    avSugg = avMin;
             }
 
             if ((conditionTxFinal === "OK") && (conditionAv === "av OK")) {
@@ -521,10 +522,10 @@ function processFormD() {
                     "av": avSugg
                 });
             }
-
+        }
 
     arranjos.sort(function (a, b) {
-        return a.ncam - b.ncam;
+        return a.bitola - b.bitola;
     });
 
     result = "Pode ser usada armadura com " + arranjos[0].qtd + "Ø" + arranjos[0].bitola + " em " + arranjos[0].ncam + " camadas. Confira relatório para os detalhes do dimensionamento e outras opções de armaduras.";
