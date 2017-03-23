@@ -508,6 +508,7 @@ function processFormD() {
                 if (conditionAv === "av OK") {
                     ahSugg = ahMin;
                     avSugg = avMin;
+                }
             }
 
             if ((conditionTxFinal === "OK") && (conditionAv === "av OK")) {
