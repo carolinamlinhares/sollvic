@@ -15,7 +15,7 @@ var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, ast, situationS, result;
 var txCalc, txCalcT, txCalcC, inercia, wo, fctm, fctkSup, mdMin, astMin, astMinAbs, situationArmPele, armPele, situationTxMax, situationCG;
 var ac, av, avMin, ah, ahMin, ahT, ahC, ahSugg, ahSuggT, ahSuggC, sPele, resultP, resultTx, resultArmPele, conditionTxFinal, conditionEsp, conditionPele, conditionAh, conditionAv;
 var nBarras, nBarrasNovo, nBarrasC, nBarrasT, nBarrasPele, nCamadas, iCamadas, nBmax, nCam1, nCam2, nCam3, nCam4;
-var asSugg, asSuggC, asSuggT, avSugg, ahSugg, txCalcSugg, txCalcTSugg, txCalcCSugg, condition;
+var asSugg, asSuggC, asSuggT, avSugg, ahSugg, txCalcSugg, txCalcTSugg, txCalcCSugg, condition, situationCam;
 var arranjos = [];
 
 var bitola = [
