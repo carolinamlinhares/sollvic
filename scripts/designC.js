@@ -14,7 +14,7 @@ var situationD, situationLN;
 var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, ast, situationS, result;
 var txCalc, txCalcT, txCalcC, inercia, wo, fctm, fctkSup, mdMin, astMin, astMinAbs, situationArmPele, armPele, situationTxMax, situationCG;
 var ac, av, avMin, ah, ahMin, ahT, ahC, ahSugg, ahSuggT, ahSuggC, sPele, resultP, resultTx, resultArmPele, conditionTxFinal, conditionEsp, conditionPele, conditionAh, conditionAv;
-var nBarras, nBarrasNovo, nBarrasC, nBarrasT, nBarrasPele, nCamadas, iCamadas;
+var nBarras, nBarrasNovo, nBarrasC, nBarrasT, nBarrasPele, nCamadas, iCamadas, nBmax, nCam1, nCam2, nCam3, nCam4;
 var asSugg, asSuggC, asSuggT, avSugg, ahSugg, txCalcSugg, txCalcTSugg, txCalcCSugg, condition;
 var arranjos = [];
 
@@ -352,7 +352,7 @@ function processFormD() {
         if (as < astMin) {
             as = astMin;
         }
-        resultP = "PARCIAL: Área de aço = " + as + "cm²";
+        resultP = "A viga pode ser simplesmente armada: Área de aço = " + as + "cm²";
         alert(resultP);
      
     } else {
@@ -396,10 +396,13 @@ function processFormD() {
         }
         
         //Resultados
-        resultP = "PARCIAL: Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
+        resultP = "A viga deve ser duplamente armada: Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
         alert(resultP);
         
     }
+    
+    console.log("situationS = " + situationS);
+    
         //} //NOVO
              
         //CÁLCULO DA TAXA DE ARMADURA
@@ -407,7 +410,7 @@ function processFormD() {
         
     if (situationS === "Simples") {
         txCalc = (as / ac) * 100;
-        if ((txCalc >= 0.14) && (txCalc <= 4.0)) {
+        if ((txCalc >= 0.15) && (txCalc <= 4.0)) {
             resultTx = "OK";
         } else {
             resultTx = "Taxa Simples Reprovada.";
@@ -416,13 +419,13 @@ function processFormD() {
         txCalcT = (ast / ac) * 100;
         txCalcC = (asl / ac) * 100;
         txCalc = txCalcT + txCalcC;
-        if ((txCalc >= 0.14) && (txCalc <= 4.0)) {
+        if ((txCalc >= 0.15) && (txCalc <= 4.0)) {
             resultTx = "OK";
         } else {
             resultTx = "Taxa Dupla Reprovada.";
         }
     }
-    console.log(resultTx);
+    console.log("resultTx" + resultTx);
         
         //Arranjos
     switch (situationS) {
@@ -430,14 +433,14 @@ function processFormD() {
         for (i = 0; i < bitola.length; i += 1) {
             nBarras = Math.ceil((as - 0.05 * as) / (bitola[i].area)); //Incluindo 5% de tolerância
             console.log(i);
-            console.log(nBarras);
+            console.log("nBarras = " + nBarras);
             asSugg = nBarras * bitola[i].area;
-            console.log(asSugg);
+            console.log("asSugg = " + asSugg);
             txCalcSugg = (asSugg / ac) * 100;
-            console.log(txCalcSugg);
+            console.log("txCalcSugg = " + txCalcSugg);
                 
                 //Verificar taxa max CONDITION
-            if ((txCalcSugg >= 0.14) && (txCalcSugg <= 4.0)) {
+            if ((txCalcSugg >= 0.15) && (txCalcSugg <= 4.0)) {
                 conditionTxFinal = "OK";
             } else {
                 conditionTxFinal = "Reprovado";
@@ -461,8 +464,28 @@ function processFormD() {
                 console.log(conditionAh);
             } else {
                 conditionAh = "ah insuficiente";
-                console.log("dentro do else " + conditionAh);
-                nCamadas = 2;
+                console.log("dentro do else = " + conditionAh);
+                
+                nBmax = nBarras;
+                if (2 * (cob + diamEst) + nBmax * bitola[i].diametroCM + (nBmax - 1) * ahMin >= bwMin) {
+                    while (2 * (cob + diamEst) + nBmax * bitola[i].diametroCM + (nBmax - 1) * ahMin >= bwMin) {
+                        nBmax = nBmax - 1;
+                    }
+                    nCam1 = nBmax;
+                    if (nBarras - nCam1 <= nCam1) {
+                        console.log("A viga terá 2 camadas de armadura");
+                        nCam2 = nBarras - nCam1;
+                    } else if (nCam1 < nBarras - nCam1 <= 3 * nCam1) {
+                        console.log("A viga terá 3 camadas de armadura");
+                        nCam2 = nCam1;
+                        nCam3 = nBarras - 2 * nCam1;
+                    } else if (3 * nCam1 <= nBarras - nCam1 <= 4 * nCam1) {
+                        nCam2 = nCam1;
+                        nCam3 = nCam1;
+                        nCam4 = nBarras - 3 * nCam1;
+                    }
+                }
+                /* nCamadas = 2;
                 iCamadas = 1;
                 do {
                     console.log("iCamadas =" + iCamadas);
@@ -478,7 +501,7 @@ function processFormD() {
                         nCamadas += 1;
                         iCamadas += 1;
                     }
-                } while (iCamadas < 4);
+                } while (iCamadas < 4); */
             }
                 
             //Verificação do espaçamento vertical mínimo
