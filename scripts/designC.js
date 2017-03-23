@@ -521,34 +521,11 @@ function processFormD() {
                     "av": avSugg
                 });
             }
-    }
+
 
     arranjos.sort(function (a, b) {
         return a.ncam - b.ncam;
     });
-
-    //CÁLCULO DA ARMADURA DE PELE
-    /*if (h <= 60) {
-        situationArmPele = "Não";
-    } else {
-        situationArmPele = "Sim";
-        armPele = 0.001 * ac;
-        
-    //CÁLCULO DO ARRANJO DA ARMADURA DE PELE
-    //Espaçamento entre barras deve ser não mais que 20cm e sua área não deve exceder 5cm²/m por face. Usar CA-50 ou CA-60
-    //for (y = 0; y < estriboProp.length; y += 1) {
-           // nBarrasPele = armPele / diamEst;
-           // sPele = h - (2 * (cob + diamEst) + estriboProp[y].diametro);
-           // if (((sPele - (nBarrasPele * estriboProp[y].diametro)) / (nBarrasPele + 1)) <= 20) {
-           //     if (((nBarrasPele * estriboProp[y].diametro) / (h / 100)) <= 5) {
-            //        conditionPele = "OK";
-                    // ADICIONAR PROPRIEDADE
-             //   }
-            //}s
-        //}
-        
-            
-    }*/
 
     result = "Pode ser usada armadura com " + arranjos[0].qtd + "Ø" + arranjos[0].bitola + " em " + arranjos[0].ncam + " camadas. Confira relatório para os detalhes do dimensionamento e outras opções de armaduras.";
     alert(result);
@@ -614,8 +591,7 @@ if (h > 60) {
 } else {
     resultArmPele = "Não é necessário utilizar armadura de pele";
 }
-if (resultArmPele === "É necessário utilizar armadura de pele com " + armPele + "cm² por face") {
-    alert(resultArmPele);
+if (resultArmPele === "É necessário utilizar armadura de pele com " + armPele + "cm² por face") {  alert(resultArmPele);
 }
 
 }
