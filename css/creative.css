@@ -544,6 +544,7 @@ footer {
 
 .description {
     font-size: 13px;
+    padding-left: 15px;
 }
 
 .author {
@@ -829,6 +830,10 @@ header .header-content{
     background-image: url('../images/Participe.jpg');
     text-align: center;
     color: #999999;
+}
+
+.title1 {
+    padding-left: 15px;
 }
 
 #contato {
