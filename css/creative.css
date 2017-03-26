@@ -810,13 +810,13 @@ tr {
 
 @media (max-width: 768px) {
     #slogan{
-        font-size: 8px;
+        font-size: 15px;
     }    
     .logoHeading{
         height: auto;
         width: auto;
-        max-width: 80px;
-        max-height: 30px;
+        max-width: 120px;
+        max-height: 50px;
         margin:auto;
         top: 50%;@me
     }
