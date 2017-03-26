@@ -840,12 +840,6 @@ header .header-content{
     padding-top:25px;
 }
 
-#logo-hover:hover {
-    content: url("../images/LogoBlue2.png");
-    width: auto;
-    max-height: 250px;
-}
-
 #responsive-section{
     vertical-align: top;
 }
