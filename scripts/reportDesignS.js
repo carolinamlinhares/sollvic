@@ -87,7 +87,7 @@ $(document).ready(function() {
     
     //RD
     
-    $('#suggestion_table').append('<table></table>');
+    $('#suggestion_table').append('<table class="row col-lg-10"></table>');
     var table = $('#suggestion_table').children();
     table.append(tableHeader);
     for (i = 0; i <= resultado.suggestion.length; i += 1) {
