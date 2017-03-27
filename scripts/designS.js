@@ -379,7 +379,7 @@ function processFormDS() {
     
     var menu_prompt = {
         title: "Resultado",
-        message: "O perfil " + suggestion[0].perfil.bitola + " pode ser utilizado para a Viga " + beam + ". Confira o relatório para mais opções.",
+        message: "O perfil ",
         buttons: {
             cancel: {
                 label: '<i class="fa fa-times"></i> Voltar'
