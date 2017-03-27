@@ -395,6 +395,8 @@ function processFormDS() {
         }
     };
     
+    bootbox.confirm(menu_prompt);
+    
     //console.table(suggestion);
     //alert("O perfil " + suggestion[0].perfil.bitola + " pode ser utilizado para a Viga " + beam + ". Confira o relatório para mais opções.");
 
