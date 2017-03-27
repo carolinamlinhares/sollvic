@@ -168,7 +168,7 @@ aside {
     }
 }
 
-.nav-logo{
+.nav-logo {
     height: auto;
     width: auto;
     max-width: 200px;
@@ -547,7 +547,7 @@ footer {
     padding-left: 15px;
 }
 
-.pad-left{
+.pad-left {
     padding-left: 15px;
 }
 
@@ -727,51 +727,49 @@ tr {
 }
 
 
-
 /* Menu to open sidebar menu */
-.sidebar-logo{
-    padding:0;
+
+.sidebar-logo {
+    padding: 0;
 }
 
-.menu-sidebar-open{
-    background-color:#444;
+.menu-sidebar-open {
+    background-color: #444;
     margin: 2px 2px 2px !important;
 }
 
-.big-logo{
-    font-size:8em !important;
+.big-logo {
+    font-size: 8em !important;
 }
 
-@media (max-width: 768px) { 
-    .menu-sidebar-open{
-        background-color:#444;
+@media (max-width: 768px) {
+    .menu-sidebar-open {
+        background-color: #444;
         margin-left: 18px !important;
     }
-    
-
-    .big-logo{
+    .big-logo {
         font-size: 6em !important;
     }
 }
 
-.menu-sidebar-open:hover{
-    background-color:#000 !important;
+.menu-sidebar-open:hover {
+    background-color: #000 !important;
     color: #FFFFFF !important;
 }
 
-.sollvic-home{
+.sollvic-home {
     padding-left: 25px !important;
 }
 
-.sidebar-menu{
+.sidebar-menu {
     z-index: 1000;
 }
 
-.top-menu{
+.top-menu {
     z-index: 999;
 }
 
-.submenu-title{
+.submenu-title {
     display: inline-block;
     padding: 8px 12px;
     color: #fff;
@@ -780,66 +778,69 @@ tr {
     width: 250px;
 }
 
-.clear-nav { 
-    padding-top: 65px; 
+.clear-nav {
+    padding-top: 65px;
 }
 
-.my-table{
+.my-table {
     border: 1px solid black;
     border-left: 0px;
     border-bottom: 0px;
 }
 
-.my-table tr, .my-table td, .my-table tr td {
+.my-table tr,
+.my-table td,
+.my-table tr td {
     border: none !important;
 }
 
-.side-title{
-    padding-left:5px;
+.side-title {
+    padding-left: 5px;
     font-family: 'Nunito' !important;
 }
 
-#slogan{
+#slogan {
     margin-top: 00px;
     font-size: 35px;
     text-transform: none;
 }
 
-.logoHeading{
+.logoHeading {
     height: auto;
     width: auto;
     max-width: 400px;
     max-height: 100px;
-    margin:auto;
-    top: 50%;@me
+    margin: auto;
+    top: 50%;
+    @me
 }
 
 @media (max-width: 768px) {
-    #slogan{
+    #slogan {
         font-size: 15px;
-    }    
-    .logoHeading{
+    }
+    .logoHeading {
         height: auto;
         width: auto;
         max-width: 120px;
         max-height: 50px;
-        margin:auto;
-        top: 50%;@me
+        margin: auto;
+        top: 50%;
+        @me
     }
-    
 }
 
-header .header-content{
+header .header-content {
     top: 35% !important;
 }
 
-.logo-about{
+.logo-about {
     height: auto;
     width: auto;
     max-width: 300px;
     max-height: 250px;
     position: relative;
-    margin:auto;
+    margin: auto;
     margin-top: 30px;
 }
 
@@ -862,18 +863,18 @@ header .header-content{
 }
 
 #contato {
-    padding-top:25px;
+    padding-top: 25px;
 }
 
-#responsive-section{
+#responsive-section {
     vertical-align: top;
 }
 
-.no-padding-bottom{
+.no-padding-bottom {
     padding-bottom: 0;
 }
 
-#retirar{
+#retirar {
     width: 80%;
     height: 80%;
 }
@@ -882,38 +883,38 @@ header .header-content{
     padding-top: auto;
 }
 
-.minor-padding-top{
+.minor-padding-top {
     padding-top: 20px;
 }
 
-#stairs{
+#stairs {
     margin-left: 40px;
 }
 
-.line-height{
+.line-height {
     line-height: 2;
-    
 }
 
-#welcome{
+#welcome {
     font-weight: bold;
-    text-align: center !important; 
+    text-align: center !important;
     font-size: 20px;
     display: block;
     margin: 0 auto;
 }
 
-.founderpic{
+.founderpic {
     max-width: 170px;
     max-height: 170px;
 }
 
-.founderpic:hover{
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+.founderpic:hover {
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
 
-.join{
+.join {
     color: white;
     font-weight: bolder;
     font-size: 40px;
@@ -926,7 +927,7 @@ header .header-content{
     font-size: 15px;
 }
 
-.title2{
+.title2 {
     font-weight: bold;
     font-family: 'Nunito';
     font-size: 24px;
@@ -937,17 +938,17 @@ header .header-content{
     background-size: cover;
 }
 
-#project-info{
+#project-info {
     margin-left: 95px;
     vertical-align: middle;
 }
 
-.tab{
+.tab {
     padding-left: 20px;
     display: inline;
 }
 
-.inline{
+.inline {
     display: inline;
 }
 
@@ -957,67 +958,91 @@ header .header-content{
     margin-bottom: 25px;
 }
 
-.tdcell{
+.tdcell {
     vertical-align: middle !important;
     padding-left: 5px;
 }
 
-.tdcell p{
+.tdcell p {
     margin-bottom: 5px;
 }
 
-.tdfig{
+.tdfig {
     font-size: 10px;
 }
 
-.tdfigcell{
+.tdfigcell {
     font-size: 10px;
 }
 
-.sectiondata tr, .sectiondata td, .sectiondata tr td {
+.sectiondata tr,
+.sectiondata td,
+.sectiondata tr td {
     border: none !important;
-    
 }
 
-.sectiondata tr{
+.sectiondata tr {
     border-bottom: 1px solid black;
     border-left: 1px solid black;
 }
 
-#perfilspan{
+#perfilspan {
     text-align: center;
     font-weight: bold;
 }
 
-#disclaimer{
+#disclaimer {
     font-size: 10px;
     font-style: italic;
 }
 
-@media print
-{
-    * {-webkit-print-color-adjust:exact !important; } 
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+    }
 }
 
-.report-h2{
+.report-h2 {
     font-family: 'Nunito';
     font-size: 28px;
 }
 
-.report-h3{
+.report-h3 {
     font-family: 'Nunito';
     font-size: 24px;
     font-weight: bold;
 }
 
-.report-h4{
+.report-h4 {
     font-family: 'Nunito';
     font-size: 20px;
     font-weight: bold;
 }
 
-.report-h5{
+.report-h5 {
     font-family: 'Nunito';
     font-size: 18px;
     font-weight: bold;
+}
+
+.reportable {
+        font-family: 'Open Sans', arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        font-size: 16px;
+    }
+    
+.reportable td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+    }
+
+.reportable tr:nth-child(even) {
+        background-color: #dddddd;
+    }
 }

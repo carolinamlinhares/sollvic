@@ -265,17 +265,18 @@ function processFormDS() {
         ratiopDSV = ratioDSV * 100;
         ratiopDSM = ratioDSM * 100;
         
-        vsd = Number(vsd.toFixed(2));
-        msd = Number(msd.toFixed(2));
-        vrd = Number(vrd.toFixed(2));
-        mrdOut = Number(mrdOut.toFixed(2));
-        ratioDSV = Number(ratioDSV.toFixed(2));
-        ratioDSM = Number(ratioDSM.toFixed(2));
-        ratiopDSV = Number(ratiopDSV.toFixed(2));
-        ratiopDSM = Number(ratiopDSM.toFixed(2));
-
         if (vsd <= vrd && msd <= mrdOut) {
             result = "OK";
+            
+            vsd = Number(vsd.toFixed(2));
+            msd = Number(msd.toFixed(2));
+            vrd = Number(vrd.toFixed(2));
+            mrdOut = Number(mrdOut.toFixed(2));
+            ratioDSV = Number(ratioDSV.toFixed(2));
+            ratioDSM = Number(ratioDSM.toFixed(2));
+            ratiopDSV = Number(ratiopDSV.toFixed(2));
+            ratiopDSM = Number(ratiopDSM.toFixed(2));
+ 
             approved.push({    // saves to a list of approved sections
                 "perfil": perfis[i],
                 "vrd": vrd,
@@ -288,6 +289,7 @@ function processFormDS() {
         } else {
             result = "Não OK";
         }
+        
 
      // END OF FUNCTION TO SAVE CHECK EACH SECTION
 
@@ -374,9 +376,27 @@ function processFormDS() {
 /*
     SUGGESTION: Printing a log to check
 */
-
-    console.table(suggestion);
-    alert("O perfil " + suggestion[0].perfil.bitola + " pode ser utilizado para a Viga " + beam + ". Confira o relatório para mais opções.");
+    
+    var menu_prompt = {
+        title: "Resultado",
+        message: "O perfil " + suggestion[0].perfil.bitola + " pode ser utilizado para a Viga " + beam + ". Confira o relatório para mais opções.",
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> Voltar'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Mostrar relatório'
+            }
+        },
+        callback: function (result) {
+            if (result) {
+                location.href = "reportDesign.html?test=" + JSON.stringify(resultado);
+            }
+        }
+    };
+    
+    //console.table(suggestion);
+    //alert("O perfil " + suggestion[0].perfil.bitola + " pode ser utilizado para a Viga " + beam + ". Confira o relatório para mais opções.");
 
     // Report Array
 
