@@ -390,7 +390,7 @@ function processFormDS() {
         },
         callback: function (result) {
             if (result) {
-                location.href = "reportDesign.html?test=" + JSON.stringify(resultado);
+                location.href = "reportDesignS.html?test=" + JSON.stringify(resultado);
             }
         }
     };
@@ -421,7 +421,7 @@ function processFormDS() {
         "suggestion": suggestion
     };
 
-    document.getElementById("botaoRelatorio2").href = "reportDS.html?test=" + JSON.stringify(resultado);
+    //document.getElementById("botaoRelatorio2").href = "reportDS.html?test=" + JSON.stringify(resultado);
 
 }
 
