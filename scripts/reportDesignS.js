@@ -31,6 +31,10 @@ function getJsonFromUrl(hashBased) {
     return result;
 }
 
+var resultado = [];
+resultado = JSON.parse(getJsonFromUrl().test);
+//End of parsing results
+
 var i = 0;
 var tableHeader = '<tr><th> Perfil </th> <th> Cortante \\(V_{rd}\\) (KN) </th> <th> Momento \\(M_{rd}\\) (KN.m) </th> <th> Ratio Cortante </th> <th> Ratio Momento </th> </tr>';
 MathJax.Hub.Queue(["Typeset", MathJax.Hub, tableHeader]);
