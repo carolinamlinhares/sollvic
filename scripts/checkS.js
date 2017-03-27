@@ -267,6 +267,35 @@ function processFormCS() {
     ratioCSM = msd / mrdOut;
     ratiopCSV = ratioCSV * 100;
     ratiopCSM = ratioCSM * 100;
+    
+    
+    var menu_prompt = {
+        title: "Resultado",
+        message: "A viga foi aprovada.",
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> Voltar'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Mostrar relatório'
+            }
+        },
+        callback: function (result) {
+            console.log('Viga reprovada resultado: ' + result);
+            if (result) {
+                location.href = "reportCheckS.html?test=" + JSON.stringify(resultado);
+            }
+        }
+    };
+
+    if (vsd <= vrd && msd <= mrdOut) {
+        result = "OK";
+        bootbox.confirm(menu_prompt);
+    } else {
+        result = "Não OK";
+        menu_prompt.message = "A viga foi reprovada";
+        bootbox.confirm(menu_prompt);
+    }
 
     // Fixing decimals 
 
@@ -404,34 +433,7 @@ function processFormCS() {
         "ratiopCSV": ratiopCSV,
         "ratiopCSM": ratiopCSM
     };
-
-    var menu_prompt = {
-        title: "Resultado",
-        message: "A viga foi aprovada.",
-        buttons: {
-            cancel: {
-                label: '<i class="fa fa-times"></i> Voltar'
-            },
-            confirm: {
-                label: '<i class="fa fa-check"></i> Mostrar relatório'
-            }
-        },
-        callback: function (result) {
-            console.log('Viga reprovada resultado: ' + result);
-            if (result) {
-                location.href = "reportCheckS.html?test=" + JSON.stringify(resultado);
-            }
-        }
-    };
-
-    if (vsd <= vrd && msd <= mrdOut) {
-        result = "OK";
-        bootbox.confirm(menu_prompt);
-    } else {
-        result = "Não OK";
-        menu_prompt.message = "A viga foi reprovada";
-        bootbox.confirm(menu_prompt);
-    }
+    
 }
 
 /*
