@@ -996,5 +996,28 @@ header .header-content{
 
 @media print
 {
-    * {-webkit-print-color-adjust:exact;}
+    * {-webkit-print-color-adjust:exact !important; } 
+}
+
+.report-h2{
+    font-family: 'Nunito';
+    font-size: 28px;
+}
+
+.report-h3{
+    font-family: 'Nunito';
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.report-h4{
+    font-family: 'Nunito';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.report-h5{
+    font-family: 'Nunito';
+    font-size: 18px;
+    font-weight: bold;
 }
