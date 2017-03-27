@@ -988,3 +988,13 @@ header .header-content{
     text-align: center;
     font-weight: bold;
 }
+
+#disclaimer{
+    font-size: 10px;
+    font-style: italic;
+}
+
+@media print
+{
+    * {-webkit-print-color-adjust:exact;}
+}

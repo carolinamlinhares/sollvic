@@ -406,7 +406,7 @@ function processFormCS() {
     };
 
     var menu_prompt = {
-        title: "Resultado da verificação",
+        title: "Resultado",
         message: "A viga foi aprovada.",
         buttons: {
             cancel: {
@@ -429,7 +429,7 @@ function processFormCS() {
         bootbox.confirm(menu_prompt);
     } else {
         result = "Não OK";
-        menu_prompt.message = "A viga foi reprovada!";
+        menu_prompt.message = "A viga foi reprovada";
         bootbox.confirm(menu_prompt);
     }
 }
