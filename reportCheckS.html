@@ -9,7 +9,7 @@
     <meta name="description" content="Sollvic">
     <meta name="author" content="Carolina Linhares">
 
-    <title>Verificação de Vigas Metálicas</title>
+    <title>Relatório de Verificação de Vigas Metálicas</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -111,95 +111,118 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <div class="clear-nav"></div>
+     <div class="container">
+        <div class="row">
+            <div class="apptitle">
+                <h1 class="titleReport">Relatório de Verificação de Viga Metálica</h1>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div>
-            <table style="width:100%;">
+            <table id="project-info" style="width:55%; height: 308px; float:left;">
                 <tr>
-                    <td>aaa</td>
+                    <td class="tdcell">
+                        <p> Projeto <span class="project"> </span> </p>
+                    </td>
                 </tr>
                 <tr>
-                    <td>aaa</td>
+                    <td class="tdcell">
+                        <p> Viga <span class="beam"> </span></p>
+                    </td>
                 </tr>
                 <tr>
-                    <td>aaa</td>
+                    <td class="tdcell">
+                        <p> Aço <span class="steel"> </span> </p>
+                        <p class="inline"> fy = <span class="fyForm"> </span> MPa </p>
+                        <p class="tab"> fu = <span class="fuForm"> </span> MPa </p>
+                    </td>
                 </tr>
                 <tr>
-                    <td>aaa</td>
+                    <td class="tdcell">
+                        <p> Distância entre travamentos laterais <span class="lbForm"> </span> m </p>
+                    </td>
                 </tr>
                 <tr>
-                    <td>aaa</td>
+                    <td class="tdcell">
+                        <p> Perfil com enrijecedor <span id="enrij"> </span> </p> 
+                        <p class="inline"> Distância entre enrijecedores <span class="a"> </span> m </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdcell">
+                        <p> Esforços </p>
+                        <p class="inline"> Cortante \(V_k\) = <span class="vk"> </span> KN </p>
+                        <p class="tab"> Momento \(M_k\) = <span class="mk"> </span> KN.m </p>    
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdcell">
+                        <p> Coeficientes </p>
+                        <p class="inline"> Gama \({\gamma}\) = <span class="gama"> </span> </p>
+                        <p class="tab"> Gama a1 \({\gamma}_{a1}\) = <span class="gama1"> </span> </p>
+                        <p class="tab"> Cb = <span class="cb"> </span> </p>   
+                    </td>
                 </tr>
             </table>
-            <table class="my-table" style="width: 380px;height: 380px;background: url(../images/Section.jpg) no-repeat;background-size: cover;">
+            <table class="my-table" style="width: 28%; height: 190px;background: url(../images/Section.jpg) no-repeat;background-size: 85% 85%; background-position:25% 20%; float:left;">
                 <tbody>
-                    <tr style="height: 90px;">
+                    <tr style="height: 22%;">
                         <td></td>
-                        <td style="vertical-align: bottom;text-align: right;"> aaa </td>
+                        <td class="tdfig" style="vertical-align: bottom; padding-left:35px; text-align: left;"> 
+                            tf = <span class="tf"> </span> mm
+                        </td>
                     </tr>
                     <tr>
-                        <td style="vertical-align: middle;text-align: center;padding-bottom: 60px;padding-left: 25px;">
-                            TF = 1mm
+                        <td class="tdfig" style="vertical-align: middle;text-align: center; padding-top: 10px; padding-right: 10px">
+                            tw = <span class="tw"> </span> mm
                         </td>
-                        <td style="vertical-align: middle;text-align: center;padding-bottom: 30px;padding-left: 40px;">aaa</td>
+                        <td class="tdfig" style="vertical-align: middle;text-align: left; padding-top: 35px; padding-left:35px">
+                            h = <span class="h"> </span> mm
+                        </td>
                     </tr>
-                    <tr style="height: 60px;">
-                        <td style="width: 320px;padding-left: 60px;vertical-align: middle;text-align: center;">BF = 12,8</td>
+                    <tr style="height: 45%;">
+                        <td class="tdfig" style="width: 70%;padding-left: 65px;vertical-align: middle;text-align: center;padding-top: 30px;">
+                            bf = <span class="bf"> </span> mm    
+                        </td>
                         <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="sectiondata" style="float:left; width: 28%; height:118px; border-top-width: 0px;border-left-width: 0px;">
+                <tbody>
+                    <tr>
+                    <td colspan="3" style="padding-bottom:20px" id="perfilspan"> Perfil <span id="section"> </span> </td>
+                    </tr>
+                    <tr>
+                        <td class="tdfig tdfigcell" style="padding-left: 10px; ">
+                            Massa Linear = <span id="ml"> </span> kg/m <br>
+                            d' = <span class="dl"> </span> mm <br>
+                            Área = <span id="area"> </span> \({cm}^2\) <br>
+                            Ix = <span id="ix"> </span> \({cm}^4\) <br>
+                            Wx = <span class="wx"> </span> \({cm}^3\) 
+                        </td>
+                        <td class="tdfig tdfigcell" style="padding-left: 10px; ">
+                            rx = <span id="rx"> </span> cm <br>
+                            Zx = <span id="zx"> </span> \({cm}^3\) <br>
+                            Iy = <span class="iy"> </span> \({cm}^4\) <br>
+                            Wy = <span id="wy"> </span> \({cm}^3\) <br>
+                            ry = <span class="ry"> </span> cm 
+                        </td>
+                        <td class="tdfig tdfigcell" style="padding-left: 10px;">
+                            Zy = <span id="zy"> </span> \({cm}^3\) <br>
+                            rt = <span id="rt"> </span> cm <br>
+                            It = <span class="it"> </span> \({cm}^4\) <br>
+                            Cw = <span class="cw"> </span> \({cm}^6\) <br>
+                            u = <span id="u"> </span> \({m}^2\)/m 
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
-    <h1> Relatório de Verificação </h1>
-
-    <div>
-        <p> Projeto <span class="project"> </span> </p>
-        <p> Viga <span class="beam"> </span></p>
-        <p> Distância entre travamentos laterais <span class="lbForm"> </span> m </p>
-        <p> Aço <span class="steel"> </span> </p>
-        <p> fy = <span class="fyForm"> </span> MPa </p>
-        <p> fu = <span class="fuForm"> </span> MPa </p>
-        <p> Módulo de elasticidade (E) = <span class="E"> </span> MPa </p>
-        <h4> Esforços </h4>
-        <p> Cortante \(V_k\) = <span class="vk"> </span> KN </p>
-        <p> Momento \(M_k\) = <span class="mk"> </span> KN.m </p>
-        <p> Gama \({\gamma}\) = <span class="gama"> </span> </p>
-        <p> Gama a1 \({\gamma}_{a1}\) = <span class="gama1"> </span> </p>
-        <p> Cb = <span class="cb"> </span> </p>
-        <p> Perfil com enrijecedor <span id="enrij"> </span> </p>
-        <p> Distância entre enrijecedores <span class="a"> </span> m </p>
-    </div>
-
-    <div>
-        <h4> Perfil <span id="section"> </span> </h4>
-        <p> Massa Linear <span id="ml"> </span> kg/m </p>
-        <p> d = <span id="d"> </span> mm </p>
-        <p> bf = <span class="bf"> </span> mm </p>
-        <p> tw = <span class="tw"> </span> mm </p>
-        <p> tf = <span class="tf"> </span> mm </p>
-        <p> h = <span class="h"> </span> mm </p>
-        <p> d' = <span class="dl"> </span> mm </p>
-        <p> Área = <span id="area"> </span> \({cm}^2\) </p>
-        <p> Ix = <span id="ix"> </span> \({cm}^4\) </p>
-        <p> Wx = <span class="wx"> </span> \({cm}^3\) </p>
-        <p> rx = <span id="rx"> </span> cm </p>
-        <p> Zx = <span id="zx"> </span> \({cm}^3\) </p>
-        <p> Iy = <span class="iy"> </span> \({cm}^4\) </p>
-        <p> Wy = <span id="wy"> </span> \({cm}^3\) </p>
-        <p> ry = <span class="ry"> </span> cm </p>
-        <p> Zy = <span id="zy"> </span> \({cm}^3\) </p>
-        <p> rt = <span id="rt"> </span> cm </p>
-        <p> It = <span class="it"> </span> \({cm}^4\) </p>
-        <p> Esbeltez da mesa = <span id="mesa"> </span> </p>
-        <p> Esbeltez da alma = <span id="alma"> </span> </p>
-        <p> Cw = <span class="cw"> </span> \({cm}^6\) </p>
-        <p> u = <span id="u"> </span> \({m}^2\)/m </p>
-
-    </div>
-
+    
     <div class="container">
         <div class="row col-lg-10 text-justify centertable">
             <br> <br> <br>
