@@ -9,6 +9,8 @@ $(function () {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
             var name = $("input#name").val();
+            var course = $("input#course").val();
+            var subject = $("input#subject").val();
             var email = $("input#email").val();
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
@@ -18,15 +20,16 @@ $(function () {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                // Formulario Join Us (contato@sollvic.com)
-                //https://docs.google.com/document/d/1e4jSvu6LjegqKCf5IAXC9fy9-WQtJbi2mbs4f9SgBpE/edit
-                url: "https://docs.google.com/forms/d/176CBydIpBXvcKKZnJTWUuOk9pGADyFP6i2ywS4AVigU/formResponse",
+                //url: "https://docs.google.com/forms/d/176CBydIpBXvcKKZnJTWUuOk9pGADyFP6i2ywS4AVigU/formResponse",
+                url: "https://docs.google.com/forms/d/1FAIpQLSeAn25kS08xmX56GFF5y5WZULn7pPwFkS7tHKGDHBl9YCwbWw/formResponse",
                 type: "POST",
                 data: {
-                    "entry.2022169595": name,
-                    "entry.1268399164": email,
-                    "entry.1688326692": phone,
-                    "entry.739605402": message
+                    "entry.1785861497": name,
+                    "entry.719194490": course,
+                    "entry.1273701555": subject,
+                    "entry.1943849180": email,
+                    "entry.868553239": phone,
+                    "entry.376576089": message
                 },
                 cache: false,
                 success: function() {
