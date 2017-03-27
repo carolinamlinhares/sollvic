@@ -875,8 +875,11 @@ header .header-content {
 }
 
 #retirar {
-    width: 80%;
-    height: 80%;
+    height: auto;
+    width: auto;
+    max-width: 400px;
+    max-height: 250px;
+    margin: auto;
 }
 
 #about {
