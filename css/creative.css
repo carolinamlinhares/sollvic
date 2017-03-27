@@ -1049,3 +1049,7 @@ header .header-content {
         background-color: #dddddd;
     }
 }
+
+li{
+    list-style-type: none;
+}
