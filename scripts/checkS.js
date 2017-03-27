@@ -293,7 +293,7 @@ function processFormCS() {
         bootbox.confirm(menu_prompt);
     } else {
         result = "Não OK";
-        menu_prompt.message = "A viga foi reprovada";
+        menu_prompt.message = "A viga foi reprovada.";
         bootbox.confirm(menu_prompt);
     }
 
