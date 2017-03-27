@@ -419,7 +419,7 @@ function processFormDS() {
         "suggestion": suggestion
     };
 
-    document.getElementById("botaoRelatorio2").href = "reportDS.html?test=" + JSON.stringify(resultado);
+    //document.getElementById("botaoRelatorio2").href = "reportDS.html?test=" + JSON.stringify(resultado);
 
 }
 
