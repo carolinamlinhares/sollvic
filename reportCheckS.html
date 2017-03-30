@@ -226,22 +226,19 @@
     <div class="container">
         <div class="row col-lg-10 text-justify centertable" style="padding-top: 40px;">
             
-            <p> Para a verificação de uma viga metálica deve-se analisar a mesma pelo Estado Limite Último (ELU) e o Estado Limite de Serviço (ELS). O ELU avalia a viga pelos esforço cortante e o momento fletor máximo, enquanto o ELS analisa o deslocamento e a vibração da viga. Este relatório avalia a viga quanto ao Estado Limite Último (ELU) de acordo com a norma brasileira NBR 8800:2008. </p>
-
+            <p> Para a verificação de uma viga metálica deve-se analisar a mesma pelo Estado Limite Último (ELU) e o Estado Limite de Serviço (ELS). O ELU avalia a viga pelos esforço cortante e o momento fletor máximo, enquanto o ELS analisa o deslocamento e a vibração da viga. Este relatório avalia a viga quanto ao Estado Limite Último (ELU) de acordo com a NBR 8800:2008. </p>
+            
             <p class="report-h2"> Estado Limite Último (ELU) </p>
 
-            <p> O cálculo do esforço cortante e o momento fletor resistente da viga são dependentes do parâmetro de esbeltez, dividida em categorias:</p>
+            <p> De acordo com a norma brasileira vigente, as seções das vigas podem ser divididas em três classes conforme a influência da flambagem local sobre os respectivos momentos fletores resistentes. Dependendo do valor do parâmetro de esbeltez \(λ\) dos componentes comprimidos em relação ao parâmetro de esbeltez correspondente à plastificação \(λ_p\) e ao parâmetro de esbeltez correspondente ao início do escoamento \(λ_r\), as seções transversais são classificadas em: <br></p>
 
-            <p> \(λ\) - parâmetro de esbeltez característico; <br> \(λ_p\) - parâmetro de esbeltez correspondente à plastificação; <br> \(λ_r\) - parâmetro de esbeltez correspondente ao início do escoamento. </p>
-
-            <p>Os limites de plastificação e escoamento ditam a situação do perfil perante aos esforços aplicados. Logo, as equações para cálculo do momento resistente são específicas para cada situação. Teremos:</p>
-
-            <p> \(λ\) ≤ \(λ_p\) = Caso 1 <br> \(λ_p\) \(λ\) ≤ \(λ_r\) = Caso 2 <br> \(λ\) > \(λ_r\) = Caso 3 <br>
-            </p>
+            <p> \(λ\) ≤ \(λ_p\) = Caso 1, Seção compacta <br> \(λ_p\) \(λ\) ≤ \(λ_r\) = Caso 2, Seção semicompacta <br> \(λ\) > \(λ_r\) = Caso 3, Seção esbelta <br></p>
+            
+             <p> No projeto no estado limite último de vigas sujeitas à flexão simples calculam-se o momento e o esforço cortante resistentes de projeto para compará-los aos respectivos esforços solicitantes de projeto. As equações utilizadas são determinadas pelo Anexo H da norma e são dependentes da classificação da seçao em cada caso de análise.<br></p>
 
             <p class="report-h3"> I. Esforço Cortante </p>
 
-            <p class="report-h5"> Parâmetro de esbeltez característico (\(λ\)) </p>
+            <p class="report-h5"> Parâmetro de esbeltez (\(λ\)) </p>
 
             <p class="eqcenter"> \(\lambda =\frac{h}{t_w}\) = <span id="lambV"></span> </p>
 
@@ -252,7 +249,7 @@
 
             <p class="eqcenter"> \({\lambda }_p=1,10\sqrt{\frac{k_v\times E}{f_y}}\) = <span id="lambpV"></span> </p>
 
-            <p> Onde: <br><br> \(f_y\) = resistência ao escoamento do aço = <span class="fyForm"> </span> MPa <br> E = módulo de elasticidade do aço = <span class="E"> </span> MPa <br> <!-- \(k_v\) = DESCREVER <br> --> \(k_v\) = 5, para perfis sem enrijecedores ou \(\frac{a}{h}>3\) ou \(\frac{a}{h}>({\frac{260}{{h}/{tw}})}^2\) <br> \(k_v=5+\frac{5}{{({a}/{h})}^2}\), para os demais casos, sendo a distância entre enrijecedores. <br> Neste caso temos, \(k_v\) = <span id="kv"> </span> .
+            <p> Onde: <br><br> \(f_y\) = resistência ao escoamento do aço = <span class="fyForm"> </span> MPa <br> E = módulo de elasticidade do aço = <span class="E"> </span> MPa <br> \(k_v\) = coeficiente de rigidez relacionado ao uso de enricejedores <br> \(k_v\) = 5, para perfis sem enrijecedores ou \(\frac{a}{h}>3\) ou \(\frac{a}{h}>({\frac{260}{{h}/{tw}})}^2\) <br> \(k_v=5+\frac{5}{{({a}/{h})}^2}\), para os demais casos, sendo a distância entre enrijecedores. <br> Neste caso temos, \(k_v\) = <span id="kv"> </span> .
             </p>
 
             <p class="report-h5"> Parâmetro de esbeltez correspondente ao início do escoamento (\(λ_r\)) </p>
@@ -265,11 +262,11 @@
 
             <p class="report-h3"> II. Momento Fletor </p>
 
-            <p> São considerados os casos de Flambagem Local da Alma (FLA), Flambagem Local da Mesa Comprimida (FLM) e Flambagem Lateral com Torção (FLT). O momento fletor resitente é adotado como a resistência mínima entre os três casos.</p>
+            <p> Para o cálculo do momento fletor resistente de cálculo, (\(M_{rd}\), devem ser considerados, os estados-limites últimos de flambagem lateral com torção (FLT), flambagem local da mesa comprimida (FLM) e flambagem local da alma (FLA). A partir dos resultados encontrados para cada situação, é adotado como MRd o menor valor encontrado visando a segurança do projeto.</p>
 
             <p class="report-h4"> a) Flambagem Local da Alma (FLA) </p>
 
-            <p class="report-h5"> Parâmetro de esbeltez característico (\(λ\)) </p>
+            <p class="report-h5"> Parâmetro de esbeltez (\(λ\)) </p>
 
             <p class="eqcenter"> \(\lambda =\frac{d'}{t_w}\) = <span id="lambA"></span> </p>
 
@@ -290,7 +287,7 @@
 
             <p class="report-h4"> b) Flambagem Local da Mesa Comprimida (FLM) </p>
 
-            <p class="report-h5"> Parâmetro de esbeltez característico (\(λ\)) </p>
+            <p class="report-h5"> Parâmetro de esbeltez (\(λ\)) </p>
 
             <p class="eqcenter"> \(\lambda =\frac{b_f}{2t_f}\) = <span id="lambM"></span> </p>
 
@@ -299,7 +296,7 @@
 
             <p class="report-h5"> Parâmetro de esbeltez correspondente à plastificação (\(λ_p\)) </p>
 
-            <p class="eqcenter"> \({\lambda }_p=3,76\sqrt{\frac{E}{f_y}}\) = <span id="lambpM"></span> </p>
+            <p class="eqcenter"> \({\lambda }_p=0,38\sqrt{\frac{E}{f_y}}\) = <span id="lambpM"></span> </p>
 
             <p class="report-h5"> Parâmetro de esbeltez correspondente ao início do escoamento (\(λ_r\)) </p>
 
@@ -314,7 +311,7 @@
 
             <p class="report-h4"> c) Flambagem Lateral com Torção (FLT) </p>
 
-            <p class="report-h5"> Parâmetro de esbeltez característico (\(λ\)) </p>
+            <p class="report-h5"> Parâmetro de esbeltez (\(λ\)) </p>
 
             <p class="eqcenter"> \(\lambda =\frac{L_b}{r_y}\) = <span id="lambT"></span> </p>
 
@@ -329,7 +326,7 @@
 
             <p class="eqcenter"> \({\lambda }_r=\frac{1,38\sqrt{I_YJ}}{r_yJ{\beta }_1}\times \sqrt{1+\sqrt{1+\frac{27C_w{{\beta }_1}^2}{I_y}}}\) = <span id="lambrT"></span> </p>
 
-            <p> Onde: <br><br> \({\beta }_1=\ \frac{\left(f_y-\ {\sigma }_r\right)\ \times \ W_x\ }{E\ \times \ J}\) = <span id="beta1"> </span> <br> Sendo: <br> \(C_w\) = constante do empenamento da seção transversal; valor retirado das especificações do perfil = <span class="cw"></span> ;<br> \(I_y\) = momento de inércia da seção em relação ao eixo que passa pelo plano médio da alma; valor retirado das especificações do perfil = <span class="iy"></span> \({cm}^4\);<br> \(J\) = constante de torção da seção transversal; valor retirado das especificações do perfil = <span class="it"></span> \({cm}^4\);<br> \(W_x\) = módulo de resistência (mínimo) elástico da seção, relativo ao eixo de flexão, no caso o eixo x; valor retirado das especificações do perfil = <span class="wx"></span> \({cm}^3\).<br>
+            <p> Onde: <br><br> \({\beta }_1=\ \frac{\left(f_y-\ {\sigma }_r\right)\ \times \ W\ }{E\ \times \ J}\) = <span id="beta1"> </span> <br> Sendo: <br> \(C_w\) = constante do empenamento da seção transversal; valor retirado das especificações do perfil = <span class="cw"></span> ;<br> \(I_y\) = momento de inércia da seção em relação ao eixo que passa pelo plano médio da alma; valor retirado das especificações do perfil = <span class="iy"></span> \({cm}^4\);<br> \(J\) = constante de torção da seção transversal; valor retirado das especificações do perfil = <span class="it"></span> \({cm}^4\);<br> \(W\) = módulo de resistência (mínimo) elástico da seção, relativo ao eixo de flexão, no caso o eixo x; valor retirado das especificações do perfil = <span class="wx"></span> \({cm}^3\).<br>
 
             </p>
 
