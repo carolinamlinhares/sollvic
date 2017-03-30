@@ -50,7 +50,7 @@ resultado.mrdOut = Number (resultado.mrdOut);
 
 $(document).ready(function() {
     // Building variable texts
-    textV1 = "<p> Como " + resultado.lambV + " ≤ " + resultado.lambpV + ", " + "\\(λ\\) ≤ \\(λ_p\\)" + ", o esforço cortante resistente é dado por: <br>" + "<span class='eqcenter'> \\(V_{Rd}=\\frac{V_{pl}}{{\\gamma }_{a1}}\\) = " + resultado.vrd + " kN </span> </p>" + "<p> Sendo: <br> \\(V_{pl}=0,5\\times A_w\\times f_y\\) = " + resultado.vpl + "kN <br> \\(A_w\\) = área da alma = \\(d\\times t_w\\) = " + resultado.aw + "\\({cm}^2\\) </p>";
+    textV1 = "<p> Como " + resultado.lambV + " ≤ " + resultado.lambpV + ", " + "\\(λ\\) ≤ \\(λ_p\\)" + ", o esforço cortante resistente é dado por: <br><br>" + "<span class='eqcenter'> \\(V_{Rd}=\\frac{V_{pl}}{{\\gamma }_{a1}}\\) = " + resultado.vrd + " kN </span> </p>" + "<p> Sendo: <br> \\(V_{pl}=0,5\\times A_w\\times f_y\\) = " + resultado.vpl + "kN <br> \\(A_w\\) = área da alma = \\(d\\times t_w\\) = " + resultado.aw + "\\({cm}^2\\) </p>";
     MathJax.Hub.Queue(["Typeset", MathJax.Hub, textV1]);
 
     textV2 = "<p> Como " + resultado.lambpV + " < " + resultado.lambV + " ≤ " + resultado.lambrV + ",  \\(λ_p\\) < \\(λ\\) ≤ \\(λ_r\\), o esforço cortante resistente é dado por: <br>" + "<span class='eqcenter'> \\[V_{Rd}=\\frac{{\\lambda }_p}{\\lambda }\\times \\frac{V_{pl}}{{\\gamma }_{a1}}\\]  = " + resultado.vrd + " kN </span> </p>" + "<p> Sendo: <br> \\(V_{pl}=0,5\\times A_w\\times f_y\\) = " + resultado.vpl + "kN <br> \\(A_w\\) = área da alma = \\(d\\times t_w\\) = " + resultado.aw + "\\({cm}^2\\) </p>";
