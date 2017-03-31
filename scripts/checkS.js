@@ -58,12 +58,14 @@ function processFormCS() {
         console.log("Por favor preencha o campo Cortante.");
         return false;
     }
+    
     mk = Number(document.formCS.mCS.value);
     if (document.formCS.mCS.value === "" || isNaN(mk)) {
         bootbox.alert("Por favor preencha o campo Momento com números.");
         console.log("Por favor preencha o campo Momento.");
         return false;
     }
+    
     lbForm = Number(document.formCS.lbCS.value);
     if (document.formCS.lbCS.value === "" || isNaN(lbForm)) {
         bootbox.alert("Por favor preencha o campo Distância entre travamentos laterais com números.");
