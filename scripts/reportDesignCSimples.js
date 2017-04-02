@@ -76,6 +76,7 @@ $(document).ready(function() {
     $("#dominio").html(resultado.dominio);
     $("#ln").html(resultado.ln);
     $(".asNec").html(resultado.asNec);
+    $(".resultArmPele").html(resultado.resultArmPele);
     
     
     //Arranjos Table
