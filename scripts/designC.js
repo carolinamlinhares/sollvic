@@ -272,7 +272,6 @@ function processFormD() {
 
     //CÁLCULO DO MOMENTO FLETOR MAJORADO
     md = mk * gamaf;
-    md = Number(md.toFixed(2));
 
     //CÁLCULO DA ALTURA ÚTIL (d)
     d = h - dl;
@@ -358,7 +357,7 @@ function processFormD() {
     } else {*/
 
     if (situationD === "Aprovado" && situationLN === "Aprovada") {
-        situationS = "Simples";
+        situationS = "Simplesmente Armada";
         as = md / (tsd * (d - 0.4 * x));
 
         //CÁLCULO DA ARMADURA MÍNIMA DE TRAÇÃO
@@ -375,7 +374,7 @@ function processFormD() {
         alert(resultP);*/
 
     } else {
-        situationS = "Dupla";
+        situationS = "Duplamente Armada";
 
         //Cálculo da nova posição da LN
         xd = 0.45 * d;
@@ -415,8 +414,8 @@ function processFormD() {
         }
 
         //Resultados
-        /* resultP = "A viga deve ser duplamente armada: Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
-        alert(resultP);*/
+        resultP = "A viga deve ser duplamente armada: Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
+        alert(resultP);
 
     }
 
@@ -428,14 +427,14 @@ function processFormD() {
     asNec = md / (tsd * (d - 0.4 * x));
     ac = bw * h;
 
-    if (situationS === "Simples") {
+    if (situationS === "Simplesmente Armada") {
         txCalc = (as / ac) * 100;
         if ((txCalc >= 0.15) && (txCalc <= 4.0)) {
             resultTx = "OK";
         } else {
             resultTx = "Taxa Simples Reprovada.";
         }
-    } else if (situationS === "Dupla") {
+    } else if (situationS === "Duplamente Armada") {
         txCalcT = (ast / ac) * 100;
         txCalcC = (asl / ac) * 100;
         txCalc = txCalcT + txCalcC;
@@ -449,7 +448,7 @@ function processFormD() {
 
     //Arranjos
     switch (situationS) {
-        case "Simples":
+        case "Simplesmente Armada":
             for (i = 0; i < bitola.length; i += 1) {
                 nBarras = Math.ceil((as - 0.05 * as) / (bitola[i].area)); //Incluindo 5% de tolerância
                 console.log("Montagem dos arranjos " + i + "bitola " + bitola[i].diametro);
@@ -530,6 +529,8 @@ function processFormD() {
             x = Number(x.toFixed(2));
             ln = Number(ln.toFixed(2));
             asNec = Number(asNec.toFixed(2));
+            md = Number(md.toFixed(2));
+            
                 
                 arranjos.push({
                     "bitola": bitola[i].diametro,
@@ -547,12 +548,17 @@ function processFormD() {
     arranjos.sort(function (a, b) {
         return a.bitola - b.bitola;
     });
+            
+        if (arranjos.length === 0) {
+        alert("Ops! Nenhum arranjo satisfaz condições adequadas para a viga.");
+        return;
+    }
 
     result = "Pode ser usada armadura com " + arranjos[0].qtd + "Ø" + arranjos[0].bitola + " em " + arranjos[0].ncam + " camadas. Confira relatório para os detalhes do dimensionamento e outras opções de armaduras.";
     //alert(result);
     break;
 
-    case "Dupla":
+    case "Duplamente Armada":
         for (i = 0; i < bitola.length; i += 1) {
             //diamLongT = bitola[i].diametro;    Precisa definir, sendo que comprimida e tracionada podem ser diferentes!!!
             //diamLongC = bitola[i].diametro;
@@ -608,12 +614,14 @@ function processFormD() {
 
 if (h > 60) {
     armPele = 0.001 * bw * h;
-    resultArmPele = "É necessário utilizar armadura de pele com " + armPele + "cm² por face";
+    armPele = Number(armPele.toFixed(2));
+    resultArmPele = armPele;
+    //resultArmPele = "É necessário utilizar armadura de pele com " + armPele + "cm² por face";
 } else {
     resultArmPele = "Não é necessário utilizar armadura de pele";
 }
-if (resultArmPele === "É necessário utilizar armadura de pele com " + armPele + "cm² por face") {  alert(resultArmPele);
-}
+//if (resultArmPele === "É necessário utilizar armadura de pele com " + armPele + " cm² por face") {  alert(resultArmPele);
+//}
 
 
 
@@ -664,6 +672,7 @@ var menu_prompt = {
         "gamas": gamas,
         "ac": ac,
         "situationS": situationS,
+        "resultArmPele": resultArmPele,
         "md": md,
         "x": x,
         "dominio": dominio,
