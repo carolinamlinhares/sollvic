@@ -499,13 +499,13 @@ function processFormD() {
                     nCamadas = 1;
                     situationCam = "aprovado";
                 }
-                console.log("Essa bitola cabe em " + nCamadas + " camadas")
+                console.log("Essa bitola cabe em " + nCamadas + " camadas");
 
             //Verificação do espaçamento vertical mínimo
 
             av = h - x - cob - diamEst;
             
-            if (nCamadas > 1){
+            if (nCamadas > 1) {
                 if ((avMin <= ((av - (nCamadas * bitola[i].diametroCM)) / (nCamadas - 1)))) {
                     conditionAv = "av OK";
                 } else {
@@ -640,7 +640,9 @@ var menu_prompt = {
         "h": h,
         "bw": bw,
         "concrete": concrete,
+        "steel": steel,
         "diamEstForm": diamEstForm,
+        "d": d,
         "dl": dl,
         "dlc": dlc,
         "cob": cob,
@@ -649,11 +651,8 @@ var menu_prompt = {
         "gamac": gamac,
         "gamaf": gamaf,
         "gamas": gamas,
-        "cb": cb,
-        "priority": priority,
-        "vsd": vsd,
-        "msd": msd,
-        "suggestion": suggestion
+        "ac": ac,
+
     };
 
     //document.getElementById("botaoRelatorio2").href = "reportDS.html?test=" + JSON.stringify(resultado);
