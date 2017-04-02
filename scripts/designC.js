@@ -3,7 +3,7 @@
 
 // variables
 var project, beam, mk, concrete, steel, estribo, bitola;
-var tsd, as, bw, bwMin, bwMinNovo, bwMinAbs, fcd;
+var tsd, as, bw, bwMin, bwMinNovo, bwMinAbs, hMinAbs, fcd;
 var betax23, betax34, epc, eps, epyd, fyd, Es, fck, fyk, fckForm, fykForm;
 var d, h, cob, diamAgreg, agreg, diamEstForm, diamEst, diamAgregForm, diamLong, diamLongT, diamLongC;
 var a, b, c, delta, deltaR, x1, x2;
