@@ -272,7 +272,8 @@ function processFormD() {
 
     //CÁLCULO DO MOMENTO FLETOR MAJORADO
     md = mk * gamaf;
-
+    md = Number(md.toFixed(2));
+    
     //CÁLCULO DA ALTURA ÚTIL (d)
     d = h - dl;
 
