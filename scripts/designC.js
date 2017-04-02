@@ -3,7 +3,7 @@
 
 // variables
 var project, beam, mk, concrete, steel, estribo, bitola;
-var tsd, as, bw, bwMin, bwMinNovo, bwMinAbs, hMinAbs, fcd;
+var tsd, as, asNec, bw, bwMin, bwMinNovo, bwMinAbs, hMinAbs, fcd;
 var betax23, betax34, epc, eps, epyd, fyd, Es, fck, fyk, fckForm, fykForm;
 var d, h, cob, diamAgreg, agreg, diamEstForm, diamEst, diamAgregForm, diamLong, diamLongT, diamLongC;
 var a, b, c, delta, deltaR, x1, x2;
@@ -424,6 +424,7 @@ function processFormD() {
     //} //NOVO
 
     //CÁLCULO DA TAXA DE ARMADURA
+    asNec = md / (tsd * (d - 0.4 * x));
     ac = bw * h;
 
     if (situationS === "Simples") {
@@ -522,6 +523,13 @@ function processFormD() {
             }
 
             if ((conditionTxFinal === "OK") && (conditionAv === "av OK")) {
+                
+            asSugg = Number(asSugg.toFixed(2));
+            txCalcSugg = Number(txCalcSugg.toFixed(2));
+            x = Number(x.toFixed(2));
+            ln = Number(ln.toFixed(2));
+            asNec = Number(asNec.toFixed(2));
+                
                 arranjos.push({
                     "bitola": bitola[i].diametro,
                     "area": bitola[i].area,
@@ -660,6 +668,7 @@ var menu_prompt = {
         "dominio": dominio,
         "ln": ln,
         "as": as,
+        "asNec": asNec,
         "arranjos": arranjos,
         "qtd": nBarras,
         "ncam": nCamadas,
