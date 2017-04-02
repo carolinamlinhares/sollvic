@@ -248,7 +248,7 @@ function processFormD() {
         return false;
     }
     
-    //Bw Min
+    //h Min
     hMinAbs = 25;
     if (h < hMinAbs) {
         alert("A altura mínima indicada é de 25cm. Por favor, aumente sua altura.");
