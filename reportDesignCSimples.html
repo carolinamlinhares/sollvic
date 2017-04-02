@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sollvic">
+    <meta name="author" content="Carolina Linhares">
+
+    <title>Relatório de Dimensionamento</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/creative.css" rel="stylesheet">
+
+    <!-- Simple Sidebar -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="wrapper">
+    <div id="top-page"></div>
+    <div id="sidebar-wrapper" class="sidebar-menu">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand side-title">
+                <a>
+                    Nossas Ferramentas
+                </a>
+            </li>
+            <li>
+                <span class="submenu-title"> Estruturas Metálicas </span>
+                <ul>
+                    <li>
+                        <a href="checkS.html"> Verificação de Vigas </a>
+                    </li>
+                    <li>
+                        <a href="designS.html"> Dimensionamento de Vigas </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="submenu-title"> Estruturas em Concreto Armado </span>
+                <ul>
+                    <li>
+                        <a href="checkCS.html"> Verificação de Vigas Simplesmente Armadas </a>
+                    </li>
+                    <li>
+                        <a href="checkCD.html"> Verificação de Vigas Duplamente Armadas </a>
+                    </li>
+                    <li>
+                        <a href="designC.html"> Dimensionamento de Vigas </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top top-menu generalNav">
+        <div class="sidebar-logo container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+
+                <a href="#menu-toggle" class="navbar-brand page-scroll menu-sidebar-open" id="menu-toggle"><i class="fa fa-bars" style="padding: 0 3px 0 2px"></i></a>
+
+                <a class="navbar-brand page-scroll sollvic-home" href="index.html">
+                    <img class="nav-logo img-responsive" src=images/blank.png alt="Sollvic Logo">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="aboutUs.html">Quem Somos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="support.html">Apoio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="joinUs.html">Participe</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="contact.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+     <div class="container">
+        <div class="row">
+            <div class="apptitle">
+                <h1 class="titleReport">Relatório de Dimensionamento de Viga em Concreto Armado</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div>
+            <!-- Table referring to project info -->
+            <table id="project-info" style="width:55%; height: 308px; float:left;">
+                <tr>
+                    <td class="tdcell">
+                        <p> Projeto <span class="project"> </span> </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdcell">
+                        <p> Viga <span class="beam"> </span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdcell">
+                        <p> Altura: <span class="h"> </span> Largura: <span class="bw"> </span> </p>
+                        <p class="inline"> Concreto = <span class="concrete"> </span> MPa Aço = <span class="steel"> </span> MPa </p>
+                        <p class="tab"> Estribo = <span class="diamEstForm"> </span> mm </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdcell">
+                        <p> Distância da borda tracionada ao CG da armadura tracionada (d'): <span class="dl"> </span> cm </p>
+                        <p> Distância da borda comprimida ao CG da borda comprimida (d'c): <span class="dlc"> </span> cm </p>
+                        <p> Cobrimento: <span class="cob"> </span> cm </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdcell">
+                        <p> Agregado Graúdo: <span class="agreg"> </span> </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdcell">
+                        <p> Momento Fletor \(M_k\) = <span class="mk"> </span> kN.cm </p>    
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdcell">
+                        <p> Coeficientes </p>
+                        <p class="inline"> \({\gamma}_{c}\) = <span class="gamac"> </span> </p>
+                        <p class="tab"> \({\gamma}_{f}\) = <span class="gamaf"> </span> </p>
+                        <p class="tab"> \({\gamma}_{s}\) = <span class="gamas"> </span> </p>   
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- Table referring to image -->
+            <table class="my-table" style="width: 28%; height: 202px;background: url(../images/Section.jpg) no-repeat;background-size: 85% 85% !important; background-position:25% 20%; float:left;">
+                <!--<tbody>
+                    <tr style="height: 22%;">
+                        <td></td>
+                        <td class="tdfig" style="vertical-align: bottom; padding-left:30px; text-align: left;"> 
+                            d'c = <span class="dlc"> </span> cm
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdfig" style="vertical-align: middle;text-align: center; padding-top: 10px; padding-right: 10px">
+                            ΦEst = <span class="diamEstForm"> </span> mm
+                        </td>
+                        <td class="tdfig" style="vertical-align: middle;text-align: left; padding-top: 35px; padding-left:30px">
+                            h = <span class="h"> </span> cm
+                        </td>
+                    </tr>
+                    <tr style="height: 45%;">
+                        <td class="tdfig" style="width: 70%;padding-left: 65px;vertical-align: middle;text-align: center;padding-top: 30px;">
+                            cob = <span class="cob"> </span> cm    
+                        </td>
+                        <td class="tdfig" style="width: 70%;padding-left: 65px;vertical-align: middle;text-align: center;padding-top: 30px;">
+                            bw = <span class="bw"> </span> cm    
+                        </td>
+                        <td class="tdfig" style="width: 70%;padding-left: 65px;vertical-align: middle;text-align: center;padding-top: 30px;"> 
+                            d' = <span class="dl"> </span> cm
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>-->
+            </table>
+            
+            <!-- Table referring to internal section data -->
+            
+            <table class="sectiondata" style="float:left; width: 28%; height:119px; border-top-width: 0px;border-left-width: 0px;">
+                <tbody>
+                    <tr>
+                    <td colspan="3" style="padding-bottom:20px" id="perfilspan"> Seção <span id="section"> </span> </td>
+                    </tr>
+                    <tr>
+                        <td class="tdfig tdfigcell" style="padding-left: 10px; ">
+                            Altura (h) = <span id="h"> </span> cm <br>
+                            Base (bw) = <span id="bw"> </span> cm <br>
+                            Cobrimento (cob) = <span id="cob"> </span> cm <br>
+                            Altura útil (d) = <span id="d"> </span> cm <br>
+                        </td>
+                        <td class="tdfig tdfigcell" style="padding-left: 10px; ">
+                            Bitola Estribo (Φest) = <span id="diamEstForm"> </span> mm <br>
+                            d' = <span class="dl"> </span> cm <br>
+                            d'c = <span class="dlc"> </span> cm <br>
+                            Área da Seção= <span id="ac"> </span> \({cm}^2\) <br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row col-lg-10 text-justify centertable" style="padding-top: 40px;">
+            
+            <p> “Vigas são definidas como elementos lineares em que a flexão é preponderante.” </p>
+            <p> O dimensionamento da viga <span class="beam"> </span> foi realizado de forma à atender ao Estado Limite Último (ELU) da viga submetida à flexão de acordo com a norma brasileira NBR 6118:2014. A viga foi avaliada pelo momento fletor máximo resistente, face às condições solicitantes. </p>
+        
+            <!--<p> Os esforços atuante \(M_k\) foi majorado pelo coeficiente \({\gamma}_{f}\), resultando no esforço solicitante apresentado a seguir. </p>-->
+            <p> As etapas de cálculo são apresentadas a seguir: </p>
+            
+            <table class="reportable">
+                <tr>
+                    <th> Tipo de Viga </th>
+                    <td> <span id="situationS"> </span> </td>
+                </tr>
+                <tr>
+                    <th> Momento Fletor Majorado \(M_{sd}\) </th>
+                    <td> <span id="md"> </span> kN.cm </td>
+                </tr>
+                <tr>
+                    <th> Altura Útil \({(d)}\) </th>
+                    <td> <span id="d"> </span> cm </td>
+                </tr>
+                <tr>
+                    <th> Posição da Linha Neutra \({(x)}\) </th>
+                    <td> <span id="x"> </span> cm </td>
+                </tr>
+                <tr>
+                    <th> Domínio de Deformação </th>
+                    <td> <span id="situationD"> </span> </td>
+                </tr>
+                <tr>
+                    <th> Relação \({(x/d)}\) </th>
+                    <td> <span id="ln"> </span> </td>
+                </tr>
+                <tr>
+                    <th> Área de Aço Necessária \(A_{s}\) </th>
+                    <td> <span id="as"> </span> cm² </td>
+                </tr>
+             </table>
+            
+            <p> São listadas na tabela abaixo sugestões de arranjos que atendem aos requisitos da viga dimensionada. é importante lembrar que o dimensionamento da seção fornece a quantidade de aço necessária para suportar ao momento fletor. Outras interferências, no entanto, devem ser consideradas, como a solicitação do esforço cortante, flechas, fluência, ou qualquer outro fator que tenha influência no aspecto da segurança da estrutura. </p>
+            
+            <div class="reportable row col-lg-10" style="padding 0" id="suggestion_table">
+            </div>
+            
+
+            <br>
+    
+            <p id="disclaimer"> * Ao utilizar o Sollvic, o usuário é responsável por toda ou qualquer conclusão feita com o uso do programa. Nem o autor, nem qualquer outra Instituição ou Empresa relacionada são responsáveis pelo uso ou mau uso do programa e de seus resultados. O relatório não tem nenhum dever legal ou responsabilidade para com qualquer pessoa ou companhia pelos danos causados direta ou indiretamente resultantes do uso de alguma informação ou do uso do programa aqui disponibilizado. Não existe nenhum compromisso de bom funcionamento ou qualquer garantia.</p>
+        </div>
+    </div>
+
+    <footer>® Sollvic 2017</footer>
+</body>
+
+<!-- jQuery -->
+<script src="vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="js/creative.min.js"></script>
+
+<!-- Enable Sidebar Menu -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#menu-toggle").toggleClass("toggled");
+        $("#wrapper").toggleClass("toggled");
+    });
+
+</script>
+
+<!-- BootBox Modal Library -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ menuSettings:{ inTabOrder:false } });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<!-- Page Code -->
+<!-- ==================================================================================================================== -->
+<script type="text/javascript" src="scripts/reportDesignCSimples.js"></script>
+<!-- ==================================================================================================================== -->
+
+</html>
