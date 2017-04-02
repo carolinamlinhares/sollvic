@@ -17,6 +17,7 @@ var ac, av, avMin, ah, ahMin, ahT, ahC, ahSugg, ahSuggT, ahSuggC, sPele, resultP
 var nBarras, nBarrasNovo, nBarrasC, nBarrasT, nBarrasPele, nCamadas, iCamadas, nBmax, nCam1, nCam2, nCam3, nCam4;
 var asSugg, asSuggC, asSuggT, avSugg, ahSugg, txCalcSugg, txCalcTSugg, txCalcCSugg, condition, situationCam;
 var arranjos = [];
+var resultado = [];
 
 var bitola = [
     {
@@ -170,6 +171,7 @@ function processFormD() {
 
     /* Clean suggestion array */
     arranjos = [];
+    resultado = [];
 
     // Getting values from HTML form inputs
     project = document.formD.projectD.value;
@@ -538,7 +540,7 @@ function processFormD() {
     });
 
     result = "Pode ser usada armadura com " + arranjos[0].qtd + "Ø" + arranjos[0].bitola + " em " + arranjos[0].ncam + " camadas. Confira relatório para os detalhes do dimensionamento e outras opções de armaduras.";
-    alert(result);
+    //alert(result);
     break;
 
     case "Dupla":
@@ -590,7 +592,7 @@ function processFormD() {
             }
         }
         result = "Pode ser usada armadura com " + arranjos[0].qtdC + "Ø" + arranjos[0].bitola + " para a armadura comprimida. E " + arranjos[0].qtdT + "Ø" + arranjos[0].bitola + " para a armadura tracionada. Confira relatório para os detalhes do dimensionamento e outras opções de armaduras.";
-        alert(result);
+        //alert(result);
         break;
 }
 
@@ -604,7 +606,7 @@ if (h > 60) {
 if (resultArmPele === "É necessário utilizar armadura de pele com " + armPele + "cm² por face") {  alert(resultArmPele);
 }
 
-}
+
 
 
 /*  
@@ -652,10 +654,19 @@ var menu_prompt = {
         "gamaf": gamaf,
         "gamas": gamas,
         "ac": ac,
+        "arranjos": arranjos,
+        "qtd": nBarras,
+        "ncam": nCamadas,
+        "as": asSugg,
+        "taxa": txCalcSugg,
+        "ah": ahSugg,
+        "av": avSugg
+        
+    };    
 
-    };
+}
 
-    //document.getElementById("botaoRelatorio2").href = "reportDS.html?test=" + JSON.stringify(resultado);
+//document.getElementById("botaoRelatorio2").href = "reportDS.html?test=" + JSON.stringify(resultado);
 
 /*
     Cria um objeto bitola
@@ -726,3 +737,5 @@ function criarAgreg(nomeAgreg, linhaAgreg) {
 for (i = 0; i < agregProp.length; i += 1) {
     agregLista.appendChild(criarAgreg(agregProp[i].agregType, i));
 }
+
+
