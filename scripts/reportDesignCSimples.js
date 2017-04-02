@@ -36,7 +36,7 @@ resultado = JSON.parse(getJsonFromUrl().test);
 
 var i = 0;
 var tableHeader1 = '<tr><th> Arranjos </th></tr>';
-var tableHeader = '<tr><th> Nº de Barras </th> <th> Φ Bitola (mm) </th> <th> Área de Aço \\(A_{s calc}\\) (cm²) </th> <th> Taxa de Armadura </th> <th> Espaçamento horizontal </th> <th> Espaçamento vertical </th> </tr>';
+var tableHeader = '<tr><th> Nº de Barras </th> <th> Φ Bitola (mm) </th> <th> Área de Aço \\(A_{sCalc}\\) (cm²) </th> <th> Taxa de Armadura </th> <th> Espaçamento horizontal </th> <th> Espaçamento vertical </th> </tr>';
 MathJax.Hub.Queue(["Typeset", MathJax.Hub, tableHeader]);
 
 $(document).ready(function() {
@@ -65,9 +65,20 @@ $(document).ready(function() {
     $("#d").html(resultado.d);
     $("#diamEstForm").html(resultado.diamEstForm);
     $(".dl").html(resultado.dl);
-    $(".dlc").html(resultado.dlc;
-    $("#ac").html(ac);
+    $(".dlc").html(resultado.dlc);
+    $("#ac").html(resultado.ac);
     
+    
+    // Resultados
+    $("#situationS").html(resultado.situationS);
+    $("#md").html(resultado.md);
+    $("#d").html(resultado.d);
+    $("#x").html(resultado.x);
+    $("dominio").html(resultado.dominio);
+    $("ln").html(resultado.ln);
+    $("#as").html(resultado.as);
+    
+        
     // SD
     $("#md").html(resultado.md);
     
@@ -76,7 +87,7 @@ $(document).ready(function() {
     $('#suggestion_table').append('<table style="width: 100%"></table>');
     var table = $('#suggestion_table').children();
     table.append(tableHeader);
-    for (i = 0; i <= resultado.arranjos.length; i += 1) {
+    for (i = 0; i <= arranjos.length; i += 1) {
         table.append('<tr><td>' +  resultado.arranjos[i].qtd + '</td>' + '<td>' +  resultado.arranjos[i].bitola + '</td>' + '<td>' +  resultado.arranjos[i].as + '</td>' + '<td>' +  resultado.arranjos[i].taxa + '</td>' + '<td>' +  resultado.arranjos[i].ah + '</td>' + '<td>' +  resultado.arranjos[i].av + '</td>' + '</tr>');
     }
 
