@@ -35,7 +35,7 @@ resultado = JSON.parse(getJsonFromUrl().test);
 //End of parsing results
 
 var i = 0;
-var tableHeader = '<tr><th> Nº de Barras </th> <th> Φ Bitola (mm) </th> <th> Área de Aço \\(A_{sCalc}\\) (cm²) </th> <th> Taxa de Armadura (%) </th> <th> Espaçamento horizontal mínimo (cm) </th> <th> Espaçamento vertical mínimo (cm) </th> </tr>';
+var tableHeader = '<tr><th> Nº de Barras </th> <th> Φ Bitola (mm) </th> <th> Nº de Camadas Sugerido </th> <th> Área de Aço \\(A_{sCalc}\\) (cm²) </th> <th> Taxa de Armadura (%) </th> <th> Espaçamento horizontal mínimo (cm) </th> <th> Espaçamento vertical mínimo (cm) </th> </tr>';
 MathJax.Hub.Queue(["Typeset", MathJax.Hub, tableHeader]);
 
 $(document).ready(function() {
@@ -71,11 +71,11 @@ $(document).ready(function() {
     // Resultados
     $("#situationS").html(resultado.situationS);
     $("#md").html(resultado.md);
-    $("#d").html(resultado.d);
+    $(".d").html(resultado.d);
     $("#x").html(resultado.x);
     $("#dominio").html(resultado.dominio);
     $("#ln").html(resultado.ln);
-    $("#as").html(resultado.as);
+    $(".asNec").html(resultado.asNec);
     
     
     //Arranjos Table
@@ -84,7 +84,7 @@ $(document).ready(function() {
     var table = $('#suggestion_table').children();
     table.append(tableHeader);
     for (i = 0; i <= resultado.arranjos.length; i += 1) {
-        table.append('<tr><td>' +  resultado.arranjos[i].qtd + '</td>' + '<td>' +  resultado.arranjos[i].bitola + '</td>' + '<td>' +  resultado.arranjos[i].as + '</td>' + '<td>' +  resultado.arranjos[i].taxa + '</td>' + '<td>' +  resultado.arranjos[i].ah + '</td>' + '<td>' +  resultado.arranjos[i].av + '</td>' + '</tr>');
+        table.append('<tr><td>' +  resultado.arranjos[i].qtd + '</td>' + '<td>' +  resultado.arranjos[i].bitola + '</td>' +'<td>' +  resultado.arranjos[i].ncam + '</td>' + '<td>' +  resultado.arranjos[i].as + '</td>' + '<td>' +  resultado.arranjos[i].taxa + '</td>' + '<td>' +  resultado.arranjos[i].ah + '</td>' + '<td>' +  resultado.arranjos[i].av + '</td>' + '</tr>');
     }
     
     
