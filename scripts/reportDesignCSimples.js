@@ -59,14 +59,14 @@ $(document).ready(function() {
 
     
     // Section
-    $("#h").html(resultado.suggestion[0].perfil.h);
-    $("#bw").html(resultado.suggestion[0].perfil.dl);
-    $("#cob").html(resultado.suggestion[0].perfil.area);
-    $("#d").html(resultado.suggestion[0].perfil.ix);
-    $("#diamEstForm").html(resultado.suggestion[0].perfil.wx);
-    $(".dl").html(resultado.suggestion[0].perfil.rx);
-    $(".dlc").html(resultado.suggestion[0].perfil.zx);
-    $("#ac").html(resultado.suggestion[0].perfil.iy);
+    $("#h").html(resultado.h);
+    $("#bw").html(resultado.bw);
+    $("#cob").html(resultado.cob);
+    $("#d").html(resultado.d);
+    $("#diamEstForm").html(resultado.diamEstForm);
+    $(".dl").html(resultado.dl);
+    $(".dlc").html(resultado.dlc;
+    $("#ac").html(ac);
     
     // SD
     $("#md").html(resultado.md);
