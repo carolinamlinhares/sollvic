@@ -247,6 +247,13 @@ function processFormD() {
         alert("A viga requer base mínima de 12cm. Por favor, aumente sua base.");
         return false;
     }
+    
+    //Bw Min
+    hMinAbs = 25;
+    if (h < hMinAbs) {
+        alert("A altura mínima indicada é de 25cm. Por favor, aumente sua altura.");
+        return false;
+    }
 
     // Converting Units 
     fyk = fykForm / 10;
