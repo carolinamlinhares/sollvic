@@ -8,7 +8,7 @@ var betax23, betax34, epc, eps, epyd, fyd, Es, fck, fyk, fckForm, fykForm;
 var d, h, cob, diamAgreg, agreg, diamEstForm, diamEst, diamAgregForm, diamLong, diamLongT, diamLongC;
 var a, b, c, delta, deltaR, x1, x2;
 var x, mk, md;
-var x2lim, x3lim, dominio, dl;
+var x2lim, x3lim, dominio, dl, ln;
 var gamac, gamaf, gamas, s;
 var situationD, situationLN;
 var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, ast, situationS, result;
@@ -338,7 +338,8 @@ function processFormD() {
     console.log("situationD = " + situationD);
 
     //VERIFICAÇÃO DA RELAÇÃO x/d
-
+    ln = x / d;
+    
     if (x / d <= 0.45) {
         situationLN = "Aprovada";
     } else {
@@ -367,8 +368,8 @@ function processFormD() {
         if (as < astMin) {
             as = astMin;
         }
-        resultP = "A viga pode ser simplesmente armada: Área de aço = " + as + "cm²";
-        alert(resultP);
+        /*resultP = "A viga pode ser simplesmente armada: Área de aço = " + as + "cm²";
+        alert(resultP);*/
 
     } else {
         situationS = "Dupla";
@@ -411,8 +412,8 @@ function processFormD() {
         }
 
         //Resultados
-        resultP = "A viga deve ser duplamente armada: Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
-        alert(resultP);
+        /* resultP = "A viga deve ser duplamente armada: Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
+        alert(resultP);*/
 
     }
 
@@ -609,6 +610,53 @@ if (resultArmPele === "É necessário utilizar armadura de pele com " + armPele 
 /*  
    CRIACAO DE VARIAVEL PARA MANDAR VIA URL PARA RELATORIO
  */
+
+var menu_prompt = {
+        title: "Resultado",
+        message: "Pode ser usada armadura com " + arranjos[0].qtd + "Ø" + arranjos[0].bitola + " em " + arranjos[0].ncam + " camadas. Confira relatório para os detalhes do dimensionamento e outras opções de armadura.",
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> Voltar'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Mostrar relatório'
+            }
+        },
+        callback: function (result) {
+            if (result) {
+                location.href = "reportDesignCSimples.html?test=" + JSON.stringify(resultado);
+            }
+        }
+    };
+    
+    bootbox.confirm(menu_prompt);
+    
+
+    // Report Array
+
+    resultado = {
+        "project": project,
+        "beam": beam,
+        "h": h,
+        "bw": bw,
+        "concrete": concrete,
+        "diamEstForm": diamEstForm,
+        "dl": dl,
+        "dlc": dlc,
+        "cob": cob,
+        "agreg": agreg,
+        "mk": mk,
+        "gamac": gamac,
+        "gamaf": gamaf,
+        "gamas": gamas,
+        "cb": cb,
+        "priority": priority,
+        "vsd": vsd,
+        "msd": msd,
+        "suggestion": suggestion
+    };
+
+    //document.getElementById("botaoRelatorio2").href = "reportDS.html?test=" + JSON.stringify(resultado);
 
 /*
     Cria um objeto bitola
