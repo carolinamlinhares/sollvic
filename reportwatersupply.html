@@ -9,7 +9,7 @@
     <meta name="description" content="Sollvic">
     <meta name="author" content="Carolina Linhares">
 
-    <title>Relatório de Dimensionamento</title>
+    <title>Relatório de Cálculo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -119,146 +119,124 @@
         <!-- /.container-fluid -->
     </nav>
 
-     <div class="container">
+    <div class="container">
         <div class="row">
             <div class="apptitle">
-                <h1 class="titleReport">Relatório de Dimensionamento de Viga em Concreto Armado</h1>
+                <h1 class="titleReport">Relatório de Cálculo de Reservação Predial</h1>
             </div>
         </div>
     </div>
 
     <div class="container">
         <div>
-            <!-- Table referring to project info -->
-            <table id="project-info" style="width:50%; height: 100%; float:left;">
+            <table id="project-info" style="width:55%; height: 308px; float:left;">
                 <tr>
                     <td class="tdcell">
-                        <p> Projeto <span class="project"> </span> </p>
+                        <p> Projeto: <span class="project"> </span> </p>
                     </td>
                 </tr>
                 <tr>
                     <td class="tdcell">
-                        <p> Viga <span class="beam"> </span></p>
+                        <p> Número de pavimentos: <span class="npav"> </span></p>
                     </td>
                 </tr>
                 <tr>
                     <td class="tdcell">
-                        <p class="inline"> Altura: <span class="h"> </span> cm </p><br>
-                        <p class="inline">Largura: <span class="bw"> </span> cm </p><br>
-                        <p class="inline"> Concreto = <span class="concrete"> </span></p><br>
-                        <p class="inline"> Aço = <span class="steel"> </span> </p><br>
-                        <p class="inline"> Φ Estribo = <span class="diamEstForm"> </span> mm </p>
+                        <p> Número de apartamentos: <span class="napt"> </span> </p>
                     </td>
                 </tr>
                 <tr>
                     <td class="tdcell">
-                        <p> Distância da borda tracionada ao CG da armadura tracionada (d'): <span class="dl"> </span> cm </p>
-                        <p> Distância da borda comprimida ao CG da borda comprimida (d'c): <span class="dlc"> </span> cm </p>
-                        <p> Cobrimento: <span class="cob"> </span> cm </p>
+                        <p> Número de pessoas: <span class="npes"> </span> </p>
                     </td>
                 </tr>
                 <tr>
                     <td class="tdcell">
-                        <p> Agregado Graúdo: <span class="agreg"> </span> </p> 
+                        <p> Consumo per capita = <span class="percap"> </span> l/dia </p>
                     </td>
                 </tr>
                 <tr>
                     <td class="tdcell">
-                        <p> Momento Fletor \(M_k\) = <span class="mk"> </span> kN.cm </p>    
+                        <p> Intermitência = <span class="interm"> </span> dia(s) </p>
                     </td>
                 </tr>
                 <tr>
                     <td class="tdcell">
-                        <p> Coeficientes </p>
-                        <p class="inline"> \({\gamma}_{c}\) = <span class="gamac"> </span> </p><br><br>
-                        <p class="inline"> \({\gamma}_{f}\) = <span class="gamaf"> </span> </p><br><br>
-                        <p class="inline"> \({\gamma}_{s}\) = <span class="gamas"> </span> </p><br><br>
+                        <p> Instalações Adicionais </p>
+                        <p class="inline"> Restaurante = <span class="srest"> </span> </p>
+                        <p class="tab"> Cinema = <span class="scine"> </span> </p>
+                        <p class="tab"> Templo = <span class="stemplo"> </span> </p>
+                        <p class="tab"> Funcionário = <span class="sfunc"> </span> </p>
                     </td>
                 </tr>
             </table>
-            
-            <!-- Table referring to image -->
-            <table class="my-table" style="width: 32%; height: 100%;">
-                <tr>
-                    <td class="tdcell" align="center">
-                        <img class="secao" src=images/SecaoSimples2.png alt="SecaoSimples" width="250" height="300">
-                    </td>
-                </tr>    
-            </table>
-            
-            <!-- Table referring to internal section data -->
-            
-            <table class="sectiondata" style="float:left; width: 32%; height:100%; border-top-width: 0px; border-left-width: 0px; border-right-width: 1px;">
-                
+            <table class="my-table2" style="width: 28%; height: 308px; background: url(../images/tank.png) no-repeat;background-size: 85% 65% !important; background-position:35% 40%; float:left;">
+                <tbody>
                     <tr>
-                    <td colspan="3" class="tdcell" style="padding-bottom:20px; padding-top: 15px; width: 20%; height:48px; border-right-width: 1px;" id="perfilspan"> Detalhe da Seção <span id="section"> </span></td>
+                        <td></td>
                     </tr>
-                    <tr>
-                        <td colspan="1" class="tdfig tdfigcell" style="padding-left: 10px; padding-bottom:29px; border-right-width: 1px;">
-                            Altura (h) = <span id="h"> </span> cm <br>
-                            Base (bw) = <span id="bw"> </span> cm <br>
-                            Cobrimento (cob) = <span id="cob"> </span> cm <br>
-                            Altura útil (d) = <span id="d"> </span> cm <br>
-                            Bitola Estribo (Φest) = <span id="diamEstForm"> </span> mm <br>
-                            d' = <span class="dl"> </span> cm <br>
-                            d'c = <span class="dlc"> </span> cm <br>
-                            Área da Seção= <span id="ac"> </span> cm² <br>
-                        </td>
-                    </tr>
+                </tbody>
             </table>
         </div>
     </div>
-    
+
     <div class="container">
         <div class="row col-lg-10 text-justify centertable" style="padding-top: 40px;">
-            
-            <p> “Vigas são definidas como elementos lineares em que a flexão é preponderante.” </p>
-            <p> O dimensionamento da viga <span class="beam"> </span> foi realizado de forma à atender ao Estado Limite Último (ELU) da viga submetida à flexão de acordo com a norma brasileira NBR 6118:2014. A viga foi avaliada pelo momento fletor máximo resistente, face às condições solicitantes. </p>
-        
-            <!--<p> Os esforços atuante \(M_k\) foi majorado pelo coeficiente \({\gamma}_{f}\), resultando no esforço solicitante apresentado a seguir. </p>-->
-            <p> As etapas de cálculo são apresentadas a seguir: </p>
-            
-            <table class="reportable">
-                <tr>
-                    <th> Tipo de Viga </th>
-                    <td> <span id="situationS"> </span> </td>
-                </tr>
-                <tr>
-                    <th> Momento Fletor Majorado \(M_{sd}\) </th>
-                    <td> <span id="md"> </span> kN.cm </td>
-                </tr>
-                <tr>
-                    <th> Altura Útil \({(d)}\) </th>
-                    <td> <span class="d"> </span> cm </td>
-                </tr>
-                <tr>
-                    <th> Posição da Linha Neutra \({(x)}\) </th>
-                    <td> <span id="x"> </span> cm </td>
-                </tr>
-                <tr>
-                    <th> Domínio de Deformação </th>
-                    <td> <span id="dominio"> </span> </td>
-                </tr>
-                <tr>
-                    <th> Relação \({(x/d)}\) </th>
-                    <td> <span id="ln"> </span> </td>
-                </tr>
-                <tr>
-                    <th> Área de Aço Necessária \(A_{s}\) </th>
-                    <td> <span class="asNec"> </span> cm² </td>
-                </tr>
-                <tr>
-                    <th> Armadura de Pele \(A_{sp}\) </th>
-                    <td> <span class="resultArmPele"> </span> </td>
-                </tr>
-             </table>
-            
-            <p> São listadas na tabela abaixo sugestões de arranjos que atendem aos requisitos da viga dimensionada. é importante lembrar que o dimensionamento da seção fornece a quantidade de aço necessária para suportar ao momento fletor. Outras interferências, no entanto, devem ser consideradas, como a solicitação do esforço cortante, flechas, fluência, ou qualquer outro fator que tenha influência no aspecto da segurança da estrutura. </p>
-            
-            <div class="reportable row col-lg-10" style="padding 0" id="suggestion_table">
-            </div>
-            
 
+            <p> Os reservatórios domiciliares são utilizados para compensar a falta de água na rede pública, resultante de falhas no funcionamento do sistema de abastecimento ou de programação da distribuição. Os passos a seguir demonstram o cálculo de reservação para a situação proposta de acordo com a NBR 5626/98 - Instalação predial de água fria.</p>
+
+            <p class="report-h2"> I. Consumo Diário (CD) </p>
+
+            <p> O consumo diário (CD) de água é o volume necessário de água para que sejam atendidas as necessidades básicas do ser humano. É dado por: </p>
+
+            <p class=eqcenter> \( CD = C * P \) </p>
+
+            <p> Onde: <br><br> CD = consumo diário total (l/dia); <br> C = consumo diário “per capita” (l/dia); <br> P = população do edifício (pessoas) </p>
+
+            <p> Seguindo o contexto dos prédios com área de lazer e áreas comuns, caso a edificação contenha instalações adicionais também deve ser somado ao consumo diário relativo a população do prédio. Assim, para um prédio residencial: </p>
+
+            <p class=eqcenter> CD = (Número de pavimentos * Número de apartamentos * Número de pessoas * Consumo Per Capita) + Quantidade de refeições servidas * Consumo por refeição + Quantidade de lugares no cinema * Consumo por lugar + Quantidade de lugares no templo * Consumo por lugar + Quantidade de funcionários * Consumo por funcionário</p>
+
+            <p class=eqcenter> Calculando, temos CD = <span class="cd"></span></p>
+
+            <p class="report-h2"> II. Capacidade dos reservatórios </p>
+
+            <p> A norma brasileira de água fria, NBR 5626/98 – Instalação Predial de Água Fria, recomenda que a reservação total a ser acumulada nos reservatórios inferiores e superiores não deve ser inferior ao consumo diário e não deve ultrapassar a três vezes o mesmo. Além disso, os reservatórios com capacidade superior a 1000L devem ser compartimentados a fim de que o sistema de distribuição não seja interrompido durante uma operação de limpeza, pois ao se levar um compartimento, o outro garantirá o funcionamento da instalação. <br><br> Recomenda-se a divisão de volume entre um reservatório superior (RS) e outro inferior (RI), sendo:  </p>
+            
+            <ul style= "font-size: 18px;" "padding-left:20px;">
+                <li>Volume útil do RS = 40% do volume total;</li>
+                <li> Volume útil do RI = 60% do volume total. </li>
+            </ul>
+            <br>
+
+            <p class="report-h3"> Reservatório Superior</p>
+            
+            <p> Normalmente, armazena-se o volume para reserva de combate a incêndio no reservatório superior, logo:</p>
+
+            <p class=eqcenter> \(V_{RS}=0,4 * CD + V_{inc} \) = <span class="vrs"></span> litros</p>
+
+            <p> Onde: <br><br> \( V_{inc} = \) volume para reserva de combate a incêndio, sendo: </p>
+            
+            <p class=eqcenter> \( V_{inc} = 2 * q * t = \) <span class="vinc"></span> litros</p>
+            
+            <p>Onde:<br><br>q = vazão para o sistema em (l/min), de acordo com o quadro da norma de incêndio. Caso existam instalações adicionais na edificação, utiliza-se o tipo que possuir maior vazão. Esta vazão é multiplicada por dois por considerar a vazão para duas saídas. Neste caso, q = <span class="q"></span>;<br> t = tempo mínimo de descarga das respectivas saídas, em plena carga, em minutos. Para situações residenciais, equivale a 60 minutos.</p>
+            
+            <p class="report-h3"> Reservatório Inferior</p>
+            
+            <p>O volume do reservatório inferior irá armanezar o restante do volume necessário de acordo com a intermitência de abastecimento do sistema. Logo:</p>
+
+            <p class=eqcenter> \(V_{RI} = (n+ 0,6) × CD = \)<span class="vri"></span> litros</p>
+            
+            <p>Onde:<br><br> n = número de dias em que não ocorre o abastecimento de água = <span class="interm"></span>;</p>
+
+            <p class="report-h3"> Volume Total de Reservação</p>
+            
+            <p>A reserva total necessária para o projeto <span class="project"></span> equivale a:</p>
+            
+            <p class=eqcenter> \(V_{TOTAL} = V_{RS}+ V_{RI} =\) <span class="vtot"></span> litros</p>
+       
+            <br>
+            <br>
             <br>
     
             <p id="disclaimer"> * Ao utilizar o Sollvic, o usuário é responsável por toda ou qualquer conclusão feita com o uso do programa. Nem o autor, nem qualquer outra Instituição ou Empresa relacionada são responsáveis pelo uso ou mau uso do programa e de seus resultados. O relatório não tem nenhum dever legal ou responsabilidade para com qualquer pessoa ou companhia pelos danos causados direta ou indiretamente resultantes do uso de alguma informação ou do uso do programa aqui disponibilizado. Não existe nenhum compromisso de bom funcionamento ou qualquer garantia.</p>
@@ -302,7 +280,7 @@
 
 <!-- Page Code -->
 <!-- ==================================================================================================================== -->
-<script type="text/javascript" src="scripts/reportDesignCSimples.js"></script>
+<script type="text/javascript" src="scripts/reportwatersupply.js"></script>
 <!-- ==================================================================================================================== -->
 
 </html>

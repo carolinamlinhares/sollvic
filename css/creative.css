@@ -1062,3 +1062,33 @@ li{
     margin: auto;
     padding-top: 60px;
 }
+
+#iadd {
+    display: none;
+    margin-left: 40px;
+}
+
+#iaddrest {
+    display: none;
+    margin-left: 20px;
+}
+
+#iaddcine {
+    display: none;
+    margin-left: 20px;
+}
+
+#iaddtemplo {
+    display: none;
+    margin-left: 20px;
+}
+
+#iaddfunc{
+    display:none;
+    margin-left: 20px;
+}
+
+.my-table2{
+    border: 1px solid black;
+    border-left: 0px !important;
+}
