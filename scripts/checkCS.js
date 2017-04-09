@@ -344,15 +344,16 @@ function processFormCC() {
         "situationS": situationS,
         "resultArmPele": resultArmPele,
         "md": md,
+        "msd": msd,
         "x": x,
         "dominio": dominio,
-        "ln": ln,
-        "as": as,
+        "result": result,
+        "ln": ln
 
         
-    };  
+    };
     
-var menu_prompt = {
+    var menu_prompt = {
         title: "Resultado",
         message: result,
         buttons: {
