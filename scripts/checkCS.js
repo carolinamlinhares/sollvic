@@ -320,29 +320,7 @@ function processFormCC() {
     /*  
    CRIACAO DE VARIAVEL PARA MANDAR VIA URL PARA RELATORIO
  */
-
-var menu_prompt = {
-        title: "Resultado",
-        message: result,
-        buttons: {
-            cancel: {
-                label: '<i class="fa fa-times"></i> Voltar'
-            },
-            confirm: {
-                label: '<i class="fa fa-check"></i> Mostrar relatório'
-            }
-        },
-        callback: function (result) {
-            if (result) {
-                location.href = "reportCheckCS.html?test=" + JSON.stringify(resultado);
-            }
-        }
-    };
-    
-    bootbox.confirm(menu_prompt);
-    
-
-    // Report Array
+  // Report Array
 
     resultado = {
         "project": project,
@@ -374,6 +352,29 @@ var menu_prompt = {
 
         
     };  
+    
+var menu_prompt = {
+        title: "Resultado",
+        message: result,
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> Voltar'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Mostrar relatório'
+            }
+        },
+        callback: function (result) {
+            if (result) {
+                location.href = "reportCheckCS.html?test=" + JSON.stringify(resultado);
+            }
+        }
+    };
+    
+    bootbox.confirm(menu_prompt);
+    
+
+
     
 }
 
