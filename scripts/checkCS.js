@@ -6,7 +6,7 @@ var project, beam, mk, concrete, steel;
 var x, tsd, as, bw, fcd;
 var betax23, betax34, epc, eps, epyd, fyd, Es, fck, fyk, fckForm, fykForm;
 var d, h, cob, diamEstForm, diamLongForm, diamEst, diamLong, ncam, n;
-var mk, msd, md;
+var mk, msd, md, ln;
 var x2lim, x3lim, dominio;
 var gamac, gamaf, gamas, s;
 var result, situationD, situationS, situationLN, situationCG;
@@ -278,6 +278,9 @@ function processFormCC() {
     console.log("situationD = " + situationD);
     
     // Check x/d
+    
+    ln = x / d;
+    
     if (x / d <= 0.45) {
         situationLN = "Aprovada";
     } else {
@@ -333,15 +336,11 @@ function processFormCC() {
         "diamEstForm": diamEstForm,
         "diamLongForm": diamLongForm,
         "d": d,
-        "dl": dl,
-        "dlc": dlc,
         "cob": cob,
-        "agreg": agreg,
         "mk": mk,
         "gamac": gamac,
         "gamaf": gamaf,
         "gamas": gamas,
-        "ac": ac,
         "situationS": situationS,
         "resultArmPele": resultArmPele,
         "md": md,
