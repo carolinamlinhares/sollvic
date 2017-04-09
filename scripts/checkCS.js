@@ -11,6 +11,7 @@ var x2lim, x3lim, dominio;
 var gamac, gamaf, gamas, s;
 var result, situationD, situationLN, situationCG;
 var armPele, resultArmPele;
+var resultado = [];
 
 var bitola = [
     {
@@ -315,6 +316,64 @@ function processFormCC() {
         alert(resultArmPele);
     }
         
+    
+    /*  
+   CRIACAO DE VARIAVEL PARA MANDAR VIA URL PARA RELATORIO
+ */
+
+var menu_prompt = {
+        title: "Resultado",
+        message: "Pode ser usada armadura com " + arranjos[0].qtd + "Ø" + arranjos[0].bitola + " em " + arranjos[0].ncam + " camadas. Confira relatório para os detalhes do dimensionamento e outras opções de armadura.",
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> Voltar'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Mostrar relatório'
+            }
+        },
+        callback: function (result) {
+            if (result) {
+                location.href = "reportDesignCSimples.html?test=" + JSON.stringify(resultado);
+            }
+        }
+    };
+    
+    bootbox.confirm(menu_prompt);
+    
+
+    // Report Array
+
+    resultado = {
+        "project": project,
+        "beam": beam,
+        "h": h,
+        "bw": bw,
+        "concrete": concrete,
+        "steel": steel,
+        "as": as,
+        "diamEstForm": diamEstForm,
+        "diamLongForm": diamLongForm,
+        "d": d,
+        "dl": dl,
+        "dlc": dlc,
+        "cob": cob,
+        "agreg": agreg,
+        "mk": mk,
+        "gamac": gamac,
+        "gamaf": gamaf,
+        "gamas": gamas,
+        "ac": ac,
+        "situationS": situationS,
+        "resultArmPele": resultArmPele,
+        "md": md,
+        "x": x,
+        "dominio": dominio,
+        "ln": ln,
+        "as": as,
+
+        
+    };  
     
 }
 
