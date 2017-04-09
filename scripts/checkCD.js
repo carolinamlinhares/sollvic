@@ -7,7 +7,7 @@ var tsd, as, bw, fcd;
 var betax23, betax34, epc, eps, epyd, fyd, Es, fck, fyk, fckForm, fykForm;
 var d, h, cob, diamEstForm, diamLongTForm, diamLongCForm, diamEst, diamLongT, diamLongC;
 var a, b, c, delta, deltaR, x1, x2;
-var x, mk, md;
+var x, mk, md, ln, lnd;
 var x2lim, x3lim, dominio, dl;
 var gamac, gamaf, gamas, s;
 var situationD, situationLN, situationCG;
@@ -17,6 +17,7 @@ var armPele, resultArmPele;
 
 var nBarras, nBarrasC, nBarrasT;
 var arranjos = [];
+var resultado = [];
 
 var bitola = [
     {
@@ -290,6 +291,7 @@ function processFormCD() {
     console.log("situationD = " + situationD);
     
     //VERIFICAÇÃO DA RELAÇÃO x/d
+    ln = x / d;
 
     if (x / d <= 0.45) {
         situationLN = "Aprovada";
@@ -311,6 +313,7 @@ function processFormCD() {
         if (situationD === "Aprovado" && situationLN === "Aprovada") {
             situationS = "Simples";
 	        as = md / (tsd * (d - 0.4 * x));
+            as = Number(as.toFixed(2));
             if ((astForm + (0.05 * astForm)) >= as) {
                 result = "A viga resiste ao momento fletor solicitado e pode ser simplesmente armada";
             } /*else {
@@ -320,6 +323,7 @@ function processFormCD() {
         } else if (situationD === "Aprovado" && situationLN === "Reprovada") {
             situationS = "Simples";
 	        as = md / (tsd * (d - 0.4 * x));
+            as = Number(as.toFixed(2));
             if ((astForm + (0.05 * astForm)) >= as) {
                 result = "A viga resiste ao momento fletor solicitado e pode ser simplesmente armada, mas não atende ao limite da linha neutra estabelecido em norma. Sugere-se aumentar a altura da viga.";
             } else {
@@ -331,6 +335,9 @@ function processFormCD() {
         
             //Cálculo da nova posição da LN
             xd = 0.45 * d;
+            
+            //Cálculo da nova relação x/d
+            lnd = xd / d;
         
             //Cálculo de M1d
             m1d = 0.68 * bw * xd * fcd * (d - 0.4 * xd);
@@ -349,11 +356,13 @@ function processFormCD() {
                         
             //Encontrar área de aço comprimida necessária A's
             asl = m2d / (tlsd * (d - dlc));
+            asl = Number(asl.toFixed(2));
         
             //Encontrar área de aço tracionada necessária As
             as1 = m1d / (tsd * (d - 0.4 * xd));
             as2 = m2d / (tsd * (d - dlc));
             ast = as1 + as2;
+            ast = Number(ast.toFixed(2));
          
             if ((astForm + (0.05 * astForm)) >= ast && (ascForm + (0.05 * ascForm)) >= asl) {
                 result = "A viga resiste ao momento fletor solicitado com a armadura dupla utilizada.";
@@ -361,45 +370,95 @@ function processFormCD() {
                 result = "A viga não resiste ao momento fletor solicitado.";
             }
         }
-        alert(result);
+        //alert(result);
     }
     
     
 
     if (h > 60) {
         armPele = 0.001 * bw * h;
+        armPele = Number(armPele.toFixed(2));
         resultArmPele = "É necessário utilizar armadura de pele com " + armPele + "cm² por face";
     } else {
         resultArmPele = "Não é necessário utilizar armadura de pele";
     }
     if (resultArmPele === "É necessário utilizar armadura de pele com " + armPele + "cm² por face") {
-        alert(resultArmPele);
+        //alert(resultArmPele);
     }
+    
+    
+    
+    x = Number(x.toFixed(2));
+    ln = Number(ln.toFixed(2));
+    md = Number(md.toFixed(2));
+    
+    
+    
+    
+    /*  
+   CRIACAO DE VARIAVEL PARA MANDAR VIA URL PARA RELATORIO
+ */
+    
+        
+  // Report Array
+
+    resultado = {
+        "project": project,
+        "beam": beam,
+        "h": h,
+        "bw": bw,
+        "concrete": concrete,
+        "steel": steel,
+        "astForm": astForm,
+        "dl": dl,
+        "dlc": dlc,
+        "diamLongTForm": diamLongTForm,
+        "diamLongCForm": diamLongCForm,
+        "diamEstForm": diamEstForm,
+        "cob": cob,
+        "mk": mk,
+        "gamac": gamac,
+        "gamaf": gamaf,
+        "gamas": gamas,
+        "d": d,
+        "situationS": situationS,
+        "resultArmPele": resultArmPele,
+        "md": md,
+        "as": as,
+        "ast": ast,
+        "asl": asl,
+        "x": x,
+        "xd": xd,
+        "dominio": dominio,
+        "result": result,
+        "lnd": lnd,
+        "ln": ln
+
+        
+    };
+    
+    var menu_prompt = {
+        title: "Resultado",
+        message: result,
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> Voltar'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Mostrar relatório'
+            }
+        },
+        callback: function (result) {
+            if (result) {
+                location.href = "reportCheckCD.html?test=" + JSON.stringify(resultado);
+            }
+        }
+    };
+    
+    bootbox.confirm(menu_prompt);
 }
                 
-        //result = "Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
-        //alert(result);
-        
-   /*     //Arranjos
-    if (situationS === "Simples") {
-        for (i = 0; i < arranjos.length; i += 1) { //Log of approved
-            console.log(arranjos[i]);
-            nBarras = as / (bitola[i].area);
-        }
-    } else {
-        for (i = 0; i < arranjos.length; i += 1) { //Log of approved
-            console.log(arranjos[i]);
-            nBarrasC = asl / (bitola[i].area);
-            nBarrasT = ast / (bitola[i].area);
-        }
-    }*/
-
-        
-
-            
-  /*  
-    document.getElementById("botaoRelatorio").href = "reportCS.html?test=" + JSON.stringify(resultado);
-} */
+    
 
 /*
     Cria um objeto bitola
