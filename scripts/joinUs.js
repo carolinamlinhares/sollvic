@@ -3,7 +3,7 @@ $(function () {
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
-            alert("Por favor complete todos os campos do formulário.")
+            alert("Por favor complete todos os campos obrigatórios do formulário.")
         },
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
@@ -20,17 +20,7 @@ $(function () {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                //url: "https://docs.google.com/forms/d/176CBydIpBXvcKKZnJTWUuOk9pGADyFP6i2ywS4AVigU/formResponse",
-                //url: "https://docs.google.com/forms/d/1FAIpQLSeAn25kS08xmX56GFF5y5WZULn7pPwFkS7tHKGDHBl9YCwbWw/formResponse",
-                type: "POST",
-                data: {
-                    "entry.1785861497": name,
-                    "entry.719194490": course,
-                    "entry.1273701555": subject,
-                    "entry.1943849180": email,
-                    "entry.868553239": phone,
-                    "entry.376576089": message
-                },
+                
                 cache: false,
                 success: function() {
                     // Success message
