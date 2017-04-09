@@ -1,3 +1,4 @@
+
 // Start of parsing results
 function getJsonFromUrl(hashBased) {
     'use strict'
@@ -34,11 +35,17 @@ var resultado = [];
 resultado = JSON.parse(getJsonFromUrl().test);
 //End of parsing results
 
-var i = 0;
-var tableHeader = '<tr><th> Nº de Barras </th> <th> Φ Bitola (mm) </th> <th> Nº de Camadas Sugerido </th> <th> Área de Aço \\(A_{sCalc}\\) (cm²) </th> <th> Taxa de Armadura (%) </th> <th> Espaçamento horizontal mínimo (cm) </th> <th> Espaçamento vertical mínimo (cm) </th> </tr>';
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, tableHeader]);
+//Variables
+
+/*resultado.project = (resultado.project);
+resultado.beam = (resultado.beam);
+resultado.as = (resultado.as);
+resultado.md = (resultado.md);
+resultado.msd = Number (resultado.msd);*/
+
 
 $(document).ready(function() {
+    
     // Header
     $(".project").html(resultado.project);
     $(".beam").html(resultado.beam);
@@ -51,48 +58,35 @@ $(document).ready(function() {
     $(".cob").html(resultado.cob);
     $(".diamLongForm").html(resultado.diamLongForm);
     $(".diamEstForm").html(resultado.diamEstForm);
-    
     $(".mk").html(resultado.mk);
     $(".gamac").html(resultado.gamac);
     $(".gamaf").html(resultado.gamaf);
     $(".gamas").html(resultado.gamas);
+    
+    
+    // Results
 
-    
-    // Section
-    $("#h").html(resultado.h);
-    $("#bw").html(resultado.bw);
-    $("#cob").html(resultado.cob);
-    $("#d").html(resultado.d);
-    $("#diamEstForm").html(resultado.diamEstForm);
-    $(".dl").html(resultado.dl);
-    $(".dlc").html(resultado.dlc);
-    $("#ac").html(resultado.ac);
-    
-    
-    // Resultados
-    $("#situationS").html(resultado.situationS);
-    $("#md").html(resultado.md)
-    $("#msd").html(resultado.msd);
+    $(".as").html(resultado.as);
     $(".d").html(resultado.d);
     $("#x").html(resultado.x);
     $("#dominio").html(resultado.dominio);
     $("#ln").html(resultado.ln);
-    $(".as").html(resultado.asNec);
+    $("#md").html(resultado.md);
+    $("#msd").html(resultado.msd);
     $(".resultArmPele").html(resultado.resultArmPele);
     
-    
-    // Resultado Final
+
+    // Conclusion
     $(".result").html(resultado.result);
     
-    
-    //Arranjos Table
-    
-    /*$('#suggestion_table').append('<table style="width: 100%"></table>');
-    var table = $('#suggestion_table').children();
-    table.append(tableHeader);
-    for (i = 0; i <= resultado.arranjos.length; i += 1) {
-        table.append('<tr><td>' +  resultado.arranjos[i].qtd + '</td>' + '<td>' +  resultado.arranjos[i].bitola + '</td>' +'<td>' +  resultado.arranjos[i].ncam + '</td>' + '<td>' +  resultado.arranjos[i].as + '</td>' + '<td>' +  resultado.arranjos[i].taxa + '</td>' + '<td>' +  resultado.arranjos[i].ah + '</td>' + '<td>' +  resultado.arranjos[i].av + '</td>' + '</tr>');
+    /*if (resultado.result === "OK") {
+        $("#textR").html(textApp);
+    } else if (resultado.vsd >= resultado.vrd && resultado.msd <= resultado.mrdOut) {
+        $("#textR").html(textNAppV);
+    } else if (resultado.vsd <= resultado.vrd && resultado.msd > resultado.mrdOut) {
+        $("#textR").html(textNAppM);
+    } else if (resultado.vsd > resultado.vrd && resultado.msd > resultado.mrdOut) {
+        $("#textR").html(textNAppVM);
     }*/
-    
-    
+
 });
