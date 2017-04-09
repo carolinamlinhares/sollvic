@@ -303,7 +303,7 @@ function processFormCC() {
         } else {
             result = "A viga não resiste ao momento fletor solicitado. Sugere-se aumentar a seção transversal ou a resistência do concreto. Verifique o relatório para mais opções.";
         }
-        alert(result);
+        //alert(result);
     }
     
     if (h > 60) {
