@@ -786,6 +786,7 @@ tr {
     border: 1px solid black;
     border-left: 0px;
     border-bottom: 0px;
+    z-index: 1000;
 }
 
 .my-table tr,
@@ -1099,6 +1100,17 @@ li{
     border: none !important;
 }
 
+@media print {
+    .my-table{
+        content: url("../images/Section.jpg");
+        float: left;
+        z-index: 100;
+    }
+    .my-table tr td{
+        z-index: 10000;
+    }
+}
+
 .sectiondata tr td .tdconc{
     border-right: 1px !important;
 }
@@ -1107,3 +1119,5 @@ li{
     border: none;
     border-right: 1px;
 }
+
+
