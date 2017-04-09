@@ -1093,6 +1093,12 @@ li{
     border-left: 0px !important;
 }
 
+.my-table2 tr,
+.my-table2 td,
+.my-table2 tr td {
+    border: none !important;
+}
+
 .sectiondata tr td .tdconc{
     border-right: 1px !important;
 }
