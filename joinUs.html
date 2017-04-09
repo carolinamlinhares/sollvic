@@ -140,31 +140,31 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form action="https://formspree.io/contato@sollvic.com" method="POST" name="sentMessage" id="contactForm" novalidate>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Nome Completo*" id="name" required data-validation-required-message="Por favor informe seu nome.">
+                                    <input type="text" name="name" class="form-control" placeholder="Nome Completo*" id="name" required data-validation-required-message="Por favor informe seu nome.">
                                     <p class="help-block text-danger" style="color: white; list-style-type: none;"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Curso" id="course">
+                                    <input type="text" name="curso" class="form-control" placeholder="Curso" id="course">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Tema de Interesse*" id="=subject" required data-validation-required-message="Por favor informe o tema de interesse.">
+                                    <input type="text" name="tema" class="form-control" placeholder="Tema de Interesse*" id="=subject" required data-validation-required-message="Por favor informe o tema de interesse.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="E-mail*" id="email" required data-validation-required-message="Por favor informe o tema de interesse.">
+                                    <input type="email" name="email" class="form-control" placeholder="E-mail*" id="email" required data-validation-required-message="Por favor informe o tema de interesse.">
                                     <p class="help-block text-danger" style="color: white; list-style-type: none !important;"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Telefone" id="phone">
+                                    <input type="tel" name="phone" class="form-control" placeholder="Telefone" id="phone">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Sua mensagem" id="message"></textarea>
+                                    <textarea class="form-control" name="message" placeholder="Deixe sua mensagem" id="message"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div><br><br>
                             </div>
@@ -207,7 +207,6 @@
     
     <!-- Form JavaScript -->
     <script src="scripts/jqBootstrapValidation.js"></script>
-    <script src="scripts/joinUs.js"></script>
 
     <footer>® Sollvic 2017</footer>
 </body>
