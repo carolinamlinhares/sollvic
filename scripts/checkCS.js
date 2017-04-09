@@ -316,13 +316,23 @@ function processFormCC() {
         resultArmPele = "Não é necessário utilizar armadura de pele";
     }
     if (resultArmPele === "É necessário utilizar armadura de pele com " + armPele + "cm² por face") {
-        alert(resultArmPele);
+        //alert(resultArmPele);
     }
         
+        
+    
+    x = Number(x.toFixed(2));
+    ln = Number(ln.toFixed(2));
+    md = Number(md.toFixed(2));
+    msd = Number(msd.toFixed(2));
+    armPele = Number(armPele.toFixed(2));
+    
     
     /*  
    CRIACAO DE VARIAVEL PARA MANDAR VIA URL PARA RELATORIO
  */
+    
+        
   // Report Array
 
     resultado = {
