@@ -34,9 +34,6 @@ var resultado = [];
 resultado = JSON.parse(getJsonFromUrl().test);
 //End of parsing results
 
-var i = 0;
-var tableHeader = '<tr><th> Nº de Barras </th> <th> Φ Bitola (mm) </th> <th> Nº de Camadas Sugerido </th> <th> Área de Aço \\(A_{sCalc}\\) (cm²) </th> <th> Taxa de Armadura (%) </th> <th> Espaçamento horizontal mínimo (cm) </th> <th> Espaçamento vertical mínimo (cm) </th> </tr>';
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, tableHeader]);
 
 $(document).ready(function() {
     // Header
@@ -50,12 +47,11 @@ $(document).ready(function() {
     $(".aslForm").html(resultado.aslForm);
     
     $(".diamEstForm").html(resultado.diamEstForm);
-    $(".diamLongT").html(resultado.diamLongT);
-    $(".diamLongC").html(resultado.diamLongC);
+    $(".diamLongTForm").html(resultado.diamLongTForm);
+    $(".diamLongCForm").html(resultado.diamLongCForm);
     $(".dl").html(resultado.dl);
     $(".dlc").html(resultado.dlc);
     $(".cob").html(resultado.cob);
-    $(".agreg").html(resultado.agreg);
     $(".mk").html(resultado.mk);
     $(".gamac").html(resultado.gamac);
     $(".gamaf").html(resultado.gamaf);
@@ -78,9 +74,13 @@ $(document).ready(function() {
     $("#md").html(resultado.md);
     $(".d").html(resultado.d);
     $("#x").html(resultado.x);
+    $("#xd").html(resultado.xd);
     $("#dominio").html(resultado.dominio);
     $("#ln").html(resultado.ln);
-    $(".asNec").html(resultado.asNec);
+    $("#lnd").html(resultado.lnd);
+    $(".as").html(resultado.as);
+    $(".ast").html(resultado.ast);
+    $(".asl").html(resultado.asl);
     $(".resultArmPele").html(resultado.resultArmPele);
     
     
