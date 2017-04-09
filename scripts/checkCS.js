@@ -311,6 +311,7 @@ function processFormCC() {
     
     if (h > 60) {
         armPele = 0.001 * bw * h;
+        armPele = Number(armPele.toFixed(2));
         resultArmPele = "É necessário utilizar armadura de pele com " + armPele + "cm² por face";
     } else {
         resultArmPele = "Não é necessário utilizar armadura de pele";
@@ -319,13 +320,11 @@ function processFormCC() {
         //alert(resultArmPele);
     }
         
-        
-    
+   
     x = Number(x.toFixed(2));
     ln = Number(ln.toFixed(2));
     md = Number(md.toFixed(2));
     msd = Number(msd.toFixed(2));
-    armPele = Number(armPele.toFixed(2));
     
     
     /*  
