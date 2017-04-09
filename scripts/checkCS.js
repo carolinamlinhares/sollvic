@@ -323,7 +323,7 @@ function processFormCC() {
 
 var menu_prompt = {
         title: "Resultado",
-        message: "Pode ser usada armadura com " + arranjos[0].qtd + "Ø" + arranjos[0].bitola + " em " + arranjos[0].ncam + " camadas. Confira relatório para os detalhes do dimensionamento e outras opções de armadura.",
+        message: result,
         buttons: {
             cancel: {
                 label: '<i class="fa fa-times"></i> Voltar'
@@ -334,7 +334,7 @@ var menu_prompt = {
         },
         callback: function (result) {
             if (result) {
-                location.href = "reportDesignCSimples.html?test=" + JSON.stringify(resultado);
+                location.href = "reportCheckCS.html?test=" + JSON.stringify(resultado);
             }
         }
     };
