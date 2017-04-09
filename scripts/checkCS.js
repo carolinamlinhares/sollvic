@@ -9,7 +9,7 @@ var d, h, cob, diamEstForm, diamLongForm, diamEst, diamLong, ncam, n;
 var mk, msd, md;
 var x2lim, x3lim, dominio;
 var gamac, gamaf, gamas, s;
-var result, situationD, situationLN, situationCG;
+var result, situationD, situationS, situationLN, situationCG;
 var armPele, resultArmPele;
 var resultado = [];
 
