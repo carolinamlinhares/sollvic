@@ -147,7 +147,7 @@
                         <p> Distância da borda ao CG (d'): <span class="dl"> </span> cm </p>
                         <p> Bitola Longitudinal Tracionada: <span class="diamLongTForm"> </span> mm </p>
                         <br>
-                        <p> Área de Aço Comprimida (Asc): <span class="ascForm"> </span> cm² </p>
+                        <p> Área de Aço Comprimida (Asc): <span class="aslForm"> </span> cm² </p>
                         <p> Distância da borda ao CG (d'c): <span class="dlc"> </span> cm </p>
                         <p> Bitola Longitudinal Comprimida: <span class="diamLongCForm"> </span> mm </p>
                         <br>                        
@@ -163,10 +163,9 @@
                 <tr>
                     <td class="tdcell">
                         <p> Coeficientes </p>
-                        <p> Coeficientes </p>
-                        <p class="inline"> Gama \({\gamma}\) = <span class="gama"> </span> </p>
-                        <p class="tab"> Gama a1 \({\gamma}_{a1}\) = <span class="gama1"> </span> </p>
-                        <p class="tab"> Cb = <span class="cb"> </span> </p>   
+                        <p class="inline"> \({\gamma}_{c}\) = <span class="gamac"> </span> </p><br><br>
+                        <p class="inline"> \({\gamma}_{f}\) = <span class="gamaf"> </span> </p><br><br>
+                        <p class="inline"> \({\gamma}_{s}\) = <span class="gamas"> </span> </p><br><br>     
                     </td>
                 </tr>
             </table>
@@ -218,16 +217,24 @@
                     <td> <span class="d"> </span> cm </td>
                 </tr>
                 <tr>
-                    <th> Posição da Linha Neutra \({(x)}\) </th>
+                    <th> Posição da Linha Neutra \({(x)}\) (se simplesmente armada) </th>
                     <td> <span id="x"> </span> cm </td>
+                </tr>
+                <tr>
+                    <th> Posição da Linha Neutra \({(x)}\) (se duplamente armada) </th>
+                    <td> <span id="xd"> </span> cm </td>
                 </tr>
                 <tr>
                     <th> Domínio de Deformação </th>
                     <td> <span id="dominio"> </span> </td>
                 </tr>
                 <tr>
-                    <th> Relação \({(x/d)}\) </th>
+                    <th> Relação \({(x/d)}\) (se simplesmente armada) </th>
                     <td> <span id="ln"> </span> </td>
+                </tr>
+                <tr>
+                    <th> Relação \({(x/d)}\) (se duplamente armada) </th>
+                    <td> <span id="lnd"> </span> </td>
                 </tr>
                 <tr>
                     <th> Tipo de Viga </th>
@@ -238,15 +245,15 @@
                     <td> <span id="md"> </span> kN.cm </td>
                 </tr>
                 <tr>
-                    <th> Área de Aço Necessária (se simples) \(A_{s}\) </th>
+                    <th> Área de Aço Necessária (se simplesmente armada) \(A_{s}\) </th>
                     <td> <span class="as"> </span> cm² </td>
                 </tr>
                 <tr>
-                    <th> Área de Aço Tracionada Necessária (se dupla) \(A_{st}\) </th>
+                    <th> Área de Aço Tracionada Necessária (se duplamente armada) \(A_{st}\) </th>
                     <td> <span class="ast"> </span> cm² </td>
                 </tr>
                 <tr>
-                    <th> Área de Aço Comprimida Necessária (se dupla) \(A_{s'}\) </th>
+                    <th> Área de Aço Comprimida Necessária (se duplamente armada) \(A_{s'}\) </th>
                     <td> <span class="asl"> </span> cm² </td>
                 </tr>
                 <tr>
@@ -257,13 +264,13 @@
             
             <p> Por questões práticas, considera-se uma margem de 5% de tolerância no cálculo das armadura de aço de tração e compressão, ou seja, o programa ainda aprovará a viga caso a diferença entre quantidade de armadura necessária e armadura utilizada esteja dentre desta margem. Para fins educacionais porém, o valor exibido na tabela acima não considera tolerâncias além mas majorações/minorações.</p>
             
-            <p class="report-h4"> RESULTADO </p>
+            <!--<p class="report-h4"> RESULTADO </p>
 
             <p> Se o esforço solicitante for menor ou igual esforço resistente, a viga poderá ser submetida aos esforços apresentados. Para a viga <span class="beam"> </span>, temos: </p>
 
             <div style="text-align: center">
                 <span id="textR" style="font-size: 18px;"></span>
-            </div>
+            </div>-->
             
             <br>
     
