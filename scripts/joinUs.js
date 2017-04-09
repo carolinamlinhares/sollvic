@@ -21,7 +21,7 @@ $(function () {
             }
             $.ajax({
                 //url: "https://docs.google.com/forms/d/176CBydIpBXvcKKZnJTWUuOk9pGADyFP6i2ywS4AVigU/formResponse",
-                url: "https://docs.google.com/forms/d/1FAIpQLSeAn25kS08xmX56GFF5y5WZULn7pPwFkS7tHKGDHBl9YCwbWw/formResponse",
+                //url: "https://docs.google.com/forms/d/1FAIpQLSeAn25kS08xmX56GFF5y5WZULn7pPwFkS7tHKGDHBl9YCwbWw/formResponse",
                 type: "POST",
                 data: {
                     "entry.1785861497": name,
