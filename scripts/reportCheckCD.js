@@ -44,7 +44,7 @@ $(document).ready(function() {
     $(".concrete").html(resultado.concrete);
     $(".steel").html(resultado.steel);
     $(".astForm").html(resultado.astForm);
-    $(".aslForm").html(resultado.aslForm);
+    $(".ascForm").html(resultado.ascForm);
     
     $(".diamEstForm").html(resultado.diamEstForm);
     $(".diamLongTForm").html(resultado.diamLongTForm);
