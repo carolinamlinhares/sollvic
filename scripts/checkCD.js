@@ -319,9 +319,9 @@ function processFormCD() {
             as = Number(as.toFixed(2));
             if ((astForm + (0.05 * astForm)) >= as) {
                 result = "A viga resiste ao momento fletor solicitado e pode ser simplesmente armada";
-            } /*else {
+            } else {
                 result = "A viga não resiste ao momento fletor solicitado";
-            }*/
+            }
                 
         } else if (situationD === "Aprovado" && situationLN === "Reprovada") {
             situationS = "Simplesmente Armada";
