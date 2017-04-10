@@ -13,7 +13,7 @@ var gamac, gamaf, gamas, s;
 var situationD, situationLN, situationCG;
 var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, asc, ast, situationS, result;
 var astForm, ascForm;
-var armPele, resultArmPele;
+var armPele, resultArmPele, bootbox;
 
 var nBarras, nBarrasC, nBarrasT;
 var arranjos = [];
@@ -224,6 +224,7 @@ function processFormCD() {
     
     //CÁLCULO DO MOMENTO FLETOR MAJORADO
     md = mk * gamaf;
+    md = Number(md.toFixed(2));
 
     //CÁLCULO DA ALTURA ÚTIL (d)
     d = h - dl;
@@ -270,6 +271,7 @@ function processFormCD() {
         x = x1;
     }
     
+    x = Number(x.toFixed(2));
     //VERIFICAÇÃO DO DOMÍNIO DA VIGA
 
     x2lim = betax23 * d;
@@ -292,7 +294,8 @@ function processFormCD() {
     
     //VERIFICAÇÃO DA RELAÇÃO x/d
     ln = x / d;
-
+    ln = Number(ln.toFixed(2));
+    
     if (x / d <= 0.45) {
         situationLN = "Aprovada";
     } else {
@@ -311,7 +314,7 @@ function processFormCD() {
         alert("A altura da viga não está coerente com as distâncias ao centro das armaduras, cobrimento e bitolas utilizadas. Por favor, verifique os dados de entrada.");
     } else {
         if (situationD === "Aprovado" && situationLN === "Aprovada") {
-            situationS = "Simples";
+            situationS = "Simplesmente Armada";
 	        as = md / (tsd * (d - 0.4 * x));
             as = Number(as.toFixed(2));
             if ((astForm + (0.05 * astForm)) >= as) {
@@ -321,7 +324,7 @@ function processFormCD() {
             }*/
                 
         } else if (situationD === "Aprovado" && situationLN === "Reprovada") {
-            situationS = "Simples";
+            situationS = "Simplesmente Armada";
 	        as = md / (tsd * (d - 0.4 * x));
             as = Number(as.toFixed(2));
             if ((astForm + (0.05 * astForm)) >= as) {
@@ -331,13 +334,14 @@ function processFormCD() {
             }
                     
         } else {
-            situationS = "Dupla";
+            situationS = "Duplamente Armada";
         
             //Cálculo da nova posição da LN
             xd = 0.45 * d;
             
             //Cálculo da nova relação x/d
             lnd = xd / d;
+            lnd = Number(lnd.toFixed(2));
         
             //Cálculo de M1d
             m1d = 0.68 * bw * xd * fcd * (d - 0.4 * xd);
@@ -388,9 +392,9 @@ function processFormCD() {
     
     
     
-    x = Number(x.toFixed(2));
-    ln = Number(ln.toFixed(2));
-    md = Number(md.toFixed(2));
+    
+    
+    
     
     
     
