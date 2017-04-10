@@ -13,7 +13,7 @@ var gamac, gamaf, gamas, s;
 var situationD, situationLN;
 var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, ast, situationS, result;
 var txCalc, txCalcT, txCalcC, inercia, wo, fctm, fctkSup, mdMin, astMin, astMinAbs, situationArmPele, armPele, situationTxMax, situationCG;
-var ac, av, avMin, ah, ahMin, ahT, ahC, ahSugg, ahSuggT, ahSuggC, sPele, resultP, resultTx, resultArmPele, conditionTxFinal, conditionEsp, conditionPele, conditionAh, conditionAv;
+var ac, av, avMin, ah, ahMin, ahT, ahC, ahSugg, ahSuggT, ahSuggC, sPele, resultP, resultF, resultTx, resultArmPele, conditionTxFinal, conditionEsp, conditionPele, conditionAh, conditionAv;
 var nBarras, nBarrasNovo, nBarrasC, nBarrasT, nBarrasPele, nCamadas, iCamadas, nBmax, nCam1, nCam2, nCam3, nCam4;
 var asSugg, asSuggC, asSuggT, avSugg, ahSugg, txCalcSugg, txCalcTSugg, txCalcCSugg, condition, situationCam;
 var arranjos = [];
@@ -415,7 +415,8 @@ function processFormD() {
 
         //Resultados
         resultP = "A viga deve ser duplamente armada: Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
-        alert(resultP);
+        resultF = "Ops! Esta funcionalidade ainda não está ativa... O Sollvic está sendo aprimorado para em breve disponibilizá-la para você!";
+        bootbox.alert(resultF);
 
     }
 
