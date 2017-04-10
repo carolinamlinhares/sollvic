@@ -410,6 +410,7 @@ function processFormCD() {
         "concrete": concrete,
         "steel": steel,
         "astForm": astForm,
+        "ascForm": ascForm,
         "dl": dl,
         "dlc": dlc,
         "diamLongTForm": diamLongTForm,
