@@ -147,7 +147,7 @@
                         <p> Distância da borda ao CG (d'): <span class="dl"> </span> cm </p>
                         <p> Bitola Longitudinal Tracionada: <span class="diamLongTForm"> </span> mm </p>
                         <br>
-                        <p> Área de Aço Comprimida (Asc): <span class="aslForm"> </span> cm² </p>
+                        <p> Área de Aço Comprimida (Asc): <span class="ascForm"> </span> cm² </p>
                         <p> Distância da borda ao CG (d'c): <span class="dlc"> </span> cm </p>
                         <p> Bitola Longitudinal Comprimida: <span class="diamLongCForm"> </span> mm </p>
                         <br>                        
@@ -171,15 +171,29 @@
             </table>
             
             <!-- Table referring to image -->
-            <table class="my-table" style="width: 32%; height: 100%;">
-                <tr>
-                    <td class="tdcell" align="center">
-                        <img class="secao" src=images/SecaoDupla2.png alt="SecaoSimples" width="250" height="300">
-                    </td>
-                </tr>    
+            <table class="my-table2" style="width: 28%; height: 308px; float:left; border-left: 0px !important;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src=images/SecaoDupla2.png alt="SecaoSimples" class="img-responsive" style="margin:auto; max-width: 300px">
+                            <p style="text-align:center"> Detalhamento da Seção </p>
+                            <br>
+                            <p style="text-align: center">
+                                Altura (h) = <span id="h"> </span> cm <br>
+                                Base (bw) = <span id="bw"> </span> cm <br>
+                                Cobrimento (cob) = <span id="cob"> </span> cm <br>
+                                Altura útil (d) = <span id="d"> </span> cm <br>
+                                Bitola Estribo (Φest) = <span id="diamEstForm"> </span> mm <br>
+                                d' = <span class="dl"> </span> cm <br>
+                                d'c = <span class="dlc"> </span> cm <br>   
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
+                        
             
-            <!-- Table referring to internal section data -->
+            <!-- Table referring to internal section data 
             
             <table class="sectiondata" style="float:left; width: 32%; height:100%; border-top-width: 0px; border-left-width: 0px; border-right-width: 1px;">
                 
@@ -197,7 +211,7 @@
                             d'c = <span class="dlc"> </span> cm <br>
                         </td>
                     </tr>
-            </table>
+            </table>-->
         </div>
     </div>
     
