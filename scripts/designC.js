@@ -396,11 +396,13 @@ function processFormD() {
 
         //Encontrar área de aço comprimida A's
         asl = m2d / (tlsd * (d - dlc));
+        asl = Number(asl.toFixed(2));
 
         //Encontrar área de aço tracionada As
         as1 = m1d / (tsd * (d - 0.4 * xd));
         as2 = m2d / (tsd * (d - dlc));
         ast = as1 + as2;
+        ast = Number(ast.toFixed(2));
 
         //CÁLCULO DA ARMADURA MÍNIMA DE TRAÇÃO
         inercia = (bw * Math.pow(h, 3)) / 12;
@@ -415,7 +417,7 @@ function processFormD() {
 
         //Resultados
         resultP = "A viga deve ser duplamente armada: Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
-        resultF = "Ops! Esta funcionalidade ainda não está ativa... O Sollvic está sendo aprimorado para em breve disponibilizá-la para você!";
+        resultF = "Ops! Você vai precisar de armadura dupla e esta funcionalidade ainda não está ativa... O Sollvic está sendo aprimorado para em breve disponibilizá-la para você! Mas só para adiantar, sua viga vai precisar de " + asl + "cm² de armadura comprimida e " + ast + "cm² de armadura tracionada.";
         bootbox.alert(resultF);
 
     }
