@@ -417,7 +417,7 @@ function processFormD() {
 
         //Resultados
         resultP = "A viga deve ser duplamente armada: Área de aço comprimida = " + asl + "cm². Área de aço tracionada = " + ast + "cm².";
-        resultF = "Ops! Você vai precisar de armadura dupla e esta funcionalidade ainda não está ativa... O Sollvic está sendo aprimorado para em breve disponibilizá-la para você! Mas só para adiantar, sua viga vai precisar de " + asl + "cm² de armadura comprimida e " + ast + "cm² de armadura tracionada.";
+        resultF = "Ops! Você vai precisar de armadura dupla. O Sollvic está em desenvolvimento para disponibilizar esta função para você! Mas só para adiantar, sua viga vai precisar de " + asl + "cm² de armadura comprimida e " + ast + "cm² de armadura tracionada.";
         bootbox.alert(resultF);
 
     }
