@@ -118,7 +118,7 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    
+
     <div class="container">
         <div class="row">
             <div class="apptitle">
@@ -127,7 +127,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container">
         <div class="row">
             <form name="formD" class="form-inline">
@@ -150,28 +150,28 @@
 
                     <p class="title2"> Dados </p>
 
-                    <label>Altura da viga (cm):</label>
+                    <label>Altura da viga (cm)*:</label>
                     <input class="form-control" type="text" name="hD" /><br><br>
 
-                    <label>Largura da viga (cm):</label>
+                    <label>Largura da viga (cm)*:</label>
                     <input class="form-control" type="text" name="bwD" /><br><br>
 
-                    <label>Concreto (Fck):</label>
+                    <label>Concreto (Fck)*:</label>
                     <select class="form-control" id="concrete" name="concreteD">
 			        </select> <br><br>
 
-                    <label>Aço:</label>
+                    <label>Aço*:</label>
                     <select class="form-control" id="steel" name="steelD">
 			        </select> <br><br>
 
-                    <label>Estribo (mm):</label>
-			        <select class="form-control" id="estribo" name="estriboD">
+                    <label>Estribo (mm)*:</label>
+                    <select class="form-control" id="estribo" name="estriboD">
                     </select> <br><br>
-                    
-                    <label>Distância da borda tracionada ao centro de gravidade da armadura tracionada (cm):</label>
+
+                    <label>Distância da borda tracionada ao centro de gravidade da armadura tracionada (cm)*:</label>
                     <input class="form-control" type="text" name="dlD" value=4.0 /> <br><br>
-                    
-                    <label>Distância da borda comprimida ao centro de gravidade da armadura comprimida (cm):</label>
+
+                    <label>Distância da borda comprimida ao centro de gravidade da armadura comprimida (cm)*:</label>
                     <input class="form-control" type="text" name="dlcD" value=4.0 /> <br><br>
 
                 </div>
@@ -183,11 +183,11 @@
                     <!--<label>Esforço Cortante \(V_k\) (kN):</label>
                     <input class="form-control" type="text" name="vCS" /> <br><br> !-->
 
-                    <label>Momento Fletor \(M_k\) (kN.cm):</label>
+                    <label>Momento Fletor \(M_k\) (kN.cm)*:</label>
                     <input class="form-control" type="text" name="mD" /> <br><br><br><br>
 
                 </div>
-                            
+
                 <div class="col-lg-5">
                     <p class="title2 inline"> Coeficientes e Parâmetros </p>
 
@@ -203,9 +203,9 @@
                         <input class="form-control" type="text" name="cobD" value=3.0 /> <br><br>
 
                         <label>Brita:</label>
-                        <select class="form-control" id="agreg" name="agregD" >
+                        <select class="form-control" id="agreg" name="agregD">
 			            </select><br><br>
-                        
+
                         <label>\({\gamma}_{c}\)</label>
                         <input class="form-control" type="text" name="gamacD" value=1.4 /> <br><br>
                         <label>\({\gamma}_{f}\)</label>
@@ -215,8 +215,12 @@
                     </div>
                 </div>
 
+                <div class="col-lg-12" style="display: block; margin-top: 15px;">
+                    <p id="disclaimer"> *Campos obrigatórios</p>
+                </div>
+
                 <div class="col-lg-12 text-center">
-                    <a href="#" class="btn btn-primary btn-xl" onClick="processFormD()">Dimensionar</a>
+                    <a href="#" class="btn btn-primary btn-xl" style="margin-right: 10px;" onClick="processFormD()">Dimensionar</a>
                     <input class="btn btn-primary btn-xl" type="reset" value="Limpar" /> <br>
 
                     <br>
@@ -228,8 +232,8 @@
             </form>
         </div>
     </div>
-    
-    
+
+
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -250,6 +254,7 @@
             $("#menu-toggle").toggleClass("toggled");
             $("#wrapper").toggleClass("toggled");
         });
+
     </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     <script type="text/x-mathjax-config">
@@ -259,7 +264,25 @@
 
     <script type="text/javascript" src="scripts/designC.js"></script>
     <script type="text/javascript" src="scripts/checkSq.js"></script>
-    
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-97173118-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
     <footer>® Sollvic 2017</footer>
 </body>
 

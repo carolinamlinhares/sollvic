@@ -119,7 +119,7 @@
         <!-- /.container-fluid -->
     </nav>
 
-     <div class="container">
+    <div class="container">
         <div class="row">
             <div class="apptitle">
                 <h1 class="titleReport">Relatório de Dimensionamento de Viga Metálica</h1>
@@ -154,7 +154,7 @@
                 </tr>
                 <tr>
                     <td class="tdcell">
-                        <p> Perfil com enrijecedor: Não </p> 
+                        <p> Perfil com enrijecedor: Não </p>
                         <p class="inline"> Distância entre enrijecedores N/A m </p>
                     </td>
                 </tr>
@@ -162,7 +162,7 @@
                     <td class="tdcell">
                         <p> Esforços </p>
                         <p class="inline"> Cortante \(V_k\) = <span class="vk"> </span> kN </p>
-                        <p class="tab"> Momento \(M_k\) = <span class="mk"> </span> kN.m </p>    
+                        <p class="tab"> Momento \(M_k\) = <span class="mk"> </span> kN.m </p>
                     </td>
                 </tr>
                 <tr>
@@ -170,7 +170,7 @@
                         <p> Coeficientes </p>
                         <p class="inline"> Gama \({\gamma}\) = <span class="gama"> </span> </p>
                         <p class="tab"> Gama a1 \({\gamma}_{a1}\) = <span class="gama1"> </span> </p>
-                        <p class="tab"> Cb = <span class="cb"> </span> </p>   
+                        <p class="tab"> Cb = <span class="cb"> </span> </p>
                     </td>
                 </tr>
             </table>
@@ -178,7 +178,7 @@
                 <tbody>
                     <tr style="height: 22%;">
                         <td></td>
-                        <td class="tdfig" style="vertical-align: bottom; padding-left:30px; text-align: left;"> 
+                        <td class="tdfig" style="vertical-align: bottom; padding-left:30px; text-align: left;">
                             tf = <span class="tf"> </span> mm
                         </td>
                     </tr>
@@ -192,7 +192,7 @@
                     </tr>
                     <tr style="height: 45%;">
                         <td class="tdfig" style="width: 70%;padding-left: 65px;vertical-align: middle;text-align: center;padding-top: 30px;">
-                            bf = <span class="bf"> </span> mm    
+                            bf = <span class="bf"> </span> mm
                         </td>
                         <td></td>
                     </tr>
@@ -201,43 +201,31 @@
             <table class="sectiondata" style="float:left; width: 28%; height:119px; border-top-width: 0px;border-left-width: 0px;">
                 <tbody>
                     <tr>
-                    <td colspan="3" style="padding-bottom:20px" id="perfilspan"> Perfil <span id="section"> </span> </td>
+                        <td colspan="3" style="padding-bottom:20px" id="perfilspan"> Perfil <span id="section"> </span> </td>
                     </tr>
                     <tr>
                         <td class="tdfig tdfigcell" style="padding-left: 10px; ">
-                            Massa Linear = <span id="ml"> </span> kg/m <br>
-                            d' = <span class="dl"> </span> mm <br>
-                            Área = <span id="area"> </span> \({cm}^2\) <br>
-                            Ix = <span id="ix"> </span> \({cm}^4\) <br>
-                            Wx = <span class="wx"> </span> \({cm}^3\) 
+                            Massa Linear = <span id="ml"> </span> kg/m <br> d' = <span class="dl"> </span> mm <br> Área = <span id="area"> </span> \({cm}^2\) <br> Ix = <span id="ix"> </span> \({cm}^4\) <br> Wx = <span class="wx"> </span> \({cm}^3\)
                         </td>
                         <td class="tdfig tdfigcell" style="padding-left: 10px; ">
-                            rx = <span id="rx"> </span> cm <br>
-                            Zx = <span id="zx"> </span> \({cm}^3\) <br>
-                            Iy = <span class="iy"> </span> \({cm}^4\) <br>
-                            Wy = <span id="wy"> </span> \({cm}^3\) <br>
-                            ry = <span class="ry"> </span> cm 
+                            rx = <span id="rx"> </span> cm <br> Zx = <span id="zx"> </span> \({cm}^3\) <br> Iy = <span class="iy"> </span> \({cm}^4\) <br> Wy = <span id="wy"> </span> \({cm}^3\) <br> ry = <span class="ry"> </span> cm
                         </td>
                         <td class="tdfig tdfigcell" style="padding-left: 10px;">
-                            Zy = <span id="zy"> </span> \({cm}^3\) <br>
-                            rt = <span id="rt"> </span> cm <br>
-                            It = <span class="it"> </span> \({cm}^4\) <br>
-                            Cw = <span class="cw"> </span> \({cm}^6\) <br>
-                            u = <span id="u"> </span> \({m}^2\)/m 
+                            Zy = <span id="zy"> </span> \({cm}^3\) <br> rt = <span id="rt"> </span> cm <br> It = <span class="it"> </span> \({cm}^4\) <br> Cw = <span class="cw"> </span> \({cm}^6\) <br> u = <span id="u"> </span> \({m}^2\)/m
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    
+
     <div class="container">
         <div class="row col-lg-10 text-justify centertable" style="padding-top: 40px;">
-            
+
             <p> O dimensionamento da viga <span class="beam"> </span> foi feito para atender ao Estado Limite Último (ELU) da viga submetida à flexão simples de acordo com a norma brasileira NBR 8800:2008. A viga foi avaliada pelo esforço cortante e o momento fletor máximo resistentes, face às condições solicitantes. </p>
-        
+
             <p> Os esforços atuantes \(V_k\) e \(M_k\) são majorados pelo fator \({\gamma}_{a1}\), resultando nos esforços solicitantes apresentados na tabela a seguir. </p>
-            
+
             <table class="reportable">
                 <tr>
                     <th> Esforço </th>
@@ -247,19 +235,19 @@
                 <tr>
                     <td> Solicitação </td>
                     <td> <span id="vsd"> </span> </td>
-                    <td> <span id="msd"> </span> </td>          
+                    <td> <span id="msd"> </span> </td>
                 </tr>
-             </table>
-            
+            </table>
+
             <p> A prioridade para o dimensionamento da viga foi o critério de <span class="priority"> </span>. Assim, são listadas na tabela abaixo sugestões de perfis que atendem aos requisitos com seus respectivos esforços resistentes e a proporção de utilização (Ratio = Solicitação/Resistência). Poderá ser usado qualquer perfil sugerido, desde que sejam consideradas outras variáveis como flecha admissível, custos, manuseio e questões estruturais. </p>
-            
+
             <div class="reportable row col-lg-10" style="padding 0" id="suggestion_table">
             </div>
-            
+
             <p> Para obter a verificação completa de cada perfil sugerido, visite a página de <a href="checkS.html">Verificação de Vigas Metálicas.</a> </p>
 
             <br>
-    
+
             <p id="disclaimer"> * Ao utilizar o Sollvic, o usuário é responsável por toda ou qualquer conclusão feita com o uso do programa. Nem o autor, nem qualquer outra Instituição ou Empresa relacionada são responsáveis pelo uso ou mau uso do programa e de seus resultados. O relatório não tem nenhum dever legal ou responsabilidade para com qualquer pessoa ou companhia pelos danos causados direta ou indiretamente resultantes do uso de alguma informação ou do uso do programa aqui disponibilizado. Não existe nenhum compromisso de bom funcionamento ou qualquer garantia.</p>
         </div>
     </div>
@@ -303,5 +291,23 @@
 <!-- ==================================================================================================================== -->
 <script type="text/javascript" src="scripts/reportDesignS.js"></script>
 <!-- ==================================================================================================================== -->
+
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-97173118-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
 
 </html>
