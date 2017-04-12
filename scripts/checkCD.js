@@ -368,10 +368,12 @@ function processFormCD() {
             //Cálculo de M2d
             m2d = md - m1d;
         
-            //Encontrar valor de tlsd na tabela (!!!!)
+            //Encontrar valor de tlsd na tabela
             rtab = dlc / d;
             elsd = 3.5 * (1 - (1 / 0.45) * rtab);
+            elsd = Number(elsd.toFixed(2));
             tlsd = (elsd / 10) * (Es / 100);
+            tlsd = Number(tlsd.toFixed(2));
             
             if ((rtab) < 0.1838571429) {
                 (rtab) = 0.1838571429;
