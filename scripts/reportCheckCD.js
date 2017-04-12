@@ -59,29 +59,45 @@ $(document).ready(function() {
 
     
     // Section
-    $("#h").html(resultado.h);
-    $("#bw").html(resultado.bw);
-    $("#cob").html(resultado.cob);
-    $("#d").html(resultado.d);
-    $("#diamEstForm").html(resultado.diamEstForm);
+    $(".h").html(resultado.h);
+    $(".bw").html(resultado.bw);
+    $(".cob").html(resultado.cob);
+    $(".d").html(resultado.d);
+    $(".diamEstForm").html(resultado.diamEstForm);
     $(".dl").html(resultado.dl);
     $(".dlc").html(resultado.dlc);
-    $("#ac").html(resultado.ac);
+    $(".ac").html(resultado.ac);
     
     
     // Resultados
-    $("#situationS").html(resultado.situationS);
-    $("#md").html(resultado.md);
+    $(".situationS").html(resultado.situationS);
+    $(".md").html(resultado.md);
     $(".d").html(resultado.d);
-    $("#x").html(resultado.x);
-    $("#xd").html(resultado.xd);
-    $("#dominio").html(resultado.dominio);
-    $("#ln").html(resultado.ln);
-    $("#lnd").html(resultado.lnd);
+    $(".x").html(resultado.x);
+    $(".xd").html(resultado.xd);
+    $(".dominio").html(resultado.dominio);
+    $(".ln").html(resultado.ln);
+    $(".lnd").html(resultado.lnd);
     $(".as").html(resultado.as);
     $(".ast").html(resultado.ast);
     $(".asl").html(resultado.asl);
     $(".resultArmPele").html(resultado.resultArmPele);
+    $(".fcd").html(resultado.fcd);
+    $(".fyd").html(resultado.fyd);
+    $(".epc").html(resultado.epc);
+    $(".eps").html(resultado.eps);
+    $(".epyd").html(resultado.epyd);
+    $(".betax23").html(resultado.betax23);
+    $(".betax34").html(resultado.betax34);
+    $(".x2lim").html(resultado.x2lim);
+    $(".x3lim").html(resultado.x3lim);
+    $(".m1d").html(resultado.m1d);
+    $(".m2d").html(resultado.m2d);
+    $(".elsd").html(resultado.elsd);
+    $(".tlsd").html(resultado.tlsd);
+    $(".astTol").html(resultado.astTol);
+    $(".aslTol").html(resultado.aslTol);
+ 
     
     
     //Arranjos Table
