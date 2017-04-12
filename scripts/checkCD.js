@@ -267,7 +267,9 @@ function processFormCD() {
     if (delta > 0) {
 	    deltaR = Math.sqrt(delta);
 	    x1 = ((-b +  deltaR)  / (2 * a));
+        x1 = Number(x1.toFixed(2));
 	    x2 = ((-b -  deltaR)  / (2 * a));
+        x2 = Number(x2.toFixed(2));
     } else {
         x1 = ("Sem raiz");
 		x2 = ("Sem raiz");
@@ -279,7 +281,7 @@ function processFormCD() {
         x = x1;
     }
     
-    x = Number(x.toFixed(2));
+    //x = Number(x.toFixed(2));
     //VERIFICAÇÃO DO DOMÍNIO DA VIGA
 
     x2lim = betax23 * d;
