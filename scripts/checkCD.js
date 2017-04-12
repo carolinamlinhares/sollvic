@@ -11,7 +11,7 @@ var x, mk, md, ln, lnd;
 var x2lim, x3lim, dominio, dl;
 var gamac, gamaf, gamas, s;
 var situationD, situationLN, situationCG;
-var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, asc, ast, astTol, aslTol, situationS, result;
+var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, asc, ast, astTol, aslTol, situationS, caseS, result;
 var astForm, ascForm;
 var armPele, resultArmPele, bootbox;
 
@@ -250,6 +250,7 @@ function processFormCD() {
    
     //DOMÍNIO 3
     epyd = (fyd / Es) * 1000;
+    epyd = Number(epyd.toFixed(2));
     betax34 = epc / (epc + epyd);
     betax34 = Number(betax34.toFixed(2));
     
@@ -281,7 +282,9 @@ function processFormCD() {
     //VERIFICAÇÃO DO DOMÍNIO DA VIGA
 
     x2lim = betax23 * d;
+    x2lim = Number(x2lim.toFixed(2));
     x3lim = betax34 * d;
+    x3lim = Number(x3lim.toFixed(2));
     
     if (x > x2lim && x < x3lim) {
         dominio = "Domínio 3";
@@ -321,6 +324,7 @@ function processFormCD() {
     } else {
         if (situationD === "Aprovado" && situationLN === "Aprovada") {
             situationS = "Simplesmente Armada";
+            caseS = "1º caso";
 	        as = md / (tsd * (d - 0.4 * x));
             as = Number(as.toFixed(2));
             astTol = as * 1.05;
@@ -333,6 +337,7 @@ function processFormCD() {
                 
         } else if (situationD === "Aprovado" && situationLN === "Reprovada") {
             situationS = "Simplesmente Armada";
+            caseS = "2º caso";
 	        as = md / (tsd * (d - 0.4 * x));
             as = Number(as.toFixed(2));
             astTol = as * 1.05;
@@ -345,6 +350,7 @@ function processFormCD() {
                     
         } else {
             situationS = "Duplamente Armada";
+            caseS = "3º caso";
         
             //Cálculo da nova posição da LN
             xd = 0.45 * d;
