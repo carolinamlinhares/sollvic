@@ -112,6 +112,7 @@ $(document).ready(function() {
     $(".tlsd").html(resultado.tlsd);
     $(".astTol").html(resultado.astTol);
     $(".aslTol").html(resultado.aslTol);
+    $(".caseS").html(resultado.caseS);
     $("#textC1").html(resultado.textC1);
     $("#textC2").html(resultado.textC2);
     $("#textC3").html(resultado.textC3);
