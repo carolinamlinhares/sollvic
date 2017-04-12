@@ -11,8 +11,9 @@ var x, mk, md, ln, lnd;
 var x2lim, x3lim, dominio, dl;
 var gamac, gamaf, gamas, s;
 var situationD, situationLN, situationCG;
-var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, asc, ast, astTol, aslTol, situationS, caseS, result;
+var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, asc, ast, astTol, aslTol, situationS, result;
 var astForm, ascForm;
+var textC1, textC2, textC3, caseS;
 var armPele, resultArmPele, bootbox;
 
 var nBarras, nBarrasC, nBarrasT;
@@ -473,6 +474,10 @@ function processFormCD() {
         "tlsd": tlsd,
         "astTol": astTol,
         "aslTol": aslTol,
+        "caseS": caseS,
+        "textC1": textC1,
+        "textC2": textC2,
+        "textC3": textC3,
         "lnd": lnd,
         "ln": ln
 
