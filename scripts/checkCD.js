@@ -11,7 +11,7 @@ var x, mk, md, ln, lnd;
 var x2lim, x3lim, dominio, dl;
 var gamac, gamaf, gamas, s;
 var situationD, situationLN, situationCG;
-var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, asc, ast, situationS, result;
+var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, asc, ast, astTol, aslTol, situationS, result;
 var astForm, ascForm;
 var armPele, resultArmPele, bootbox;
 
@@ -210,14 +210,18 @@ function processFormCD() {
     
     // Converting Units 
     fyk = fykForm / 10;
+    fyk = Number(fyk.toFixed(2));
     fck = fckForm / 100;
+    fck = Number(fck.toFixed(2));
     diamEst = diamEstForm / 10;
     diamLongT = diamLongTForm / 10;
     diamLongC = diamLongCForm / 10;
     
     // Calculating parameters
     fcd = fck / gamac;
+    fcd = Number(fcd.toFixed(2));
     fyd = fyk / gamas;
+    fyd = Number(fyd.toFixed(2));
     tsd = fyd;
     epc = 3.5;
     eps = 10.0;
@@ -242,10 +246,12 @@ function processFormCD() {
     //CÁLCULO DOS LIMITES DOS DOMÍNIOS 2 E 3
     //DOMÍNIO 2
     betax23 = epc / (epc + eps);
+    betax23 = Number(betax23.toFixed(2));
    
     //DOMÍNIO 3
     epyd = (fyd / Es) * 1000;
     betax34 = epc / (epc + epyd);
+    betax34 = Number(betax34.toFixed(2));
     
     //CÁLCULO DA POSIÇÃO DA LINHA NEUTRA (x)
     //md = 0.68*bw*x*fcd*(d-0.4*x);
@@ -317,6 +323,8 @@ function processFormCD() {
             situationS = "Simplesmente Armada";
 	        as = md / (tsd * (d - 0.4 * x));
             as = Number(as.toFixed(2));
+            astTol = as * 1.05;
+            astTol = Number(astTol.toFixed(2));
             if ((astForm + (0.05 * astForm)) >= as) {
                 result = "A viga resiste ao momento fletor solicitado e pode ser simplesmente armada";
             } else {
@@ -327,6 +335,8 @@ function processFormCD() {
             situationS = "Simplesmente Armada";
 	        as = md / (tsd * (d - 0.4 * x));
             as = Number(as.toFixed(2));
+            astTol = as * 1.05;
+            astTol = Number(astTol.toFixed(2));
             if ((astForm + (0.05 * astForm)) >= as) {
                 result = "A viga resiste ao momento fletor solicitado e pode ser simplesmente armada, mas não atende ao limite da linha neutra estabelecido em norma. Sugere-se aumentar a altura da viga.";
             } else {
@@ -361,12 +371,16 @@ function processFormCD() {
             //Encontrar área de aço comprimida necessária A's
             asl = m2d / (tlsd * (d - dlc));
             asl = Number(asl.toFixed(2));
+            aslTol = as * 1.05;
+            aslTol = Number(aslTol.toFixed(2));
         
             //Encontrar área de aço tracionada necessária As
             as1 = m1d / (tsd * (d - 0.4 * xd));
             as2 = m2d / (tsd * (d - dlc));
             ast = as1 + as2;
             ast = Number(ast.toFixed(2));
+            astTol = as * 1.05;
+            astTol = Number(astTol.toFixed(2));
          
             if ((astForm + (0.05 * astForm)) >= ast && (ascForm + (0.05 * ascForm)) >= asl) {
                 result = "A viga resiste ao momento fletor solicitado com a armadura dupla utilizada.";
@@ -431,11 +445,28 @@ function processFormCD() {
         "md": md,
         "as": as,
         "ast": ast,
+        "as1": as1,
+        "as2": as2,
         "asl": asl,
         "x": x,
         "xd": xd,
         "dominio": dominio,
         "result": result,
+        "fcd": fcd,
+        "fyd": fyd,
+        "epc": epc,
+        "eps": eps,
+        "epyd": epyd,
+        "betax23": betax23,
+        "betax34": betax34,
+        "x2lim": x2lim,
+        "x3lim": x3lim,
+        "m1d": m1d,
+        "m2d": m2d,
+        "elsd": elsd,
+        "tlsd": tlsd,
+        "astTol": astTol,
+        "aslTol": aslTol,
         "lnd": lnd,
         "ln": ln
 
