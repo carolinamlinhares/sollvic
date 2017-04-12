@@ -242,7 +242,7 @@
                 *Supondo inicialmente que a viga esteja no domínio 2 ou 3 </p>
             
                 <p class="eqcenter">\(\ \varepsilon_c=3.5\) <span class="fyd"> </span> </p>
-                <p> \(\ \varepsilon_c\) – Deformação de compressão máxima do concreto;<br>
+                <p> \(\ \varepsilon_c\) – Deformação de compressão máxima do concreto;<br></p>
             
                 <p class="eqcenter">\(\ \varepsilon_s=10.0\) <span class="fyd"> </span> </p>
                 <p> \(\ \varepsilon_s\) – Deformação de alongamento máxima do aço;<br>
@@ -294,16 +294,16 @@
                 
             Se verdadeira, a equação resulta o valor de condição aprovada. Se falsa, resulta o valor de condição reprovada.
                 
-            <p class="eqcenter">\(\ LN = \frac {x}{d} ≤ \) <span class="ln"> </span> cm</p>
+            <p class="eqcenter">\(\ \beta = \frac {x}{d} = \) <span class="ln"> </span> cm</p>
             
             
             <p class="report-h4">8. Cálculo da Área de Aço Necessária</p>
                 
             <p>Nesta etapa, ocorre a análise dos resultados e suas combinações determinam se a viga precisa de fato possuir armadura dupla, de acordo com os esforços solicitados, ou pode ser simplesmente armada.</p>
                 
-            <p>1º caso - Os cálculos anteriores aprovam o domínio encontrado, o que ocorre se a viga estiver no domínio 2 ou domínio 3 de deformação, e aprovam a altura da linha neutra em relação à altura útil da viga\(\ \frac {x}{d} \). Passando nestes dois critérios, a viga pode ser simplesmente armada.
+            <p>1º caso - Os cálculos anteriores aprovaram o domínio encontrado, o que ocorre porque a viga está no domínio 2 ou domínio 3 de deformação, e aprovaram a altura da linha neutra em relação à altura útil da viga\(\ \frac {x}{d} \). Tendo passado nestes dois critérios, a viga pode ser simplesmente armada.
                 Assim, a área de aço necessária é calculada pela equação:</p>
-            <p class="eqcenter"> \(\ As = M_d / ( \sigma_{sd} * (d - 0.4 * x)) = \) </p>
+            <p class="eqcenter"> \(\ As = \frac{M_d}{ \sigma_{sd} * (d - 0.4 * x)} = \) </p>
                 <p>que comparada à área de aço inserida como dado de entrada (solicitante), define se a viga resiste ou não ao esforço provocado pelo momento fletor.<br><br>
                 
                     Ou seja:<br>
@@ -315,7 +315,7 @@
             
             <p>Caso contrário, a viga não resiste ao momento fletor solicitado.<br><br></p>
                 
-           <p>2º caso – A viga é aprovada no critério do domínio, mas reprovada na verificação do limite da linha neutra. O elemento em questão ainda pode possuir armadura simples, necessitando apenas de alguma alteração que faça com que a linha neutra esteja dentro do limite indicado por norma.<br><br>
+           <p>2º caso – A viga foi aprovada no critério do domínio, mas reprovada na verificação do limite da linha neutra. O elemento em questão ainda pode possuir armadura simples, necessitando apenas de alguma alteração que faça com que a linha neutra esteja dentro do limite indicado por norma.<br><br>
                 Algumas opções são:<br>
                 -Aumentar a altura útil, o que ocorre com a redução da distância da borda tracionada ao centro de gravidade da armadura tracionada \(\ d'\),<br>
                 -Aumentar a altura da viga, para que seja possível ter um valor de altura útil maior,<br>
@@ -324,7 +324,11 @@
             Desta forma:<br>
                 Se\(\ A_{stEntrada} *1.05 ≥\ A_s \), a viga resiste ao momento fletor solicitado e pode ser simplesmente armada, mas não atende ao limite da linha neutra estabelecido em norma. Sugere-se aumentar a altura da viga.<br><br>
                 
-                Em qualquer caso onde a condição\(\ A_{stEntrada} *1.05 ≥\ A_s \) não for atendida, a viga não resiste ao momento fletor solicitado.</p><br>
+                Em qualquer caso onde a condição\(\ A_{stEntrada} *1.05 ≥\ A_s \) não for atendida, a viga não resiste ao momento fletor solicitado.</p>
+            
+                <p class="eqcenter"> \(\ As = \frac{M_d}{ \sigma_{sd} * (d - 0.4 * x)} = \) </p>
+            
+                <p class="eqcenter"> \(\ (A_{stEntrada} * 1.05) = \)</p>
  
                 
             <p>3º caso – A viga encontra-se no domínio 4, e foi então reprovada neste critério. A mesma precisa ser duplamente armada, de modo que uma parcela dos esforços de compressão seja resistida pelo aço inserido na zona comprimida da seção. Assim, o programa procede com as seguintes etapas de cálculo:<br><br>
@@ -334,45 +338,56 @@
                 <p class="eqcenter">\(\ x' = 0.45 * d =\) <span class="xd"> </span> cm</p>
                 
                 <p>Calcula-se então o valor da primeira parcela do momento fletor resistente, a ser gerado pela área de aço tracionada:</p>
-                <p class="eqcenter">\(\ M_{1d} = 0.68 * bw * xd * f_{cd} * (d - 0.4 * x_d) \)</p>
+                <p class="eqcenter">\(\ M_{1d} = 0.68 * bw * x_d * f_{cd} * (d - 0.4 * x_d) \)</p>
                 <p class="eqcenter">\(\ M_{1d} \) = <span class="fcd"> </span> kN.cm</p>
                 
                 <p>A segunda parcela do momento fletor resistente, a ser gerado pela área de aço na zona comprimida é calculado através da subtração:</p>
                 <p class="eqcenter">\(\ M_{2d} = M_d - M_{1d} \)</p>
                 <p class="eqcenter">\(\ M_{2d} = \) <span class="m2d"> </span> cm</p>
-                <p>onde md é o momento de flexão total solicitado, já majorado.</p>
+                <p>onde Md é o momento de flexão total solicitado, já majorado.</p>
                 
                 <p>A área de aço comprimida necessária As` é então dada pela equação:</p>
-                <p class="eqcenter">/(/ A_{s'} = M_{2d} / ( /sigma_{`sd} * (d - d`c)) \)</p>
-                <p class="eqcenter">as' = <span class="asl"> </span> cm²</p>
+                <p class="eqcenter"> \(\ A'_{s} = \frac{M_{2d}}{ \sigma'_{sd} * (d - d'c)}\)</p>
+                <p class="eqcenter">\(\ A'_s = \)<span class="asl"> </span> cm²</p>
+            
+                <p> \(\ \sigma'_{sd}\) – Tensão de escoamento do aço;<br></p>
+                <p> \(\ d'\) – Distância da borda mais comprimida ao centro de gravidade da armadura comprimida;<br></p>
                 
-                <p>Para encontrar o valor de tlsd e substituir na equação acima, calcula-se o valor da deformação da armadura comprimida através da equação:</p>
-                    ε'sd= 3,5 * (1 - (1 / 0,45) *d'c/d)
-                    elsd = <span class="elsd"> </span> cm
+                <p>Para encontrar o valor de \(\ \sigma'_{sd}\) e substituir na equação acima, calcula-se o valor da deformação da armadura comprimida através da equação:</p>
+                <p class="eqcenter"> \(\ \varepsilon'_{sd} = 3.5 * (1 - \frac{1}{0.45} * \frac{d'c}{d}) = \)<span class="elsd"> </span> cm </p>
                 
-                Multiplicando-se o seu valor pelo módulo de elasticidade do aço (210GPa), encontra-se a tensão de escoamento, que na equação acima, resultará a área de aço comprimida:
-                    θ'sd = (ε^' sd / 10) * (Es / 100)
-                    θ'sd = <span class="tlsd"> </span> cm
+                <p>Multiplicando-se o seu valor pelo módulo de elasticidade do aço (210GPa), encontra-se a tensão de escoamento, que na equação acima, resultará a área de aço comprimida:</p>
+                    <p class="eqcenter"> \(\ \sigma'_{sd} = (\frac{\varepsilon'_{sd}}{10}) * (\frac{Es}{100}) = \)<span class="tlsd"> </span> cm</p>
+                <p> \(\ E_s = \) 210GPa - Módulo de elasticidade do aço;<br></p>
                 
                 <!--Verifica-se que a partir do valor de 0,1838571429 da relação 𝑑’𝑐/𝑑, a tensão de escoamento já atingiu seu valor limite de 2,07 ‰.-->
                 
-                 A area de aço tracionada necessária é a soma de duas parciais (as1 e as2). ). A primeira equilibra o momento fletor resistente da área de concreto comprimido e a segunda faz o equilíbrio com o momento fletor da armadura comprimida. Os cálculos são dados pelas equações abaixo, onde 𝑎𝑠𝑡 é a área de aço total necessária na zona tracionada.
-                 as1 = m1d / (tsd * (d - 0.4 * xd)) = <span class="as1"> </span> cm
-                 as2 = m2d / (tsd * (d - dlc)) = <span class="as1"> </span> cm
-                 ast = as1 + as2 =  = <span class="ast"> </span> cm
-            </p>
+                 <p>A area de aço tracionada necessária é a soma de duas parciais \(\ A_{s1}\) e \(\ A_{s2}) \). A primeira equilibra o momento fletor resistente da área de concreto comprimido e a segunda faz o equilíbrio com o momento fletor da armadura comprimida. Os cálculos são dados pelas equações abaixo, onde \(\ A_{st}\) é a área de aço total necessária na zona tracionada.</p>
+                <p class="eqcenter">\(\ A_{s1} = \frac{M_{1d}}{\sigma_sd * (d - 0.4 * x_d)} = \)<span class="as1"></span> cm²</p>
+                <p class="eqcenter">\(\ A_{s2} = \frac{M_{2d}}{\sigma_sd * (d - d'_c)} = \)<span class="as1"> </span> cm²</p>
+                <p class="eqcenter">\(\ A_{st} = A_{s1} + A_{s2} = \) <span class="ast"> </span> cm²</p>
+                
             
-            <p>
-            	9. Resultados
-                A verificação da resistência se dá pela comparação entre valores de áreas de aço comprimidas e tracionadas inseridos pelo usuário e seus respectivos valores mínimos calculados para resistir aos esforços solicitantes.
+            
+            	<p class="report-h4">9. Resultados</p>
+                <p>A verificação da resistência se dá pela comparação entre valores de áreas de aço comprimidas e tracionadas inseridos pelo usuário e seus respectivos valores mínimos calculados para resistir aos esforços solicitantes.<br><br>
                 
-                Assim:          
-                Se ((astForm + (0,05 * astForm))≥ ast e (ascForm + (0,05 * ascForm))≥ asl),
+                Assim:<br>          
+                Se \(\ (A_{stEntrada} * 1.05 ≥ A_{st}) \) e \(\ (A'_{sEntrada} * 1.05 ≥ A'_s) \),
                 
-                a viga resiste ao momento fletor solicitado. Caso contrário, a viga não resiste ao momento fletor solicitado.
+                a viga resiste ao momento fletor solicitado.<br>
+                Caso contrário, a viga não resiste ao momento fletor solicitado.</p>
+            
+                <p class="eqcenter">\(\ A_{stEntrada} * 1.05 = \) <span class="ast"> </span> cm²</p>
+                <p class="eqcenter">\(\ A'_{sEntrada} * 1.05 = \) <span class="ast"> </span> cm²</p>
+            
+                <p> \(\ A_{stEntrada} \) - Área de aço tracionada inserida como dado de entrada;<br></p>
+                <p> \(\ A'_{sEntrada} \) - Área de aço comprimida inserida como dado de entrada;<br></p>
+                <p> \(\ A_{st} \) - Área de aço tracionada necessária;<br></p>
+                <p> \(\ A'_s \) - Área de aço comprimida necessária;<br></p>
                 
-                Pode-se observar nas fórmulas acima que os cálculos finais na comparação das áreas de aço consideram uma margem de 5% de tolerância, para que uma viga que resulte valores muito próximos ao necessário para resistir ao momento solicitante majorado, com uma seção aceitável e ainda segura, não deixe de ser aprovada, sendo que esta de fato resiste, considerando todos os coeficientes e verificações de segurança que são utilizados nas aplicações até o resultado final.
-            </p>
+                <p>Pode-se observar nas fórmulas acima que os cálculos finais na comparação das áreas de aço consideram uma margem de 5% de tolerância, para que uma viga que resulte valores muito próximos ao necessário para resistir ao momento solicitante majorado, com uma seção aceitável e ainda segura, não deixe de ser aprovada, sendo que esta de fato resiste, considerando todos os coeficientes e verificações de segurança que são utilizados nas aplicações até o resultado final.</p>
+        
             
             <table class="reportable">
                 <tr>
