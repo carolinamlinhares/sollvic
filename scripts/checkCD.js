@@ -324,7 +324,7 @@ function processFormCD() {
     } else {
         if (situationD === "Aprovado" && situationLN === "Aprovada") {
             situationS = "Simplesmente Armada";
-            caseS = "1º caso";
+            caseS = "Caso 1";
 	        as = md / (tsd * (d - 0.4 * x));
             as = Number(as.toFixed(2));
             astTol = as * 1.05;
@@ -337,7 +337,7 @@ function processFormCD() {
                 
         } else if (situationD === "Aprovado" && situationLN === "Reprovada") {
             situationS = "Simplesmente Armada";
-            caseS = "2º caso";
+            caseS = "Caso 2";
 	        as = md / (tsd * (d - 0.4 * x));
             as = Number(as.toFixed(2));
             astTol = as * 1.05;
@@ -350,7 +350,7 @@ function processFormCD() {
                     
         } else {
             situationS = "Duplamente Armada";
-            caseS = "3º caso";
+            caseS = "Caso 3";
         
             //Cálculo da nova posição da LN
             xd = 0.45 * d;
