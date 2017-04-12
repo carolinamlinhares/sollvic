@@ -225,115 +225,129 @@
             
             <p> As etapas de cálculo são apresentadas a seguir: </p>
                         
-            <p>1.Estabelecimento dos parâmetros
+            <p class="report-h4">1.Estabelecimento dos parâmetros
                 
-                <p>\[\ f_{cd}\ =\ f_{ck}\ /\ \gamma_c~\ ~\ ~\ ~\ ~\ ~\] = <span class="fcd"> </span> – Resistência minorada do concreto;</p>
-                <p>\[ \ f_{yd}\ =\ f_{yk}\ /\ \gamma_s~\ ~\ ~\ ~\ ~\ ~\] = <span class="fcd"> </span> – Resistência minorada do aço; </p>
-                <p>\[\ \sigma_{sd}\ =\ f_{yd}\ ~\ ~\ ~\ ~\ ~\ ~\] = <span class="fcd"> </span> – (Supondo inicialmente que a viga esteja no domínio 2 ou 3) </p>
-                <p>\[\ \varepsilon_c\ =3.5\ ~\ ~\ ~\ ~\ ~\ ~\] = <span class="fcd"> </span> – Deformação de compressão máxima do concreto; </p>
-                <p>\[\ \varepsilon_s\ =10.0\ ~\ ~\ ~\ ~\ ~\ ~\] = <span class="fcd"> </span> – Deformação de alongamento máxima do aço; </p>
-            </p>
+                <p class="eqcenter">\(\ f_{cd}=\frac{f_{ck}}{\gamma_c}\) = <span class="fcd"> </span> </p>
+                <p> \(\ f_{ck} \) – Resistência do concreto;<br>
+                 \(\ \gamma_c \) – Coeficiente de minoração do concreto;<br>
+                 \(\ f_{cd} \) – Resistência minorada do concreto;</p>
             
-            <p>2. Cálculo do Momento Fletor Majorado
-                \[\ M_d\ =\ M_k * \gamma_f\]
-            </p>
+                <p class="eqcenter">\(\ f_{yd}=\frac{f_{yk}}{\gamma_s}\) = <span class="fyd"> </span> </p>
+                <p> \(\ f_{yd} \) – Resistência do concreto;<br>
+                 \(\ \gamma_s \) – Coeficiente de minoração do aço;<br>
+                 \(\ f_{yd} \) – Resistência minorada do concreto;</p>
             
-            <p>3. Cálculo da Altura Útil (d)
-                \[\ d =\ h – d'\]
-            </p>
+                <p class="eqcenter">*\(\ \sigma_{sd}=f_{yd}\) = <span class="fyd"> </span> </p>
+                <p> \(\ \sigma_{sd} \) – Tensão de tração no aço;<br>
+                *Supondo inicialmente que a viga esteja no domínio 2 ou 3 </p>
             
-            <p>
-            4. Determinação dos limites entre os domínios da viga
-            Calculam-se os limites entre os domínios 2 e 3 através dos parâmetros encontrados através das equações:
-            \[\ \beta_{x23} = \varepsilon_c / (\varepsilon_c + \varepsilon_s)\] = <span class="betax23"> </span> cm (Domínio 2);
-            \[\ \beta_{x34} = \varepsilon_c / (\varepsilon_c + \varepsilon_{yd})\] = <span class="betax34"> </span> cm (Domínio 3),
-                sendo \[\ \varepsilon_{yd} = \frac{f_{yd}}{E_s} * 1000\]
+                <p class="eqcenter">\(\ \varepsilon_c=3.5\) <span class="fyd"> </span> </p>
+                <p> \(\ \varepsilon_c\) – Deformação de compressão máxima do concreto;<br>
+            
+                <p class="eqcenter">\(\ \varepsilon_s=10.0\) <span class="fyd"> </span> </p>
+                <p> \(\ \varepsilon_s\) – Deformação de alongamento máxima do aço;<br>
+            
+            </p><br>
+            
+            <p class="report-h4">2. Cálculo do Momento Fletor Majorado
+                <p>\[\ M_d\ =\ M_k * \gamma_f\]</p>
+            
+            
+            <p class="report-h4">3. Cálculo da Altura Útil (d)</p>
+                <p>\[\ d =\ h – d'\] </p>
+           
+            
+            <p class="report-h4">4. Determinação dos limites entre os domínios da viga</p>
+            <p>Calculam-se os limites entre os domínios 2 e 3 através dos parâmetros encontrados através das equações:
+            <p class="eqcenter">\(\ \beta_{x23} = \frac{\varepsilon_c}{(\varepsilon_c + \varepsilon_s)} \) = <span class="betax23"> </span> cm<p>
+            <p> \(\ \beta_{x23} \) – Relação \(\ x/d \) (limite do domínio 2);<br>
+            
+            <p class="eqcenter">\(\ \beta_{x34} = \frac{\varepsilon_c}{(\varepsilon_c + \varepsilon_{yd})} \) = <span class="betax23"> </span> cm<p>
+            <p> \(\ \beta_{x34} \) – Relação \(\ x/d \) (limite do domínio 3);<br><br>
                 
-            Os limites dos domínios 2 e 3 são calculados multiplicando-se os parâmetros acima pela altura útil da seção:
-            \[\ x_{2lim} =\ \beta_{x23} * d\]
-            \[\ x_{3lim} =\ \beta_{x34} * d\]
-            </p>
+                Sendo \[\ \varepsilon_{yd} = \frac{f_{yd}}{E_s} * 1000\]
+                
+            Os limites dos domínios 2 e 3 são calculados multiplicando-se os parâmetros acima pela altura útil da seção: </p>
+            <p>\[\ x_{2lim} =\ \beta_{x23} * d =\] </p>
+            <p>\[\ x_{3lim} =\ \beta_{x34} * d =\] </p>
+           
             
-            <p>
-            Determinação da posição da Linha Neutra
+            <p class="report-h4">5. Determinação da posição da Linha Neutra</p>
                 
             \[\ M_d = 0.68*bw*x*f_{cd}*(d-0.4*x)\]
-            \[x =\] <span class="x"> </span> cm (Domínio 2)
+            <p class="eqcenter"> \(x =\) <span class="x"> </span>cm</p>    
+            <p> \(\ x\) - Posição da linha neutra na viga a partir da borda mais comprimida.</p>
+            
+            <p class="report-h4">6. Determinação do domínio de deformação da viga</p>
                 
-                Onde\(\ 'x'\) é a posição da linha neutra na viga, a partir da sua borda mais comprimida.
+            <p>Os valores de \(\ x_{2lim}\) e \(\ x_{3lim}\) representam a altura na seção da viga que delimitam os domínios 2 e 3. A comparação destes com a altura\(\ 'x'\) da linha neutra, resulta no domínio da viga:</p>
+                
+             <p>Se \(\ x < x_{2lim} \), viga no domínio 2 (Aprovada neste quesito)<br>
+                Se \(\ x_{2lim} < x < x_{3lim} \), viga no domínio 3 (Aprovada neste quesito)<br>
+                Se \(\ x > x_{3lim} \), viga está no domínio 4 (Reprovada neste quesito)
             </p>
             
-            <p>
-            Determinação do domínio de deformação da viga
-                
-            Os valores de \(\ x_{2lim}\) e \(\ x_{3lim}\) representam a altura na seção da viga que delimitam os domínios 2 e 3. A comparação destes com a altura\(\ 'x'\) da linha neutra, resulta no domínio da viga:
-                
-                <p> Se \(\ x < x_{2lim} \), viga no domínio 2 (Aprovada neste quesito)<br>
-                    Se \(\ x_{2lim} < x < x_{3lim} \), viga no domínio 3 (Aprovada neste quesito)<br>
-                    Se \(\ x > x_{3lim} \), viga está no domínio 4 (Reprovada neste quesito)
-                </p>
-            </p>
-            
-            <p>
-            7. Verificação do limite da linha neutra
-            A norma impõe um limite à relação\(\ \frac {x}{d} \), restrigindo ainda mais a zona da altura da seção na qual a linha neutra estará aprovada, favorecendo assim a segurança. Esta verificação é observada através da fórmula:
+            <p class="report-h4">7. Verificação do limite da linha neutra</p>
+            <p>A norma impõe um limite à relação\(\ \frac {x}{d} \), restrigindo ainda mais a zona da altura da seção na qual a linha neutra estará aprovada, favorecendo assim a segurança. Esta verificação é observada através da fórmula:
                 
             \[\ \frac {x}{d} ≤ 0.45 \]
                 
             Se verdadeira, a equação resulta o valor de condição aprovada. Se falsa, resulta o valor de condição reprovada.
                 
-            \(\ LN = \frac {x}{d} ≤ \) <span class="ln"> </span> cm
-            </p>
+            <p class="eqcenter">\(\ LN = \frac {x}{d} ≤ \) <span class="ln"> </span> cm</p>
             
-            <p>
-            8. Cálculo da Área de Aço Necessária<br>
+            
+            <p class="report-h4">8. Cálculo da Área de Aço Necessária</p>
                 
-            Nesta etapa, ocorre a análise dos resultados e suas combinações determinam se a viga precisa de fato possuir armadura dupla, de acordo com os esforços solicitados, ou pode ser simplesmente armada.<br><br>
+            <p>Nesta etapa, ocorre a análise dos resultados e suas combinações determinam se a viga precisa de fato possuir armadura dupla, de acordo com os esforços solicitados, ou pode ser simplesmente armada.</p>
                 
-            1º caso - Os cálculos anteriores aprovam o domínio encontrado, o que ocorre se a viga estiver no domínio 2 ou domínio 3 de deformação, e aprovam a altura da linha neutra em relação à altura útil da viga\(\ \frac {x}{d} \). Passando nestes dois critérios, a viga pode ser simplesmente armada.
-                Assim, a área de aço necessária é calculada pela equação:
-                    \[\ As = M_d / ( \sigma_{sd} * (d - 0.4 * x)), \]
-                que comparada à área de aço inserida como dado de entrada (solicitante), define se a viga resiste ou não ao esforço provocado pelo momento fletor.<br>
+            <p>1º caso - Os cálculos anteriores aprovam o domínio encontrado, o que ocorre se a viga estiver no domínio 2 ou domínio 3 de deformação, e aprovam a altura da linha neutra em relação à altura útil da viga\(\ \frac {x}{d} \). Passando nestes dois critérios, a viga pode ser simplesmente armada.
+                Assim, a área de aço necessária é calculada pela equação:</p>
+            <p class="eqcenter"> \(\ As = M_d / ( \sigma_{sd} * (d - 0.4 * x)) = \) </p>
+                <p>que comparada à área de aço inserida como dado de entrada (solicitante), define se a viga resiste ou não ao esforço provocado pelo momento fletor.<br><br>
                 
-            Ou seja:<br>
-                Se \(\ (A_{stEntrada} * 1.05) >= A_s \), a viga resiste ao momento fletor solicitado e pode ser simplesmente armada.<br>
-                \(\ A_{stEntrada}\) - área de aço inserida como dado de entrada<br>
-                \(\ A_s\) - área de aço necessária para resistir aos esforços.<br><br>
-                Caso contrário, a viga não resiste ao momento fletor solicitado.<br><br>
+                    Ou seja:<br>
+                Se \(\ (A_{stEntrada} * 1.05) ≥ A_s \), a viga resiste ao momento fletor solicitado e pode ser simplesmente armada.</p>
+               <p> \(\ A_{stEntrada}\) - área de aço inserida como dado de entrada<br>
+                   \(\ A_s\) - área de aço necessária para resistir aos esforços<br><br></p>
+            
+            <p class="eqcenter"> \(\ (A_{stEntrada} * 1.05) = \)</p>
+            
+            <p>Caso contrário, a viga não resiste ao momento fletor solicitado.<br><br></p>
                 
-           2º caso – A viga é aprovada no critério do domínio, mas reprovada na verificação do limite da linha neutra. O elemento em questão ainda pode possuir armadura simples, necessitando apenas de alguma alteração que faça com que a linha neutra esteja dentro do limite indicado por norma.
+           <p>2º caso – A viga é aprovada no critério do domínio, mas reprovada na verificação do limite da linha neutra. O elemento em questão ainda pode possuir armadura simples, necessitando apenas de alguma alteração que faça com que a linha neutra esteja dentro do limite indicado por norma.<br><br>
                 Algumas opções são:<br>
-                -Aumentar a altura útil, o que ocorre com a redução da distância da borda tracionada ao centro de gravidade da armadura tracionada \(\ d'\),
-                -Aumentar a altura da viga, para que seja possível ter um valor de altura útil maior,
-                -Reduzir a altura da linha neutra, alterando-se o momento solicitante ou o tipo do concreto e, por conseqüência, sua resistência.
+                -Aumentar a altura útil, o que ocorre com a redução da distância da borda tracionada ao centro de gravidade da armadura tracionada \(\ d'\),<br>
+                -Aumentar a altura da viga, para que seja possível ter um valor de altura útil maior,<br>
+                -Reduzir a altura da linha neutra, alterando-se o momento solicitante ou o tipo do concreto e, por conseqüência, sua resistência.<br><br>
                 
-            Desta forma:
-                Se\(\ A_{stEntrada} *1.05 ≥\ A_s \), a viga resiste ao momento fletor solicitado e pode ser simplesmente armada, mas não atende ao limite da linha neutra estabelecido em norma. Sugere-se aumentar a altura da viga.
+            Desta forma:<br>
+                Se\(\ A_{stEntrada} *1.05 ≥\ A_s \), a viga resiste ao momento fletor solicitado e pode ser simplesmente armada, mas não atende ao limite da linha neutra estabelecido em norma. Sugere-se aumentar a altura da viga.<br><br>
                 
-                Em qualquer caso onde a condição\(\ A_{stEntrada} *1.05 ≥\ A_s \) não for atendida, a viga não resiste ao momento fletor solicitado.<br><br>
+                Em qualquer caso onde a condição\(\ A_{stEntrada} *1.05 ≥\ A_s \) não for atendida, a viga não resiste ao momento fletor solicitado.</p><br>
  
                 
-            3º caso – A viga encontra-se no domínio 4, e foi então reprovada neste critério. A mesma precisa ser duplamente armada, de modo que uma parcela dos esforços de compressão seja resistida pelo aço inserido na zona comprimida da seção. Assim, o programa procede com as seguintes etapas de cálculo:
+            <p>3º caso – A viga encontra-se no domínio 4, e foi então reprovada neste critério. A mesma precisa ser duplamente armada, de modo que uma parcela dos esforços de compressão seja resistida pelo aço inserido na zona comprimida da seção. Assim, o programa procede com as seguintes etapas de cálculo:<br><br>
                 
                 3.1 - Cálculo de uma nova posição da LN
-                Tomando-se a altura máxima que a linha neutra pode atingir para estar de acordo com os critérios da NBR 6118:2014, valor que corresponde à 45% da altura útil, tem-se:  
-                    x' = 0.45 * d = <span class="xd"> </span> cm
+                Tomando-se a altura máxima que a linha neutra pode atingir para estar de acordo com os critérios da NBR 6118:2014, valor que corresponde à 45% da altura útil, tem-se:</p>  
+                <p class="eqcenter">\(\ x' = 0.45 * d =\) <span class="xd"> </span> cm</p>
                 
-                Calcula-se então o valor da primeira parcela do momento fletor resistente, a ser gerado pela área de aço tracionada:
-                    m1d = 0.68 * bw * xd * fcd * (d - 0.4 * xd)
-                    m1d = <span class="fcd"> </span> kN.cm
+                <p>Calcula-se então o valor da primeira parcela do momento fletor resistente, a ser gerado pela área de aço tracionada:</p>
+                <p class="eqcenter">\(\ M_{1d} = 0.68 * bw * xd * f_{cd} * (d - 0.4 * x_d) \)</p>
+                <p class="eqcenter">\(\ M_{1d} \) = <span class="fcd"> </span> kN.cm</p>
                 
-                A segunda parcela do momento fletor resistente, a ser gerado pela área de aço na zona comprimida é calculado através da subtração:
-                    m2d = md - m1d
-                    m2d = <span class="m2d"> </span> cm
-                onde md é o momento de flexão total solicitado, já majorado.
+                <p>A segunda parcela do momento fletor resistente, a ser gerado pela área de aço na zona comprimida é calculado através da subtração:</p>
+                <p class="eqcenter">\(\ M_{2d} = M_d - M_{1d} \)</p>
+                <p class="eqcenter">\(\ M_{2d} = \) <span class="m2d"> </span> cm</p>
+                <p>onde md é o momento de flexão total solicitado, já majorado.</p>
                 
-                A área de aço comprimida necessária A's é então dada pela equação:
-                    as' = m2d / (θ'sd * (d - dlc))
-                    as' = <span class="asl"> </span> cm²
+                <p>A área de aço comprimida necessária As` é então dada pela equação:</p>
+                <p class="eqcenter">/(/ A_{s'} = M_{2d} / ( /sigma_{`sd} * (d - d`c)) \)</p>
+                <p class="eqcenter">as' = <span class="asl"> </span> cm²</p>
                 
-                Para encontrar o valor de tlsd e substituir na equação acima, calcula-se o valor da deformação da armadura comprimida através da equação:
-                    ε^' sd= 3,5 * (1 - (1 / 0,45) *d'c/d)
+                <p>Para encontrar o valor de tlsd e substituir na equação acima, calcula-se o valor da deformação da armadura comprimida através da equação:</p>
+                    ε'sd= 3,5 * (1 - (1 / 0,45) *d'c/d)
                     elsd = <span class="elsd"> </span> cm
                 
                 Multiplicando-se o seu valor pelo módulo de elasticidade do aço (210GPa), encontra-se a tensão de escoamento, que na equação acima, resultará a área de aço comprimida:
