@@ -13,7 +13,7 @@ var gamac, gamaf, gamas, s;
 var situationD, situationLN, situationCG;
 var dlc, xd, m1d, m2d, rtab, elsd, tlsd, asl, as1, as2, asc, ast, astTol, aslTol, situationS, result;
 var astForm, ascForm;
-var textC1, textC2, textC3, caseS;
+var textC1, textC2, textC3, caseS, tableT1, tableT2, caseT;
 var armPele, resultArmPele, bootbox;
 
 var nBarras, nBarrasC, nBarrasT;
@@ -325,13 +325,19 @@ function processFormCD() {
     if (situationCG === "Incoerente") {
         alert("A altura da viga não está coerente com as distâncias ao centro das armaduras, cobrimento e bitolas utilizadas. Por favor, verifique os dados de entrada.");
     } else {
-        if (situationD === "Aprovado" && situationLN === "Aprovada") {
+        if (x === "Sem raiz") {
+            result = "A viga não atende às solicitações pois não foi possível determinar a posição da linha neutra. Sugere-se alterar a seção ou o momento solicitante.";
+            
+        } else if (situationD === "Aprovado" && situationLN === "Aprovada") {
             situationS = "Simplesmente Armada";
             caseS = "Caso 1";
+            caseT = "Tabela Simples";
 	        as = md / (tsd * (d - 0.4 * x));
             as = Number(as.toFixed(2));
             astTol = as * 1.05;
             astTol = Number(astTol.toFixed(2));
+            aslTol = ascForm * 1.05;
+            aslTol = Number(aslTol.toFixed(2));
             if ((astForm + (0.05 * astForm)) >= as) {
                 result = "A viga resiste ao momento fletor solicitado e pode ser simplesmente armada";
             } else {
@@ -341,10 +347,13 @@ function processFormCD() {
         } else if (situationD === "Aprovado" && situationLN === "Reprovada") {
             situationS = "Simplesmente Armada";
             caseS = "Caso 2";
+            caseT = "Tabela Simples";
 	        as = md / (tsd * (d - 0.4 * x));
             as = Number(as.toFixed(2));
             astTol = as * 1.05;
             astTol = Number(astTol.toFixed(2));
+            aslTol = ascForm * 1.05;
+            aslTol = Number(aslTol.toFixed(2));
             if ((astForm + (0.05 * astForm)) >= as) {
                 result = "A viga resiste ao momento fletor solicitado e pode ser simplesmente armada, mas não atende ao limite da linha neutra estabelecido em norma. Sugere-se aumentar a altura da viga.";
             } else {
@@ -354,6 +363,7 @@ function processFormCD() {
         } else {
             situationS = "Duplamente Armada";
             caseS = "Caso 3";
+            caseT = "Tabela Dupla";
         
             //Cálculo da nova posição da LN
             xd = 0.45 * d;
@@ -486,6 +496,9 @@ function processFormCD() {
         "textC1": textC1,
         "textC2": textC2,
         "textC3": textC3,
+        "caseT": caseT,
+        "tableT1": tableT1,
+        "tableT2": tableT2,
         "lnd": lnd,
         "ln": ln
 
