@@ -364,9 +364,11 @@ function processFormCD() {
         
             //Cálculo de M1d
             m1d = 0.68 * bw * xd * fcd * (d - 0.4 * xd);
+            m1d = Number(m1d.toFixed(2));
         
             //Cálculo de M2d
             m2d = md - m1d;
+            m2d = Number(m2d.toFixed(2));
         
             //Encontrar valor de tlsd na tabela
             rtab = dlc / d;
@@ -387,7 +389,9 @@ function processFormCD() {
         
             //Encontrar área de aço tracionada necessária As
             as1 = m1d / (tsd * (d - 0.4 * xd));
+            as1 = Number(as1.toFixed(2));
             as2 = m2d / (tsd * (d - dlc));
+            as2 = Number(as2.toFixed(2));
             ast = as1 + as2;
             ast = Number(ast.toFixed(2));
             astTol = astForm * 1.05;
