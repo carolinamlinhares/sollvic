@@ -94,6 +94,8 @@ $(document).ready(function() {
     $(".ln").html(resultado.ln);
     $(".lnd").html(resultado.lnd);
     $(".as").html(resultado.as);
+    $(".as1").html(resultado.as1);
+    $(".as2").html(resultado.as2);
     $(".ast").html(resultado.ast);
     $(".asl").html(resultado.asl);
     $(".resultArmPele").html(resultado.resultArmPele);
