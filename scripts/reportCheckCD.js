@@ -137,7 +137,7 @@ $(document).ready(function() {
             $("#textC").html(textC1);
             break;
         case "Caso 2":
-            $("#texC").html(textC2);
+            $("#textC").html(textC2);
             break;
         case "Caso 3":
             $("#textC").html(textC3);
