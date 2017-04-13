@@ -382,7 +382,7 @@ function processFormCD() {
             //Encontrar área de aço comprimida necessária A's
             asl = m2d / (tlsd * (d - dlc));
             asl = Number(asl.toFixed(2));
-            aslTol = as * 1.05;
+            aslTol = ascForm * 1.05;
             aslTol = Number(aslTol.toFixed(2));
         
             //Encontrar área de aço tracionada necessária As
@@ -390,7 +390,7 @@ function processFormCD() {
             as2 = m2d / (tsd * (d - dlc));
             ast = as1 + as2;
             ast = Number(ast.toFixed(2));
-            astTol = as * 1.05;
+            astTol = astForm * 1.05;
             astTol = Number(astTol.toFixed(2));
          
             if ((astForm + (0.05 * astForm)) >= ast && (ascForm + (0.05 * ascForm)) >= asl) {
