@@ -305,8 +305,10 @@
             <p>Nesta etapa, ocorre a análise dos resultados e suas combinações determinam se a viga precisa de fato possuir armadura dupla, de acordo com os esforços solicitados, ou pode ser simplesmente armada.</p>
             
             <p> A viga em análise está no <span class="caseS"></span>, e foi calculada como viga <span class="situationS"></span>.</p>
+            
+            <span id="textC"></span>
                 
-            <p>1º caso - Os cálculos anteriores aprovaram o domínio encontrado, o que ocorre porque a viga está no domínio 2 ou domínio 3 de deformação, e aprovaram a altura da linha neutra em relação à altura útil da viga\(\ \frac {x}{d} \). Tendo passado nestes dois critérios, a viga pode ser simplesmente armada.
+            <!--<p>1º caso - Os cálculos anteriores aprovaram o domínio encontrado, o que ocorre porque a viga está no domínio 2 ou domínio 3 de deformação, e aprovaram a altura da linha neutra em relação à altura útil da viga\(\ \frac {x}{d} \). Tendo passado nestes dois critérios, a viga pode ser simplesmente armada.
                 Assim, a área de aço necessária é calculada pela equação:</p>
             <p class="eqcenter"> \(\ As = \frac{M_d}{ \sigma_{sd} * (d - 0.4 * x)} = \) <span class="as"> </span> cm²</p>
                 <p>que comparada à área de aço inserida como dado de entrada (solicitante), define se a viga resiste ou não ao esforço provocado pelo momento fletor.<br><br>
@@ -365,12 +367,12 @@
                     <p class="eqcenter"> \(\ \sigma'_{sd} = (\frac{\varepsilon'_{sd}}{10}) * (\frac{Es}{100}) = \)<span class="tlsd"> </span> cm</p>
                 <p> \(\ E_s = \) 210GPa - Módulo de elasticidade do aço;<br></p>
                 
-                <!--Verifica-se que a partir do valor de 0,1838571429 da relação 𝑑’𝑐/𝑑, a tensão de escoamento já atingiu seu valor limite de 2,07 ‰.-->
+                <!--Verifica-se que a partir do valor de 0,1838571429 da relação 𝑑’𝑐/𝑑, a tensão de escoamento já atingiu seu valor limite de 2,07 ‰.
                 
                  <p>A area de aço tracionada necessária é a soma de duas parciais \(\ A_{s1}\) e \(\ A_{s2}) \). A primeira equilibra o momento fletor resistente da área de concreto comprimido e a segunda faz o equilíbrio com o momento fletor da armadura comprimida. Os cálculos são dados pelas equações abaixo, onde \(\ A_{st}\) é a área de aço total necessária na zona tracionada.</p>
                 <p class="eqcenter">\(\ A_{s1} = \frac{M_{1d}}{\sigma_sd * (d - 0.4 * x_d)} = \)<span class="as1"></span> cm²</p>
                 <p class="eqcenter">\(\ A_{s2} = \frac{M_{2d}}{\sigma_sd * (d - d'_c)} = \)<span class="as2"> </span> cm²</p>
-                <p class="eqcenter">\(\ A_{st} = A_{s1} + A_{s2} = \) <span class="ast"> </span> cm²</p>
+                <p class="eqcenter">\(\ A_{st} = A_{s1} + A_{s2} = \) <span class="ast"> </span> cm²</p>-->
                 
                 <p class="report-h4">9. Cálculo da Armadura de Pele</p>
                 <p>De acordo com a NBR 6118:2014, só é necessário utilizar armadura de pele quando h>60cm.</p>
@@ -531,4 +533,22 @@
 <script type="text/javascript" src="scripts/reportCheckCD.js"></script>
 <!-- ==================================================================================================================== -->
 
+<script>
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-97173118-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
 </html>
