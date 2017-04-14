@@ -6,11 +6,11 @@ var project, beam, mk, concrete, steel;
 var x, tsd, as, bw, fcd;
 var betax23, betax34, epc, eps, epyd, fyd, Es, fck, fyk, fckForm, fykForm;
 var d, h, cob, diamEstForm, diamLongForm, diamEst, diamLong, ncam, n;
-var mk, msd, md, ln;
+var mk, msd, md, mdtol, ln;
 var x2lim, x3lim, dominio;
 var gamac, gamaf, gamas, s;
 var result, situationD, situationS, situationLN, situationCG;
-var armPele, resultArmPele;
+var armPele, resultArmPele, bootbox;
 var resultado = [];
 
 var bitola = [
@@ -230,7 +230,9 @@ function processFormCC() {
     
     // Calculating parameters
     fcd = fck / gamac;
+    fcd = Number(fcd.toFixed(2));
     fyd = fyk / gamas;
+    fyd = Number(fyd.toFixed(2));
     tsd = fyd;
     epc = 3.5;
     eps = 10.0;
@@ -291,7 +293,8 @@ function processFormCC() {
     
     // Calculating Bending
     md = 0.68 * bw * x * fcd * (d - 0.4 * x);
-    
+    mdtol = md * 1.05;
+    mdtol = Number(mdtol.toFixed(2));
     // Results
     msd = mk * gamaf;
     
@@ -327,6 +330,7 @@ function processFormCC() {
     msd = Number(msd.toFixed(2));
     
     
+    
     /*  
    CRIACAO DE VARIAVEL PARA MANDAR VIA URL PARA RELATORIO
  */
@@ -351,12 +355,18 @@ function processFormCC() {
         "gamaf": gamaf,
         "gamas": gamas,
         "situationS": situationS,
+        "situationLN": situationLN,
         "resultArmPele": resultArmPele,
         "md": md,
+        "mdtol": mdtol,
         "msd": msd,
         "x": x,
         "dominio": dominio,
         "result": result,
+        "fcd": fcd,
+        "fyd": fyd,
+        "epc": epc,
+        "eps": eps,
         "ln": ln
 
         
