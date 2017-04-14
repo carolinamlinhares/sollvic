@@ -216,6 +216,96 @@
             
             <p> As etapas de cálculo são apresentadas a seguir: </p>
             
+            <p class="report-h4">1.Estabelecimento dos parâmetros
+                
+                <p class="eqcenter">\(\ f_{cd}=\frac{f_{ck}}{\gamma_c} = \) <span class="fcd"> </span> kN.cm² </p>
+                <p> \(\ f_{ck} \) – Resistência do concreto;<br>
+                 \(\ \gamma_c \) – Coeficiente de minoração do concreto;<br>
+                 \(\ f_{cd} \) – Resistência minorada do concreto;</p>
+            
+                <p class="eqcenter">\(\ f_{yd}=\frac{f_{yk}}{\gamma_s}= \) <span class="fyd"> </span> kN.cm² </p>
+                <p> \(\ f_{yd} \) – Resistência do concreto;<br>
+                 \(\ \gamma_s \) – Coeficiente de minoração do aço;<br>
+                 \(\ f_{yd} \) – Resistência minorada do concreto;</p>
+            
+                <p class="eqcenter">*\(\ \sigma_{sd}=f_{yd} = \) <span class="fyd"> </span> kN.cm² </p>
+                <p> \(\ \sigma_{sd} \) – Tensão de tração no aço;<br>
+                *Supondo inicialmente que a viga esteja no domínio 2 ou 3 </p>
+            
+                <p class="eqcenter">\(\ \varepsilon_c= \) <span class="epc"> </span> ‰ </p>
+                <p> \(\ \varepsilon_c\) – Deformação de compressão máxima do concreto;<br></p>
+            
+                <p class="eqcenter">\(\ \varepsilon_s= \) <span class="eps"> </span> ‰ </p>
+                <p> \(\ \varepsilon_s\) – Deformação de alongamento máxima do aço;<br>
+            
+            </p><br>
+            
+            <p class="report-h4">2. Determinação da posição da Linha Neutra</p>
+                
+            \[\ M_d = 0.68*bw*x*f_{cd}*(d-0.4*x)\]
+            <p class="eqcenter"> \(x =\) <span class="x"> </span> cm</p>    
+            <p> \(\ x\) - Posição da linha neutra na viga a partir da borda mais comprimida.</p>
+            
+            <p class="report-h4">3. Determinação do domínio de deformação da viga</p>
+                
+            <p>Os valores de \(\ x_{2lim}\) e \(\ x_{3lim}\) representam a altura na seção da viga que delimitam os domínios 2 e 3. A comparação destes com a altura\(\ 'x'\) da linha neutra, resulta no domínio da viga:</p>
+                
+             <p>Se \(\ x < x_{2lim} \), viga no domínio 2 (Aprovada neste quesito)<br>
+                Se \(\ x_{2lim} < x < x_{3lim} \), viga no domínio 3 (Aprovada neste quesito)<br>
+                Se \(\ x > x_{3lim} \), viga está no domínio 4 (Reprovada neste quesito)
+            </p>
+            
+            <p class="eqcenter"> \(Domínio\ de\ Deformação =\) <span class="dominio"> </span></p>
+            
+            <p class="report-h4">4. Verificação do limite da linha neutra</p>
+            <p>A norma impõe um limite à relação\(\ \frac {x}{d} \), restrigindo ainda mais a zona da altura da seção na qual a linha neutra estará aprovada, favorecendo assim a segurança. Esta verificação é observada através da fórmula:
+                
+            \[\ \frac {x}{d} ≤ 0.45 \]
+                
+            Se verdadeira, a equação resulta o valor de condição aprovada. Se falsa, resulta o valor de condição reprovada.
+                
+            <p class="eqcenter">\(\ \beta = \frac {x}{d} = \) <span class="ln"> </span></p>
+            
+            <p class="report-h4">5. Cálculo do Momento Fletor Resistente
+                
+            <p class="eqcenter">\(\ M_d\ =\ 0.68 * bw * x * f_{cd} * (d - 0.4 * x) = \)<span class="md"> </span> kN.cm</p>
+            
+            <p class="report-h4">7. Cálculo do Momento Fletor Solicitante Majorado
+            <p class="eqcenter">\(\ M_{sd}\ =\ M_k * \gamma_f = \)<span class="msd"> </span> kN.cm</p>
+            
+            <p class="report-h4">6. Cálculo da Armadura de Pele</p>
+                <p>De acordo com a NBR 6118:2014, só é necessário utilizar armadura de pele quando h>60cm.</p>
+            
+                <p class="eqcenter">\(\ A_{sp} = 0.001 * bw * h \)</p>
+                <p class="eqcenter"><span class="resultArmPele"> </span></p>
+            
+            <p class="report-h4">7. Resultados</p>
+                <p>A verificação da resistência se dá pela comparação entre valores de momento fletor resistente e solicitante (inserido pelo usuário) além das demais condições constantes no relatório, de forma a garantir que o elemento estrutural esteja conforme as exigências da NBR 6118:2014.<br><br>
+                
+                Assim:<br>          
+                Se \(\ (M_{sd} ≤ 1.05 * M_d) \),
+                
+                Se a viga está no domínio de deformação 2 ou 3 e
+                    
+                Se a viga atende ao limite \(\ \frac{x}{d} ≤ 0.45 \),
+                
+                a viga resiste ao momento fletor solicitado.<br>
+                Caso contrário, a viga não resiste ao momento fletor solicitado.</p>
+            
+                <p class="eqcenter">\(\ M_{sd} = \) <span class="msd"> </span> kN.cm</p>
+                <p class="eqcenter">\(\ M_{dConsiderado} = \) <span class="mdtol"> </span> kN.cm</p>
+            
+                <p> \(\ M_{dConsiderado}\) – Momento resistente considerado;<br>
+            
+            
+                <p> Por questões práticas, considera-se uma margem de 5% de tolerância no cálculo das armadura de aço de tração e compressão, ou seja, o programa ainda aprovará a viga caso a diferença entre quantidade de armadura necessária e armadura utilizada esteja dentro desta margem. Para fins educacionais porém, o valor exibido na tabela acima não considera tolerâncias além mas majorações/minorações.</p>
+
+                <p> A viga em análise está no <span class="dominio"></span>, e foi <span class="situationLN"></span> em relação ao limite \(\ \frac{x}{d} \) da norma.</p>
+            
+                <p>Por isso, <span class="result"></span></p>
+            
+            <p>A tabela abaixo resume os resultados encontrados:</p>
+            
             <table class="reportable">
                 <tr>
                     <th> Área de Aço Utilizada \(A_{s}\) </th>
@@ -227,23 +317,23 @@
                 </tr>
                 <tr>
                     <th> Posição da Linha Neutra \({(x)}\) </th>
-                    <td> <span id="x"> </span> cm </td>
+                    <td> <span class="x"> </span> cm </td>
                 </tr>
                 <tr>
                     <th> Domínio de Deformação </th>
-                    <td> <span id="dominio"> </span> </td>
+                    <td> <span class="dominio"> </span> </td>
                 </tr>
                 <tr>
                     <th> Relação \({(x/d)}\) </th>
-                    <td> <span id="ln"> </span> </td>
+                    <td> <span class="ln"> </span> </td>
                 </tr>
                 <tr>
                     <th> Momento Fletor Resistente \(M_{d}\) </th>
-                    <td> <span id="md"> </span> kN.cm </td>
+                    <td> <span class="md"> </span> kN.cm </td>
                 </tr>
                 <tr>
                     <th> Momento Fletor Solicitante Majorado \(M_{sd}\) </th>
-                    <td> <span id="msd"> </span> kN.cm </td>
+                    <td> <span class="msd"> </span> kN.cm </td>
                 </tr>
                 <tr>
                     <th> Armadura de Pele \(A_{sp}\) </th>
