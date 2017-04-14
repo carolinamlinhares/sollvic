@@ -362,13 +362,12 @@ function processFormCC() {
         "msd": msd,
         "x": x,
         "dominio": dominio,
-        "result": result,
         "fcd": fcd,
         "fyd": fyd,
         "epc": epc,
         "eps": eps,
-        "ln": ln
-
+        "ln": ln,
+        "result": result
         
     };
     
