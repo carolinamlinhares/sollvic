@@ -68,12 +68,18 @@ $(document).ready(function() {
 
     $(".as").html(resultado.as);
     $(".d").html(resultado.d);
-    $("#x").html(resultado.x);
-    $("#dominio").html(resultado.dominio);
-    $("#ln").html(resultado.ln);
-    $("#md").html(resultado.md);
-    $("#msd").html(resultado.msd);
+    $(".x").html(resultado.x);
+    $(".dominio").html(resultado.dominio);
+    $(".ln").html(resultado.ln);
+    $(".situationLN").html(resultado.situationLN);
+    $(".md").html(resultado.md);
+    $(".msd").html(resultado.msd);
+    $(".mdtol").html(resultado.mdtol);
     $(".resultArmPele").html(resultado.resultArmPele);
+    $(".fcd").html(resultado.fcd);
+    $(".fyd").html(resultado.fyd);
+    $(".epc").html(resultado.epc);
+    $(".eps").html(resultado.eps);
     
 
     // Conclusion
