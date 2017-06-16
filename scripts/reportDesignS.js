@@ -37,7 +37,7 @@ resultado = JSON.parse(getJsonFromUrl().test);
 
 var i = 0;
 var tableHeader = '<tr><th> Perfil </th> <th> Cortante \\(V_{rd}\\) (KN) </th> <th> Momento \\(M_{rd}\\) (KN.m) </th> <th> Ratio Cortante </th> <th> Ratio Momento </th> </tr>';
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, tableHeader]);
+//MathJax.Hub.Queue(["Typeset", MathJax.Hub, tableHeader]);
 
 $(document).ready(function() {
     // Header
