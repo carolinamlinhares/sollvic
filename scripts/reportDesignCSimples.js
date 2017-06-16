@@ -36,7 +36,7 @@ resultado = JSON.parse(getJsonFromUrl().test);
 
 var i = 0;
 var tableHeader = '<tr><th> Nº de Barras </th> <th> Φ Bitola (mm) </th> <th> Nº de Camadas Sugerido </th> <th> Área de Aço \\(A_{sCalc}\\) (cm²) </th> <th> Taxa de Armadura (%) </th> <th> Espaçamento horizontal mínimo (cm) </th> <th> Espaçamento vertical mínimo (cm) </th> </tr>';
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, tableHeader]);
+//MathJax.Hub.Queue(["Typeset", MathJax.Hub, tableHeader]);
 
 $(document).ready(function() {
     // Header
