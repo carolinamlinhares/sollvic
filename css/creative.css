@@ -962,6 +962,13 @@ header .header-content {
     margin-bottom: 25px;
 }
 
+.dateNews {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #41bef6;
+}
+
+
 .tdcell {
     vertical-align: middle !important;
     padding-left: 5px;
@@ -1119,5 +1126,3 @@ li{
     border: none;
     border-right: 1px;
 }
-
-
